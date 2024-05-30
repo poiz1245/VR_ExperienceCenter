@@ -109,9 +109,9 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
-    m_Name: Left Hand Layer
-    m_StateMachine: {fileID: -8398556297649649144}
-    m_Mask: {fileID: 31900000, guid: 33a841775c1484e43a6919707741d73d, type: 2}
+    m_Name: Right Hand Layer
+    m_StateMachine: {fileID: 7220389955689656050}
+    m_Mask: {fileID: 31900000, guid: 8854bed0e697ccd44b48a0ca01cc16bb, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -121,9 +121,9 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: Right Hand Layer
-    m_StateMachine: {fileID: 7220389955689656050}
-    m_Mask: {fileID: 31900000, guid: 8854bed0e697ccd44b48a0ca01cc16bb, type: 2}
+    m_Name: Left Hand Layer
+    m_StateMachine: {fileID: -8398556297649649144}
+    m_Mask: {fileID: 31900000, guid: 33a841775c1484e43a6919707741d73d, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0

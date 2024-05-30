@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class VRMap
+public class NewVRMap
 {
     public Transform vrTarget;
     public Transform ikTarget;
@@ -18,9 +18,9 @@ public class IKTargetFollowVRRig : MonoBehaviour
 {
     [Range(0,1)]
     public float turnSmoothness = 0.1f;
-    public VRMap head;
-    public VRMap leftHand;
-    public VRMap rightHand;
+    public NewVRMap head;
+    public NewVRMap leftHand;
+    public NewVRMap rightHand;
 
     public Vector3 headBodyPositionOffset;
     public float headBodyYawOffset;
