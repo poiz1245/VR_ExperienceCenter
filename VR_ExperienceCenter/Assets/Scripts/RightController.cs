@@ -18,15 +18,15 @@ public class RightController : MonoBehaviour
     {
         grab.action.performed += ObjectGrab;
 
-        if (!interactable.isSelected)
+       /* if (!interactable.isSelected)
         {
             anim.SetBool("isGrab", false);
-        }
+        }*/
     }
 
     public void ObjectGrab(InputAction.CallbackContext obj)
     {
         rightControllerPosition = rightController.transform.position;
-        anim.SetBool("isGrab", true);
+        //anim.SetBool("isGrab", true);
     }
 }

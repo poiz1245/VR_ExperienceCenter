@@ -22,6 +22,7 @@ public class VRRig : MonoBehaviour
     public VRMap head;
     public VRMap leftHand;
     public VRMap rightHand;
+    public VRMap thumbFinger;
 
     public Transform headConstraint;
     public Vector3 headBodyOffset;
