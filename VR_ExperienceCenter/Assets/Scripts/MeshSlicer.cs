@@ -14,6 +14,7 @@ public class MeshSlicer : MonoBehaviour
     public float cutForce = 100f;
     public Material capMaterial;
     public LayerMask sliceableLayer;
+    public LayerMask slicedObjectleLayer;
 
     private void FixedUpdate()
     {
@@ -56,7 +57,7 @@ public class MeshSlicer : MonoBehaviour
         }
 
         MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
-        slicedObject.layer = 6;
+        slicedObject.layer = slicedObjectleLayer;
         collider.convex = true;
         rigid.AddExplosionForce(cutForce, slicedObject.transform.position, 1);
     }
