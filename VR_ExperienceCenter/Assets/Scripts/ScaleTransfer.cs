@@ -1,0 +1,51 @@
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+
+public class ScaleTransfer : MonoBehaviour
+{
+
+    public Camera mainCamera;
+    public XRGrabInteractable grabInteractable;
+    public ControllerRayCast hitObject;
+
+    float initialDistance;
+    bool isGrabbed = false;
+    Vector3 cubeSize;
+    private void Start()
+    {
+        initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position);
+        cubeSize = GetComponent<Renderer>().bounds.size;
+
+    }
+    void Update()
+    {
+        if (grabInteractable.isSelected && !isGrabbed)
+        {
+            isGrabbed = true;
+        }
+        else if (isGrabbed && !grabInteractable.isSelected)
+        {
+            Vector3 adjustment = hitObject.normal * (cubeSize.magnitude / 2);
+            Vector3 newCubePosition = hitObject.hitPoint + adjustment;
+            transform.position = newCubePosition;
+
+            AdjustScale();
+            isGrabbed = false;
+        }
+    }
+
+    void AdjustScale()
+    {
+        float distance = Vector3.Distance(mainCamera.transform.position, transform.position);
+        float scaleFactor = CalculateScaleFactor(distance);
+
+        transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+    }
+
+    float CalculateScaleFactor(float distance)
+    {
+        float scale = distance / 3.0f/*initialDistance*/;
+        return Mathf.Max(scale, 0.1f);
+    }
+}
