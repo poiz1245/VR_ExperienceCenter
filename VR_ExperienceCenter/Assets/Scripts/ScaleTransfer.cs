@@ -10,28 +10,30 @@ public class ScaleTransfer : MonoBehaviour
     public CameraCenterRayCast hitObject;
 
     float initialDistance;
-    bool isGrabbed = false;
+    bool isGrab = false;
     Vector3 cubeSize;
+
     private void Start()
     {
-        initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position);
         cubeSize = GetComponent<Renderer>().bounds.size;
+        initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position);
 
     }
     void Update()
     {
-        if (grabInteractable.isSelected && !isGrabbed)
+        if (grabInteractable.isSelected && !isGrab)
         {
-            isGrabbed = true;
+            isGrab = true;
         }
-        else if (isGrabbed && !grabInteractable.isSelected)
+        else if (isGrab && !grabInteractable.isSelected)
         {
             Vector3 adjustment = hitObject.normal * (cubeSize.magnitude / 2);
             Vector3 newCubePosition = hitObject.hitPoint + adjustment;
+
             transform.position = newCubePosition;
 
             AdjustScale();
-            isGrabbed = false;
+            isGrab = false;
         }
     }
 
@@ -45,7 +47,7 @@ public class ScaleTransfer : MonoBehaviour
 
     float CalculateScaleFactor(float distance)
     {
-        float scale = distance / 3.0f/*initialDistance*/;
-        return Mathf.Max(scale, 0.1f);
+        float scale = distance / /*3.0f*/initialDistance;
+        return Mathf.Max(scale, 0.1f); //두개의 숫자 중 더 큰 값을 반환
     }
 }
