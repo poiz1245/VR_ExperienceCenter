@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraCenterRayCast : MonoBehaviour
 {
     public Camera mainCamera;
-
     int layerMask;
     LayerMask layerToIgnore;
     Vector3 startPoint;

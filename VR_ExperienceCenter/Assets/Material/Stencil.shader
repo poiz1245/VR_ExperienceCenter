@@ -1,6 +1,6 @@
 Shader "Custom/Stencil"
 {
-    Properties
+	 Properties
     {
 		[IntRange] _StencilID ("Stencil ID", Range(0, 255)) = 0
     }

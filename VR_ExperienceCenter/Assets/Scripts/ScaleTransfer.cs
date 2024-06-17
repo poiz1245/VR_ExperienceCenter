@@ -16,7 +16,7 @@ public class ScaleTransfer : MonoBehaviour
     private void Start()
     {
         cubeSize = GetComponent<Renderer>().bounds.size;
-        initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position);
+        initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position); //이거 업데이트 해야할거 같음
 
     }
     void Update()
