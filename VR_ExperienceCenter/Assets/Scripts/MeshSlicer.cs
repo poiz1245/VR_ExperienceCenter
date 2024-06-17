@@ -20,7 +20,6 @@ public class MeshSlicer : MonoBehaviour
     {
         bool hasHit = Physics.Linecast(startSlicePoint.position, endSlicePoint.position.normalized, out RaycastHit hit, sliceableLayer);
 
-        print(hasHit);
         if (hasHit)
         {
             GameObject target = hit.transform.gameObject;
