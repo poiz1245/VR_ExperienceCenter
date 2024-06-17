@@ -9,12 +9,16 @@ public class ScaleTransfer : MonoBehaviour
     public XRGrabInteractable grabInteractable;
     public CameraCenterRayCast hitObject;
 
+    new Renderer renderer;
     float initialDistance;
     bool isGrab = false;
     Vector3 cubeSize;
 
+    [SerializeField] Material firstRender;
+    [SerializeField] Material unlit;
     private void Start()
     {
+        renderer = GetComponent<Renderer>();
         cubeSize = GetComponent<Renderer>().bounds.size;
         initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position); //이거 업데이트 해야할거 같음
 
@@ -24,9 +28,11 @@ public class ScaleTransfer : MonoBehaviour
         if (grabInteractable.isSelected && !isGrab)
         {
             isGrab = true;
+            renderer.material = firstRender;
         }
         else if (isGrab && !grabInteractable.isSelected)
         {
+            renderer.material = unlit;
             Vector3 adjustment = hitObject.normal * (cubeSize.magnitude / 2);
             Vector3 newCubePosition = hitObject.hitPoint + adjustment;
 
