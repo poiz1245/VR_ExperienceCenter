@@ -7,7 +7,7 @@ public class ScaleTransfer : MonoBehaviour
 
     public Camera mainCamera;
     public XRGrabInteractable grabInteractable;
-    public ControllerRayCast hitObject;
+    public CameraCenterRayCast hitObject;
 
     float initialDistance;
     bool isGrabbed = false;
