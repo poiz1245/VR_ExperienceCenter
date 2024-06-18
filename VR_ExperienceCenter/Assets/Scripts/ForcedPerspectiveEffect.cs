@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class ScaleTransfer : MonoBehaviour
+public class ForcedPerspectiveEffect : MonoBehaviour
 {
 
     public Camera mainCamera;
@@ -19,16 +19,16 @@ public class ScaleTransfer : MonoBehaviour
     private void Start()
     {
         renderer = GetComponent<Renderer>();
-        cubeSize = GetComponent<Renderer>().bounds.size;
-        initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position); //이거 업데이트 해야할거 같음
-
     }
     void Update()
     {
         if (grabInteractable.isSelected && !isGrab)
         {
             isGrab = true;
+            cubeSize = GetComponent<Renderer>().bounds.size;
+            initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position); //이거 업데이트 해야할거 같음
             renderer.material = firstRender;
+            print(initialDistance);
         }
         else if (isGrab && !grabInteractable.isSelected)
         {
@@ -48,12 +48,12 @@ public class ScaleTransfer : MonoBehaviour
         float distance = Vector3.Distance(mainCamera.transform.position, transform.position);
         float scaleFactor = CalculateScaleFactor(distance);
 
-        transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+        transform.localScale *= scaleFactor;
     }
 
     float CalculateScaleFactor(float distance)
     {
-        float scale = distance / /*3.0f*/initialDistance;
-        return Mathf.Max(scale, 0.1f); //두개의 숫자 중 더 큰 값을 반환
+        float scale = distance / initialDistance;
+        return Mathf.Max(scale, 0.01f); //두개의 숫자 중 더 큰 값을 반환
     }
 }
