@@ -6,18 +6,20 @@ public class ForcedPerspectiveEffect : MonoBehaviour
 {
 
     public Camera mainCamera;
-    public XRGrabInteractable grabInteractable;
     public CameraCenterRayCast hitObject;
 
+
+    XRGrabInteractable grabInteractable;
     new Renderer renderer;
     float initialDistance;
     bool isGrab = false;
     Vector3 cubeSize;
 
-    [SerializeField] Material firstRender;
-    [SerializeField] Material unlit;
+    [SerializeField] Material unlitMaterial;
+    [SerializeField] Material[]  afterGrabMaterials;
     private void Start()
     {
+        grabInteractable = GetComponent<XRGrabInteractable>();
         renderer = GetComponent<Renderer>();
     }
     void Update()
@@ -27,12 +29,12 @@ public class ForcedPerspectiveEffect : MonoBehaviour
             isGrab = true;
             cubeSize = GetComponent<Renderer>().bounds.size;
             initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position); //이거 업데이트 해야할거 같음
-            renderer.material = firstRender;
+            renderer.materials = afterGrabMaterials;
             print(initialDistance);
         }
         else if (isGrab && !grabInteractable.isSelected)
         {
-            renderer.material = unlit;
+            renderer.materials = new Material[] { unlitMaterial };
             Vector3 adjustment = hitObject.normal * (cubeSize.magnitude / 2);
             Vector3 newCubePosition = hitObject.hitPoint + adjustment;
 
