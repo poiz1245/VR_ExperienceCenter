@@ -7,13 +7,16 @@ public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] Camera mainCamera;
     [SerializeField] RightController rightController;
-    [SerializeField] XRGrabInteractable grabInteractable;
 
+    XRGrabInteractable grabInteractable;
     bool isGrab = false;
     float initialDistance;
-    Vector3 initialDirection;
     Quaternion initialRotation;
 
+    private void Start()
+    {
+        grabInteractable = GetComponent<XRGrabInteractable>();
+    }
     void Update()
     {
         GetComponent<Renderer>().sortingOrder = int.MaxValue;
