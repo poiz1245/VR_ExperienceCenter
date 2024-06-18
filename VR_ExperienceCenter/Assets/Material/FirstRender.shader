@@ -3,7 +3,7 @@ Shader "Custom/FirstRender"
  
 	Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+        _MainTex ("Texture", 2D) = "red" {}
     }
     SubShader
     {

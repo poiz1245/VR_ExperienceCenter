@@ -36,7 +36,5 @@ public class FollowPlayer : MonoBehaviour
         {
             isGrab = false;
         }
-
-
     }
 }
