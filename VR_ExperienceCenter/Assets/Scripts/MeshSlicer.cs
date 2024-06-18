@@ -13,9 +13,14 @@ public class MeshSlicer : MonoBehaviour
 
     public float cutForce = 100f;
     public Material capMaterial;
-    public LayerMask sliceableLayer;
-    public LayerMask slicedObjectleLayer;
 
+    LayerMask sliceableLayer;
+    //public LayerMask slicedObjectleLayer;
+
+    private void Start()
+    {
+        sliceableLayer = LayerMask.GetMask("Slicable");
+    }
     private void FixedUpdate()
     {
         bool hasHit = Physics.Linecast(startSlicePoint.position, endSlicePoint.position.normalized, out RaycastHit hit, sliceableLayer);
@@ -37,9 +42,9 @@ public class MeshSlicer : MonoBehaviour
         if (hull != null)
         {
             GameObject upperHull = hull.CreateUpperHull(target, capMaterial);
-            SetupSlicedComponent(upperHull);
-
             GameObject lowerHull = hull.CreateLowerHull(target, capMaterial);
+
+            SetupSlicedComponent(upperHull);
             SetupSlicedComponent(lowerHull);
 
             Destroy(target.gameObject);
@@ -56,8 +61,11 @@ public class MeshSlicer : MonoBehaviour
         }
 
         MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
-        slicedObject.layer = slicedObjectleLayer;
         collider.convex = true;
+
+        int layer = Mathf.RoundToInt(Mathf.Log(sliceableLayer.value, 2));
+        slicedObject.layer = layer;
+
         rigid.AddExplosionForce(cutForce, slicedObject.transform.position, 1);
     }
 }
