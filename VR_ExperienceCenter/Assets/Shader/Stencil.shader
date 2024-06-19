@@ -25,8 +25,6 @@ Shader "Custom/Stencil"
 				Pass Replace
 				Fail Keep
 			}
-
-			
         }
     }
 }

@@ -7,7 +7,6 @@ public class CameraCenterRayCast : MonoBehaviour
     public static CameraCenterRayCast instance;
 
     int layerMask;
-    LayerMask layerToIgnore;
     Vector3 startPoint;
 
     public Camera mainCamera { get; private set; }
@@ -28,9 +27,7 @@ public class CameraCenterRayCast : MonoBehaviour
     void Start()
     {
         mainCamera = GetComponent<Camera>();
-        layerToIgnore = LayerMask.GetMask("Target");
-        layerMask = ~(1 << layerToIgnore);
-
+        layerMask = ~(1 << LayerMask.NameToLayer("Target") | 1<<LayerMask.NameToLayer("Player"));
     }
 
     void Update()
@@ -40,10 +37,11 @@ public class CameraCenterRayCast : MonoBehaviour
 
         startPoint = worldCenter;
 
-        bool collider = Physics.Raycast(startPoint, transform.forward, out RaycastHit hitInfo, float.PositiveInfinity, ~(layerMask));
+        bool collider = Physics.Raycast(startPoint, transform.forward, out RaycastHit hitInfo, float.PositiveInfinity, layerMask);
 
         if (collider)
         {
+            print(hitInfo.collider.name);
             hitPoint = hitInfo.point;
             normal = hitInfo.normal;
         }

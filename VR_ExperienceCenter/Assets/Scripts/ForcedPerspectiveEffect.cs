@@ -52,7 +52,6 @@ public class ForcedPerspectiveEffect : MonoBehaviour
 
             transform.position = newCubePosition;
 
-            print(mainCamera);
             AdjustScale();
             isGrab = false;
         }
