@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class IllusionEffect : MonoBehaviour
 {
-    public Camera mainCamera;
     public Transform targetObject;
     public GameObject[] scatteredImages;
     public GameObject finalObject;
@@ -11,6 +10,12 @@ public class IllusionEffect : MonoBehaviour
     public float acceptableAngle;
     public float acceptableDistance;
 
+    Camera mainCamera;
+
+    private void Start()
+    {
+        mainCamera = GetComponent<Camera>();
+    }
     void Update()
     {
         Vector3 directionToTarget = targetObject.position - mainCamera.transform.position;
