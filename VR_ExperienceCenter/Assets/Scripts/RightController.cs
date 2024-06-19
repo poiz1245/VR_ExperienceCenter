@@ -7,18 +7,25 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class RightController : MonoBehaviour
 {
-    [SerializeField] InputActionReference grab;
+    [SerializeField] float jumpPower;
+    [SerializeField] InputActionReference grabButton;
+    [SerializeField] InputActionReference primaryButton;
+    [SerializeField] GameObject player;
 
-    public GameObject rightController;
     public Vector3 rightControllerPosition;
+
 
     private void Start()
     {
-        grab.action.performed += ObjectGrab;
-
+        grabButton.action.performed += ObjectGrab;
+        primaryButton.action.performed += Jump;
     }
     public void ObjectGrab(InputAction.CallbackContext obj)
     {
-        rightControllerPosition = rightController.transform.position;
+        rightControllerPosition = transform.position;
+    }
+    public void Jump(InputAction.CallbackContext obj)
+    {
+        player.transform.Translate(0f, jumpPower, 0f);
     }
 }
