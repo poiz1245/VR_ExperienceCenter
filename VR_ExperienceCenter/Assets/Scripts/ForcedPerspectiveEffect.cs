@@ -2,44 +2,57 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+[RequireComponent(typeof(FollowPlayer))]
+[RequireComponent(typeof(XRGrabInteractable))]
 public class ForcedPerspectiveEffect : MonoBehaviour
 {
+    [SerializeField] Material unlitMaterial;
+    [SerializeField] Material[] afterGrabMaterials;
 
-    public Camera mainCamera;
-    public CameraCenterRayCast hitObject;
-
-
+    Camera mainCamera;
+    CameraCenterRayCast hitObject;
     XRGrabInteractable grabInteractable;
+    XRInteractorLineVisual lineVisual;
     new Renderer renderer;
     float initialDistance;
     bool isGrab = false;
     Vector3 cubeSize;
 
-    [SerializeField] Material unlitMaterial;
-    [SerializeField] Material[]  afterGrabMaterials;
+ 
     private void Start()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
         renderer = GetComponent<Renderer>();
+        lineVisual = GameObject.FindWithTag("GameController").GetComponent<XRInteractorLineVisual>();
+        hitObject = CameraCenterRayCast.instance.GetComponent<CameraCenterRayCast>();
+
+        mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        //mainCamera = CameraCenterRayCast.instance.mainCamera;
+
+        gameObject.layer = 11;
     }
     void Update()
     {
         if (grabInteractable.isSelected && !isGrab)
         {
             isGrab = true;
+            lineVisual.enabled = false;
+
             cubeSize = GetComponent<Renderer>().bounds.size;
-            initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position); //이거 업데이트 해야할거 같음
+            initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position);
             renderer.materials = afterGrabMaterials;
-            print(initialDistance);
         }
         else if (isGrab && !grabInteractable.isSelected)
         {
+            lineVisual.enabled = true;
+
             renderer.materials = new Material[] { unlitMaterial };
             Vector3 adjustment = hitObject.normal * (cubeSize.magnitude / 2);
             Vector3 newCubePosition = hitObject.hitPoint + adjustment;
 
             transform.position = newCubePosition;
 
+            print(mainCamera);
             AdjustScale();
             isGrab = false;
         }
