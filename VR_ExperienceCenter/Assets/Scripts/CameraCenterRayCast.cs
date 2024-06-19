@@ -4,19 +4,33 @@ using UnityEngine;
 
 public class CameraCenterRayCast : MonoBehaviour
 {
-    public Camera mainCamera;
+    public static CameraCenterRayCast instance;
+
     int layerMask;
     LayerMask layerToIgnore;
     Vector3 startPoint;
 
+    public Camera mainCamera { get; private set; }
     public Vector3 hitPoint { get; private set; }
     public Vector3 normal { get; private set; }
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
     void Start()
     {
+        mainCamera = GetComponent<Camera>();
         layerToIgnore = LayerMask.GetMask("Target");
         layerMask = ~(1 << layerToIgnore);
-        
+
     }
 
     void Update()
