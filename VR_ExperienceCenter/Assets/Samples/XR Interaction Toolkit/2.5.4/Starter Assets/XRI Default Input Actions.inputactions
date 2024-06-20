@@ -1266,6 +1266,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Projection",
+                    "type": "Button",
+                    "id": "cd5a5dc0-2e58-402e-9d18-dcaac23b360d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1563,6 +1572,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c3980f1c-498f-4e95-8b6f-cfbeeeb3a4d2",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Projection",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

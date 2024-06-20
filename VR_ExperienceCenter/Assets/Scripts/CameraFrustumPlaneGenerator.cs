@@ -1,37 +1,54 @@
+using System.Collections.Generic;
+using System.Linq;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class CameraFrustumPlaneGenerator : MonoBehaviour
 {
+    public Camera mainCamera;
     public GameObject planeParent;
+    public GameObject insideObject;
 
+    public GameObject aroundPlane;
+    public GameObject nearFarPlane;
+
+    List<GameObject> projections;
+    Plane[] planes;
     private void Start()
     {
-        GenerateFrustumPlanes();
+        planes = new Plane[6];
     }
 
-    private void GenerateFrustumPlanes()
+    private void Update()
     {
-        // 카메라 절두체 평면 정보 가져오기
-        Plane[] frustumPlanes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
-
-        // 절두체 평면 정보를 이용하여 평면 GameObject 생성
-        for (int i = 0; i < frustumPlanes.Length; i++)
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            GameObject plane = CreatePlaneGameObject(frustumPlanes[i]);
-            plane.transform.SetParent(planeParent.transform);
+            GenerateFrustumPlanes();
         }
     }
-
-    private GameObject CreatePlaneGameObject(Plane plane)
+    private void GenerateFrustumPlanes()
     {
-        GameObject planeObj = GameObject.CreatePrimitive(PrimitiveType.Quad);
-        planeObj.name = $"Frustum Plane {plane.normal}";
+        GeometryUtility.CalculateFrustumPlanes(mainCamera, planes);
 
-        // 평면의 법선 벡터와 거리 정보를 이용하여 평면의 크기와 위치 설정
-        planeObj.transform.position = plane.normal * plane.distance;
-        planeObj.transform.up = plane.normal;
-        planeObj.transform.localScale = new Vector3(100f, 100f, 1f);
+        for (int i = 0; i < 6; ++i)
+        {
+            GameObject p = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            p.transform.SetParent(planeParent.transform);
+            p.gameObject.tag = "ProjectionPanel";
+            p.AddComponent<InversViewProjection>();
+            p.AddComponent<Rigidbody>().GetComponent<Rigidbody>().isKinematic = true;
+            p.GetComponent<MeshCollider>().convex = true;
+            p.GetComponent<MeshCollider>().isTrigger = true;
 
-        return planeObj;
+            /*if (i < 4)
+            {
+            }
+            else
+            {
+            }*/
+            p.transform.position = -planes[i].normal * planes[i].distance;
+            p.transform.rotation = Quaternion.FromToRotation(Vector3.up, planes[i].normal);
+            p.transform.localScale = new Vector3(100, 100, 100);
+        }
     }
 }

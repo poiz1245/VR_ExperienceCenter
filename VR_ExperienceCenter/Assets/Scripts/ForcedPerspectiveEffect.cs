@@ -27,8 +27,6 @@ public class ForcedPerspectiveEffect : MonoBehaviour
         hitObject = CameraCenterRayCast.instance.GetComponent<CameraCenterRayCast>();
 
         mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
-        //mainCamera = CameraCenterRayCast.instance.mainCamera;
-
         gameObject.layer = 11;
     }
     void Update()

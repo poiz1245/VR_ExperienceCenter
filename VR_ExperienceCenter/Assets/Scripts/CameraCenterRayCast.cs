@@ -41,7 +41,6 @@ public class CameraCenterRayCast : MonoBehaviour
 
         if (collider)
         {
-            print(hitInfo.collider.name);
             hitPoint = hitInfo.point;
             normal = hitInfo.normal;
         }
