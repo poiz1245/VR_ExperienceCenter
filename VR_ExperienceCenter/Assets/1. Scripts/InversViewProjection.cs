@@ -18,24 +18,16 @@ public class InversViewProjection : MonoBehaviour
     {
         mainCamera = Camera.main;
     }
-    private void Start()
-    {
-        FindObjectsInCameraFrustum();
 
-    }
-    private void Update()
+    private void OnTriggerStay(Collider other)
     {
-        if (!isTriggerActive && gameObject.activeSelf)
+        if (other.gameObject.tag == "Sliceable")
         {
-            Destroy(gameObject);
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Sliceable" && insideObject.Contains(other.gameObject))
-        {
-            isTriggerActive = true;
-            Slice(other.gameObject);
+            if(Input.GetKeyDown(KeyCode.P))
+            {
+                Slice(other.gameObject);
+                //FindObjectsInCameraFrustum();
+            }
         }
     }
 
@@ -55,10 +47,8 @@ public class InversViewProjection : MonoBehaviour
 
             if (GeometryUtility.TestPlanesAABB(frustumPlanes, bounds))
             {
-                insideObject.Add(obj);
+                Destroy(obj);
             }
-
-            //Destroy(obj);
         }
     }
     public void Slice(GameObject target)
@@ -74,8 +64,6 @@ public class InversViewProjection : MonoBehaviour
             Destroy(upperHull);
             Destroy(target.gameObject);
         }
-
-       // Destroy(gameObject);
     }
 
     public void SetupSlicedComponent(GameObject slicedObject)
