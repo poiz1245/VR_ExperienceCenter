@@ -14,6 +14,7 @@ public class InversViewProjection : MonoBehaviour
     Camera mainCamera;
 
     List<GameObject> insideObject = new List<GameObject>();
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -25,7 +26,7 @@ public class InversViewProjection : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.P))
             {
-                Slice(other.gameObject);
+                Slice(other.gameObject, other.gameObject.name);
                 //FindObjectsInCameraFrustum();
             }
         }
@@ -51,7 +52,7 @@ public class InversViewProjection : MonoBehaviour
             }
         }
     }
-    public void Slice(GameObject target)
+    public void Slice(GameObject target, string targetName)
     {
         SlicedHull hull = target.Slice(transform.position, transform.up);
 
@@ -59,14 +60,15 @@ public class InversViewProjection : MonoBehaviour
         {
             GameObject upperHull = hull.CreateUpperHull(target);
             GameObject lowerHull = hull.CreateLowerHull(target);
-            SetupSlicedComponent(lowerHull);
+            SetupSlicedComponent(lowerHull, targetName);
+            lowerHull.name = targetName;
             //SetupSlicedComponent(upperHull);
             Destroy(upperHull);
             Destroy(target.gameObject);
         }
     }
 
-    public void SetupSlicedComponent(GameObject slicedObject)
+    public void SetupSlicedComponent(GameObject slicedObject, string slicedObjectName)
     {
         Rigidbody rigid = slicedObject.GetComponent<Rigidbody>();
 
@@ -79,5 +81,6 @@ public class InversViewProjection : MonoBehaviour
         MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
         collider.convex = true;
         slicedObject.gameObject.tag = "Sliceable";
+        slicedObject.name = slicedObjectName;
     }
 }

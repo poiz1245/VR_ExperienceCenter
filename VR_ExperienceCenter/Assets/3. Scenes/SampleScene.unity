@@ -64711,10 +64711,6 @@ MonoBehaviour:
   mainCamera: {fileID: 945456030}
   planeParent: {fileID: 1900059938}
   insideObject: {fileID: 0}
-  aroundPlane: {fileID: 5557777316630849110, guid: 30f641190e8c8804694e3fa6acc20b39,
-    type: 3}
-  nearFarPlane: {fileID: 7205034228656513065, guid: a8bb4c34103b9e84e8df0d482e599d32,
-    type: 3}
 --- !u!4 &1900059940
 Transform:
   m_ObjectHideFlags: 0
