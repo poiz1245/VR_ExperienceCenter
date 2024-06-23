@@ -13,6 +13,9 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
     public GameObject[] cuttingPlane;
 
     public List<GameObject> objectsToBeDestroyed = new List<GameObject>();
+    public List<GameObject> objectsToBeCopy = new List<GameObject>();
+
+    MeshCombiner meshCombiner;
 
     Plane[] planes;
 
@@ -28,28 +31,71 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
     float farWidth;
     float farHeight;
 
+    bool cutKeyDown = false;
     private void Start()
     {
         planes = new Plane[6];
+        meshCombiner = GetComponent<MeshCombiner>();
         GenerateFrustumPlanes();
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.C)) 
+        {
+            cutKeyDown = true;
+        }
+        /*if (Input.GetKeyDown(KeyCode.C))
         {
             for (int i = 0; i < cuttingPlane.Length; i++)
             {
-                cuttingPlane[i].SetActive(true);
+                CameraFrustumSlicing copyPlane = cuttingPlane[i].GetComponent<CameraFrustumSlicing>();
+                copyPlane.Slice(copyPlane.gameObject);
+                //cuttingPlane[i].SetActive(true);
             }
 
             FindObjectsInCameraFrustum();
 
             StartCoroutine(DestroyObjects());
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            for(int i = 0; i < cuttingPlane.Length; i++)
+            {
+
+            }
+        }*/
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (cutKeyDown)
+        {
+            print("aa");
+            for (int i = 0; i < cuttingPlane.Length; i++)
+            {
+                CameraFrustumSlicing copyPlane = cuttingPlane[i].GetComponent<CameraFrustumSlicing>();
+                copyPlane.Slice(other.gameObject);
+            }
+
+            FindObjectsInCameraFrustum();
+
+            StartCoroutine(DestroyObjects());
+
+            meshCombiner.CombineMeshes();
+            cutKeyDown = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            for (int i = 0; i < cuttingPlane.Length; i++)
+            {
+
+            }
+        }
     }
     private IEnumerator DestroyObjects()
     {
-        yield return new WaitForSeconds(1f); // 1ÃÊ ´ë±â
+        yield return new WaitForSeconds(0.01f);
 
         for (int i = objectsToBeDestroyed.Count - 1; i >= 0; i--)
         {
@@ -58,10 +104,11 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
 
         objectsToBeDestroyed.Clear();
 
-        for (int i = 0; i < cuttingPlane.Length; i++)
+        /*for (int i = 0; i < cuttingPlane.Length; i++)
         {
             cuttingPlane[i].SetActive(false);
-        }
+        }*/
+
     }
     private void FindObjectsInCameraFrustum()
     {
