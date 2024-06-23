@@ -32,6 +32,7 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
     float farHeight;
 
     bool cutKeyDown = false;
+    bool copyKeyDown = false;
     private void Start()
     {
         planes = new Plane[6];
@@ -40,41 +41,24 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C)) 
+        if (Input.GetKeyDown(KeyCode.C))
         {
             cutKeyDown = true;
         }
-        /*if (Input.GetKeyDown(KeyCode.C))
-        {
-            for (int i = 0; i < cuttingPlane.Length; i++)
-            {
-                CameraFrustumSlicing copyPlane = cuttingPlane[i].GetComponent<CameraFrustumSlicing>();
-                copyPlane.Slice(copyPlane.gameObject);
-                //cuttingPlane[i].SetActive(true);
-            }
-
-            FindObjectsInCameraFrustum();
-
-            StartCoroutine(DestroyObjects());
-        }
-
         if (Input.GetKeyDown(KeyCode.P))
         {
-            for(int i = 0; i < cuttingPlane.Length; i++)
-            {
+            copyKeyDown = true;
+        }
 
-            }
-        }*/
     }
     public void OnTriggerEnter(Collider other)
     {
         if (cutKeyDown)
         {
-            print("aa");
             for (int i = 0; i < cuttingPlane.Length; i++)
             {
                 CameraFrustumSlicing copyPlane = cuttingPlane[i].GetComponent<CameraFrustumSlicing>();
-                copyPlane.Slice(other.gameObject);
+                copyPlane.SliceToDestroy(other.gameObject);
             }
 
             FindObjectsInCameraFrustum();
@@ -85,15 +69,24 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
             cutKeyDown = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        
+        if (copyKeyDown)
         {
             for (int i = 0; i < cuttingPlane.Length; i++)
             {
-
+                CameraFrustumSlicing copyPlane = cuttingPlane[i].GetComponent<CameraFrustumSlicing>();
+                copyPlane.SliceToCopy(other.gameObject);
             }
+            FindObjectsInCameraFrustum();
+
+            //copy리스트에 있는 오브젝트 저장하기
+
+            //저장한 다음 copy리스트에 있는 오브젝트 삭제한 후 리스트 초기화
+            StartCoroutine (DestroyCopyObjects());
+            copyKeyDown = false;
         }
     }
-    private IEnumerator DestroyObjects()
+    private IEnumerator DestroyObjects() //삭제될 오브젝트 파괴하는 코루틴
     {
         yield return new WaitForSeconds(0.01f);
 
@@ -103,12 +96,17 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
         }
 
         objectsToBeDestroyed.Clear();
+    } 
+    private IEnumerator DestroyCopyObjects() //카피하려고 만들어둔 오브젝트 파괴하는 코루틴
+    {
+        yield return new WaitForSeconds(0.01f);
 
-        /*for (int i = 0; i < cuttingPlane.Length; i++)
+        for (int i = objectsToBeCopy.Count - 1; i >= 0; i--)
         {
-            cuttingPlane[i].SetActive(false);
-        }*/
+            Destroy(objectsToBeCopy[i]);
+        }
 
+        objectsToBeCopy.Clear();
     }
     private void FindObjectsInCameraFrustum()
     {
@@ -139,9 +137,13 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
                 }
             }
 
-            if (isFullyInFrustum)
+            if (cutKeyDown && isFullyInFrustum)
             {
                 objectsToBeDestroyed.Add(obj);
+            }
+            else if (copyKeyDown && isFullyInFrustum) 
+            {
+                objectsToBeCopy.Add(obj);
             }
         }
 
