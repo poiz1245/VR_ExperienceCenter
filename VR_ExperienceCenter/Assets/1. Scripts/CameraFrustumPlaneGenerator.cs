@@ -55,7 +55,13 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
         {
             Destroy(objectsToBeDestroyed[i]);
         }
+
         objectsToBeDestroyed.Clear();
+
+        for (int i = 0; i < cuttingPlane.Length; i++)
+        {
+            cuttingPlane[i].SetActive(false);
+        }
     }
     private void FindObjectsInCameraFrustum()
     {
@@ -92,7 +98,7 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
             }
         }
 
-        
+
     }
     private void GenerateFrustumPlanes()
     {
