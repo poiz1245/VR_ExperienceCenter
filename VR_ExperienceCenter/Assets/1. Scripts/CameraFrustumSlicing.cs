@@ -13,16 +13,20 @@ public class CameraFrustumSlicing : MonoBehaviour
 {
     Camera mainCamera;
     CameraFrustumPlaneGenerator planeGenerator;
+    MeshCombiner meshCombiner;
     private void Awake()
     {
         mainCamera = Camera.main;
         planeGenerator = GetComponentInParent<CameraFrustumPlaneGenerator>();
+        meshCombiner = GetComponentInParent<MeshCombiner>();
     }
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Sliceable")
         {
-            Slice(other.gameObject);
+            CameraFrustumPlaneGenerator generator = GetComponentInParent<CameraFrustumPlaneGenerator>();
+            generator.OnTriggerEnter(other);
+            //Slice(other.gameObject);
         }
     }
     public void Slice(GameObject target)
@@ -40,8 +44,7 @@ public class CameraFrustumSlicing : MonoBehaviour
             lowerHull.name = "outside" + target.name;
 
             planeGenerator.objectsToBeDestroyed.Add(upperHull);
-            //upperHull.SetActive(false);
-
+            meshCombiner.objectsToCombine.Add(lowerHull);
             Destroy(target.gameObject);
         }
     }
@@ -57,6 +60,7 @@ public class CameraFrustumSlicing : MonoBehaviour
         rigid.isKinematic = true;
         MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
         collider.convex = true;
+        //collider.isTrigger = true;
         slicedObject.gameObject.tag = "Sliceable";
     }
 }
