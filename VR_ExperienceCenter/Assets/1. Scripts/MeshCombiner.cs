@@ -5,10 +5,6 @@ public class MeshCombiner : MonoBehaviour
 {
     public List<GameObject> objectsToCombine;
 
-    private void Start()
-    {
-        CombineMeshes();
-    }
     public void CombineMeshes()
     {
         MeshFilter[] meshFilters = new MeshFilter[objectsToCombine.Count];
@@ -28,12 +24,21 @@ public class MeshCombiner : MonoBehaviour
         combinedMesh.CombineMeshes(combine);
 
         GameObject combinedObject = new GameObject("Combined Object");
+
         combinedObject.AddComponent<MeshFilter>().mesh = combinedMesh;
         combinedObject.AddComponent<MeshRenderer>().material = objectsToCombine[0].GetComponent<MeshRenderer>().sharedMaterial;
+        combinedObject.AddComponent<MeshCollider>();
+        combinedObject.AddComponent<Rigidbody>().isKinematic = true;
+        combinedObject.GetComponent<MeshCollider>().convex = true;
+        //combinedObject.GetComponent<MeshCollider>().isTrigger = true;
+
+        combinedObject.gameObject.tag = "Sliceable";
 
         foreach (GameObject obj in objectsToCombine)
         {
-            obj.SetActive(false);
+            Destroy(obj);
         }
+
+        objectsToCombine.Clear();
     }
 }
