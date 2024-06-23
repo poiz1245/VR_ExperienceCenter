@@ -29,7 +29,21 @@ public class CameraFrustumSlicing : MonoBehaviour
             //Slice(other.gameObject);
         }
     }
-    public void Slice(GameObject target)
+
+    public void SliceToCopy(GameObject target)
+    {
+        SlicedHull hull = target.Slice(transform.position, transform.up);
+
+        if (hull != null)
+        {
+            GameObject upperHull = hull.CreateUpperHull(target);
+            SetupSlicedComponent(upperHull);
+            upperHull.name = "inside" + target.name;
+
+            planeGenerator.objectsToBeCopy.Add(upperHull);
+        }
+    }
+    public void SliceToDestroy(GameObject target)
     {
         SlicedHull hull = target.Slice(transform.position, transform.up);
 
