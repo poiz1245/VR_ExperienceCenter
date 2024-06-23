@@ -1,13 +1,19 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CameraFrustumPlaneGenerator : MonoBehaviour
 {
     public Camera mainCamera;
     public GameObject planeParent;
     public GameObject insideObject;
+    public GameObject[] cuttingPlane;
 
-    List<GameObject> projections;
+    public List<GameObject> objectsToBeDestroyed = new List<GameObject>();
+
     Plane[] planes;
 
     Vector3 leftCenter;
@@ -15,68 +21,124 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
     Vector3 bottomCenter;
     Vector3 topCenter;
 
-    float rightNearToFar = 0f;
-    float topNearToFar = 0f;
-    float farPlaneWidth = 0f;
+    float rightNearToFar;
+    float topNearToFar;
+    float farPlaneWidth;
 
-    float farWidth = 0f;
-    float farHeight = 0f;
+    float farWidth;
+    float farHeight;
 
     private void Start()
     {
         planes = new Plane[6];
         GenerateFrustumPlanes();
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            for (int i = 0; i < cuttingPlane.Length; i++)
+            {
+                cuttingPlane[i].SetActive(true);
+            }
 
+            FindObjectsInCameraFrustum();
+
+            StartCoroutine(DestroyObjects());
+        }
+    }
+    private IEnumerator DestroyObjects()
+    {
+        yield return new WaitForSeconds(1f); // 1ÃÊ ´ë±â
+
+        for (int i = objectsToBeDestroyed.Count - 1; i >= 0; i--)
+        {
+            Destroy(objectsToBeDestroyed[i]);
+        }
+        objectsToBeDestroyed.Clear();
+    }
+    private void FindObjectsInCameraFrustum()
+    {
+        Plane[] frustumPlanes = GeometryUtility.CalculateFrustumPlanes(mainCamera);
+        GameObject[] sliceableObject = GameObject.FindGameObjectsWithTag("Sliceable");
+
+        foreach (GameObject obj in sliceableObject)
+        {
+            if (obj.GetComponent<MeshRenderer>() == null)
+            {
+                obj.AddComponent<MeshRenderer>();
+            }
+            Bounds bounds = obj.GetComponent<Renderer>().bounds;
+            Vector3 min = bounds.min;
+            Vector3 max = bounds.max;
+
+            bool isFullyInFrustum = true;
+
+            foreach (Plane plane in frustumPlanes)
+            {
+                float minDistance = plane.GetDistanceToPoint(min);
+                float maxDistance = plane.GetDistanceToPoint(max);
+
+                if (minDistance < 0 || maxDistance < 0)
+                {
+                    isFullyInFrustum = false;
+                    break;
+                }
+            }
+
+            if (isFullyInFrustum)
+            {
+                objectsToBeDestroyed.Add(obj);
+            }
+        }
+
+        
+    }
     private void GenerateFrustumPlanes()
     {
-        print(farHeight);
         GeometryUtility.CalculateFrustumPlanes(mainCamera, planes);
-        print(farHeight);
         CenterSetting();
-        print(farHeight);
-        for (int i = 0; i < 6; ++i)
+        for (int i = 0; i < 4; ++i)
         {
-
-            GameObject p = GameObject.CreatePrimitive(PrimitiveType.Plane);
-
+            GameObject p = cuttingPlane[i].gameObject;
+            /*GameObject p = GameObject.CreatePrimitive(PrimitiveType.Plane);
             p.transform.SetParent(planeParent.transform);
             p.gameObject.tag = "ProjectionPanel";
             p.name = $"Frustum Plane {i}";
-            p.AddComponent<InversViewProjection>();
+
+            p.AddComponent<CameraFrustumSlicing>();
             p.AddComponent<Rigidbody>().GetComponent<Rigidbody>().isKinematic = true;
             p.GetComponent<MeshCollider>().convex = true;
-            p.GetComponent<MeshCollider>().isTrigger = true;
+            p.GetComponent<MeshCollider>().isTrigger = true;*/
 
             p.transform.position = -planes[i].normal * planes[i].distance;
             p.transform.rotation = Quaternion.FromToRotation(Vector3.up, planes[i].normal);
-
 
             if (i == 0)
             {
                 p.transform.position = leftCenter;
                 Quaternion rotation = Quaternion.FromToRotation(Vector3.up, planes[i].normal);
                 p.transform.rotation = Quaternion.Euler(90f, rotation.eulerAngles.y, rotation.eulerAngles.z);
-                p.transform.localScale = new Vector3(rightNearToFar * 0.1f, rightNearToFar * 0.1f, farHeight * 0.1f);
+                p.transform.localScale = new Vector3(rightNearToFar * 0.1f, 0.1f, farHeight * 0.1f);
             }
             else if (i == 1)
             {
                 p.transform.position = rightCenter;
                 Quaternion rotation = Quaternion.FromToRotation(Vector3.up, planes[i].normal);
                 p.transform.rotation = Quaternion.Euler(90f, rotation.eulerAngles.y, rotation.eulerAngles.z);
-                p.transform.localScale = new Vector3(rightNearToFar * 0.1f, rightNearToFar * 0.1f, farHeight * 0.1f);
+                p.transform.localScale = new Vector3(rightNearToFar * 0.1f, 0.1f, farHeight * 0.1f);
             }
             else if (i == 2)
             {
                 p.transform.position = bottomCenter;
-                p.transform.localScale = new Vector3(farWidth * 0.1f, topNearToFar * 0.1f, topNearToFar * 0.1f);
+                p.transform.localScale = new Vector3(farWidth * 0.1f, 0.1f, topNearToFar * 0.1f);
             }
             else if (i == 3)
             {
                 p.transform.position = topCenter;
-                p.transform.localScale = new Vector3(farWidth * 0.1f, topNearToFar * 0.1f, topNearToFar * 0.1f);
+                p.transform.localScale = new Vector3(farWidth * 0.1f, 0.1f, topNearToFar * 0.1f);
             }
-            else if (i == 4)
+            /*else if (i == 4)
             {
                 float halfHeight = Mathf.Tan(Mathf.Deg2Rad * mainCamera.fieldOfView * 0.5f) * mainCamera.nearClipPlane;
                 float halfWidth = halfHeight * mainCamera.aspect;
@@ -91,10 +153,9 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
                 p.transform.position = mainCamera.transform.position + (mainCamera.transform.forward * mainCamera.farClipPlane);
                 p.transform.rotation = Quaternion.FromToRotation(Vector3.up, planes[i].normal);
                 p.transform.localScale = new Vector3(halfWidth * 0.2f, 1, halfHeight * 0.2f);
-            }
+            }*/
         }
     }
-
     private void CenterSetting()
     {
         Vector3 nearCenter = mainCamera.transform.position + (mainCamera.transform.forward * mainCamera.nearClipPlane);
