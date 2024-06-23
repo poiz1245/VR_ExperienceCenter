@@ -61,7 +61,7 @@ namespace EzySlice {
         }
 
         /**
-         * Helper function to accept a gameobject which will transform the plane
+         * Helper function to accept a gameobject which will transform the cuttingPlane
          * approprietly before the slice occurs
          * See -> Slice(Mesh, Plane) for more info
          */
@@ -188,7 +188,7 @@ namespace EzySlice {
                     }
 
                     // slice this particular triangle with the provided
-                    // plane
+                    // cuttingPlane
                     if (newTri.Split(pl, result)) {
                         int upperHullCount = result.upperHullCount;
                         int lowerHullCount = result.lowerHullCount;
@@ -472,7 +472,7 @@ namespace EzySlice {
 
         /**
          * Generate Two Meshes (an upper and lower) cross section from a set of intersection
-         * points and a plane normal. Intersection Points do not have to be in order.
+         * points and a cuttingPlane normal. Intersection Points do not have to be in order.
          */
         private static List<Triangle> CreateFrom(List<Vector3> intPoints, Vector3 planeNormal, TextureRegion region) {
             return Triangulator.MonotoneChain(intPoints, planeNormal, out List<Triangle> tris, region) ? tris : null;

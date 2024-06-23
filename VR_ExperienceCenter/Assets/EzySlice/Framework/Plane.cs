@@ -7,7 +7,7 @@ namespace EzySlice {
     /**
      * Quick Internal structure which checks where the point lays on the
      * Plane. UP = Upwards from the Normal, DOWN = Downwards from the Normal
-     * ON = Point lays straight on the plane
+     * ON = Point lays straight on the cuttingPlane
      */
     public enum SideOfPlane {
         UP,
@@ -88,7 +88,7 @@ namespace EzySlice {
         }
 
         /**
-         * Checks which side of the plane the point lays on.
+         * Checks which side of the cuttingPlane the point lays on.
          */
         public SideOfPlane SideOf(Vector3 pt) {
             float result = Vector3.Dot(m_normal, pt) - m_dist;

@@ -14,7 +14,7 @@ namespace EzySlice {
         /**
          * Represents a 3D Vertex which has been mapped onto a 2D surface
          * and is mainly used in MonotoneChain to triangulate a set of vertices
-         * against a flat plane.
+         * against a flat cuttingPlane.
          */
         internal struct Mapped2D {
             private readonly Vector3 original;
@@ -48,7 +48,7 @@ namespace EzySlice {
         /**
          * O(n log n) Convex Hull Algorithm. 
          * Accepts a list of vertices as Vector3 and triangulates them according to a projection
-         * plane defined as planeNormal. Algorithm will output vertices, indices and UV coordinates
+         * cuttingPlane defined as planeNormal. Algorithm will output vertices, indices and UV coordinates
          * as arrays
          */
         public static bool MonotoneChain(List<Vector3> vertices, Vector3 normal, out List<Triangle> tri, TextureRegion texRegion) {
@@ -60,7 +60,7 @@ namespace EzySlice {
                 return false;
             }
 
-            // first, we map from 3D points into a 2D plane represented by the provided normal
+            // first, we map from 3D points into a 2D cuttingPlane represented by the provided normal
             Vector3 u = Vector3.Normalize(Vector3.Cross(normal, Vector3.up));
             if (Vector3.zero == u) {
                 u = Vector3.Normalize(Vector3.Cross(normal, Vector3.forward));

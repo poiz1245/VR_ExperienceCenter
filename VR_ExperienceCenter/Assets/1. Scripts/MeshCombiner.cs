@@ -5,12 +5,11 @@ public class MeshCombiner : MonoBehaviour
 {
     public List<GameObject> objectsToCombine;
 
-    void Start()
+    private void Start()
     {
         CombineMeshes();
     }
-
-    void CombineMeshes()
+    public void CombineMeshes()
     {
         MeshFilter[] meshFilters = new MeshFilter[objectsToCombine.Count];
         for (int i = 0; i < objectsToCombine.Count; i++)
@@ -32,7 +31,6 @@ public class MeshCombiner : MonoBehaviour
         combinedObject.AddComponent<MeshFilter>().mesh = combinedMesh;
         combinedObject.AddComponent<MeshRenderer>().material = objectsToCombine[0].GetComponent<MeshRenderer>().sharedMaterial;
 
-        // Optionally, disable or destroy original objects
         foreach (GameObject obj in objectsToCombine)
         {
             obj.SetActive(false);

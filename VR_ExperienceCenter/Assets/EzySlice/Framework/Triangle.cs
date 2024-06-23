@@ -218,21 +218,21 @@ namespace EzySlice {
             float y = Mathf.Abs(m.y);
             float z = Mathf.Abs(m.z);
 
-            // compute areas of plane with largest projections
+            // compute areas of cuttingPlane with largest projections
             if (x >= y && x >= z) {
-                // area of PBC in yz plane
+                // area of PBC in yz cuttingPlane
                 nu = Intersector.TriArea2D(p.y, p.z, b.y, b.z, c.y, c.z);
-                // area of PCA in yz plane
+                // area of PCA in yz cuttingPlane
                 nv = Intersector.TriArea2D(p.y, p.z, c.y, c.z, a.y, a.z);
-                // 1/2*area of ABC in yz plane
+                // 1/2*area of ABC in yz cuttingPlane
                 ood = 1.0f / m.x;
             } else if (y >= x && y >= z) {
-                // project in xz plane
+                // project in xz cuttingPlane
                 nu = Intersector.TriArea2D(p.x, p.z, b.x, b.z, c.x, c.z);
                 nv = Intersector.TriArea2D(p.x, p.z, c.x, c.z, a.x, a.z);
                 ood = 1.0f / -m.y;
             } else {
-                // project in xy plane
+                // project in xy cuttingPlane
                 nu = Intersector.TriArea2D(p.x, p.y, b.x, b.y, c.x, c.y);
                 nv = Intersector.TriArea2D(p.x, p.y, c.x, c.y, a.x, a.y);
                 ood = 1.0f / m.z;
@@ -297,7 +297,7 @@ namespace EzySlice {
         }
 
         /**
-         * Helper function to split this triangle by the provided plane and store
+         * Helper function to split this triangle by the provided cuttingPlane and store
          * the results inside the IntersectionResult structure.
          * Returns true on success or false otherwise
          */

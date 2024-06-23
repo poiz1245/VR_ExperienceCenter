@@ -66,7 +66,7 @@ namespace EzySlice {
             Vector3 b = tri.positionB;
             Vector3 c = tri.positionC;
 
-            // check to see which side of the plane the points all
+            // check to see which side of the cuttingPlane the points all
             // lay in. SideOf operation is a simple dot product and some comparison
             // operations, so these are a very quick checks
             SideOfPlane sa = pl.SideOf(a);
@@ -74,20 +74,20 @@ namespace EzySlice {
             SideOfPlane sc = pl.SideOf(c);
 
             // we cannot intersect if the triangle points all fall on the same side
-            // of the plane. This is an easy early out test as no intersections are possible.
+            // of the cuttingPlane. This is an easy early out test as no intersections are possible.
             if (sa == sb && sb == sc) {
                 return;
             }
 
-            // detect cases where two points lay straight on the plane, meaning
-            // that the plane is actually parralel with one of the edges of the triangle
+            // detect cases where two points lay straight on the cuttingPlane, meaning
+            // that the cuttingPlane is actually parralel with one of the edges of the triangle
             else if ((sa == SideOfPlane.ON && sa == sb) ||
                 (sa == SideOfPlane.ON && sa == sc) ||
                 (sb == SideOfPlane.ON && sb == sc)) {
                 return;
             }
             
-            // detect cases where one point is on the plane and the other two are on the same side
+            // detect cases where one point is on the cuttingPlane and the other two are on the same side
             else if ((sa == SideOfPlane.ON && sb != SideOfPlane.ON && sb == sc) ||
                      (sb == SideOfPlane.ON && sa != SideOfPlane.ON && sa == sc) ||
                      (sc == SideOfPlane.ON && sa != SideOfPlane.ON && sa == sb)) {
@@ -96,16 +96,16 @@ namespace EzySlice {
 
             // keep in mind that intersection points are shared by both
             // the upper HULL and lower HULL hence they lie perfectly
-            // on the plane that cut them
+            // on the cuttingPlane that cut them
             Vector3 qa;
             Vector3 qb;
 
-            // check the cases where the points of the triangle actually lie on the plane itself
+            // check the cases where the points of the triangle actually lie on the cuttingPlane itself
             // in these cases, there is only going to be 2 triangles, one for the upper HULL and
             // the other on the lower HULL
             // we just need to figure out which points to accept into the upper or lower hulls.
             if (sa == SideOfPlane.ON) {
-                // if the point a is on the plane, test line b-c
+                // if the point a is on the cuttingPlane, test line b-c
                 if (Intersector.Intersect(pl, b, c, out qa)) {
                     // line b-c intersected, construct out triangles and return approprietly
                     result.AddIntersectionPoint(qa);
@@ -152,21 +152,21 @@ namespace EzySlice {
                         tb.SetTangent(pa, pq, pc);
                     }
 
-                    // b point lies on the upside of the plane
+                    // b point lies on the upside of the cuttingPlane
                     if (sb == SideOfPlane.UP) {
                         result.AddUpperHull(ta).AddLowerHull(tb);
                     }
 
-                    // b point lies on the downside of the plane
+                    // b point lies on the downside of the cuttingPlane
                     else if (sb == SideOfPlane.DOWN) {
                         result.AddUpperHull(tb).AddLowerHull(ta);
                     }
                 }
             }
 
-            // test the case where the b point lies on the plane itself
+            // test the case where the b point lies on the cuttingPlane itself
             else if (sb == SideOfPlane.ON) {
-                // if the point b is on the plane, test line a-c
+                // if the point b is on the cuttingPlane, test line a-c
                 if (Intersector.Intersect(pl, a, c, out qa)) {
                     // line a-c intersected, construct out triangles and return approprietly
                     result.AddIntersectionPoint(qa);
@@ -213,21 +213,21 @@ namespace EzySlice {
                         tb.SetTangent(pq, pb, pc);
                     }
 
-                    // a point lies on the upside of the plane
+                    // a point lies on the upside of the cuttingPlane
                     if (sa == SideOfPlane.UP) {
                         result.AddUpperHull(ta).AddLowerHull(tb);
                     }
 
-                    // a point lies on the downside of the plane
+                    // a point lies on the downside of the cuttingPlane
                     else if (sa == SideOfPlane.DOWN) {
                         result.AddUpperHull(tb).AddLowerHull(ta);
                     }
                 }
             }
 
-            // test the case where the c point lies on the plane itself
+            // test the case where the c point lies on the cuttingPlane itself
             else if (sc == SideOfPlane.ON) {
-                // if the point c is on the plane, test line a-b
+                // if the point c is on the cuttingPlane, test line a-b
                 if (Intersector.Intersect(pl, a, b, out qa)) {
                     // line a-c intersected, construct out triangles and return approprietly
                     result.AddIntersectionPoint(qa);
@@ -274,12 +274,12 @@ namespace EzySlice {
                         tb.SetTangent(pq, pb, pc);
                     }
 
-                    // a point lies on the upside of the plane
+                    // a point lies on the upside of the cuttingPlane
                     if (sa == SideOfPlane.UP) {
                         result.AddUpperHull(ta).AddLowerHull(tb);
                     }
 
-                    // a point lies on the downside of the plane
+                    // a point lies on the downside of the cuttingPlane
                     else if (sa == SideOfPlane.DOWN) {
                         result.AddUpperHull(tb).AddLowerHull(ta);
                     }
@@ -296,7 +296,7 @@ namespace EzySlice {
                 // since intersection was found against a - b, we need to check which other
                 // lines to check (we only need to check one more line) for intersection.
                 // the line we check against will be the line against the point which lies on
-                // the other side of the plane.
+                // the other side of the cuttingPlane.
                 if (sa == sc) {
                     // we likely have an intersection against line b-c which will complete this loop
                     if (Intersector.Intersect(pl, b, c, out qb)) {
@@ -419,13 +419,13 @@ namespace EzySlice {
                 }
             }
 
-            // if line a-b did not intersect (or the lie on the same side of the plane)
+            // if line a-b did not intersect (or the lie on the same side of the cuttingPlane)
             // this simplifies the problem a fair bit. This means we have an intersection 
             // in line a-c and b-c, which we can use to build a new UPPER and LOWER hulls
             // we are expecting both of these intersection tests to pass, otherwise something
             // went wrong (float errors? missed a checked case?)
             else if (Intersector.Intersect(pl, c, a, out qa) && Intersector.Intersect(pl, c, b, out qb)) {
-                // in here we know that line a-b actually lie on the same side of the plane, this will
+                // in here we know that line a-b actually lie on the same side of the cuttingPlane, this will
                 // simplify the rest of the logic. We also have our intersection points
                 // the computed UV coordinate of the intersection point
 
