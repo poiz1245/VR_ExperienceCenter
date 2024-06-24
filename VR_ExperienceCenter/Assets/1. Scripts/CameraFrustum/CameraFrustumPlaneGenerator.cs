@@ -42,7 +42,7 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        /*if (Input.GetKeyDown(KeyCode.C))
         {
             cutKeyDown = true;
 
@@ -83,7 +83,7 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             copyKeyDown = true;
-        }
+        }*/
     }
 
     /*public void OnTriggerEnter(Collider other)
