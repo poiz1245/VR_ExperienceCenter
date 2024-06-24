@@ -5,6 +5,9 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     public GameObject stencilRoom;
+    public Collider[] childrenCollider;
+    //BoxCollider collider;
+
     int changeVisibleLayer;
     int changeInVisibleLayer;
 
@@ -37,6 +40,13 @@ public class Portal : MonoBehaviour
                 walkIn = false;
                 ChangeLayerRecursively(stencilRoom, changeInVisibleLayer);
             }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        for (int i = 0; i < childrenCollider.Length; i++)
+        {
+            childrenCollider[i].isTrigger = false;
         }
     }
 
