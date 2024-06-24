@@ -7,9 +7,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class CloseOpenDoor : MonoBehaviour
 {
-    public Animator doorAnimatior;
-    public GameObject player;
-    public InputActionReference triggerButton;
+    [SerializeField] Animator doorAnimatior;
+    [SerializeField] GameObject player;
+    [SerializeField] InputActionReference triggerButton;
 
     XRSimpleInteractable simpleInteractable;
     bool isOpen = false;

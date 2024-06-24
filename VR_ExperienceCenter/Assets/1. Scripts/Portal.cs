@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    public GameObject stencilRoom;
-    public Collider[] childrenCollider;
+    [SerializeField] GameObject stencilRoom;
+    [SerializeField] Collider[] childrenCollider;
     //BoxCollider collider;
 
     int changeVisibleLayer;
