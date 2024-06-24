@@ -11,7 +11,7 @@ public class MeshSlicer : MonoBehaviour
     public VelocityEstimator velocityEstimator;
 
 
-    public float cutForce = 100f;
+    public float cutForce;
     public Material capMaterial;
 
     LayerMask sliceableLayer;

@@ -11,22 +11,23 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class CameraFrustumSlicing : MonoBehaviour
 {
-    Camera mainCamera;
-    CameraFrustumPlaneGenerator planeGenerator;
-    MeshCombiner meshCombiner;
+    public CameraFrustumPlaneGenerator planeGenerator;
+
+    public bool sliceComplete;
     private void Awake()
     {
-        mainCamera = Camera.main;
         planeGenerator = GetComponentInParent<CameraFrustumPlaneGenerator>();
-        meshCombiner = GetComponentInParent<MeshCombiner>();
     }
     public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Sliceable")
         {
-            CameraFrustumPlaneGenerator generator = GetComponentInParent<CameraFrustumPlaneGenerator>();
-            generator.OnTriggerEnter(other);
-            //Slice(other.gameObject);
+            if (planeGenerator.cutKeyDown)
+            {
+                print("aa");
+                SliceToDestroy(other.gameObject);
+                sliceComplete = true;
+            }
         }
     }
 
@@ -39,7 +40,7 @@ public class CameraFrustumSlicing : MonoBehaviour
             GameObject upperHull = hull.CreateUpperHull(target);
             SetupSlicedComponent(upperHull);
             upperHull.name = "inside" + target.name;
-
+            Destroy(target.gameObject);
             planeGenerator.objectsToBeCopy.Add(upperHull);
         }
     }
@@ -58,23 +59,27 @@ public class CameraFrustumSlicing : MonoBehaviour
             lowerHull.name = "outside" + target.name;
 
             planeGenerator.objectsToBeDestroyed.Add(upperHull);
-            meshCombiner.objectsToCombine.Add(lowerHull);
             Destroy(target.gameObject);
+
+            //meshCombiner.objectsToCombine.Add(lowerHull);
+
+            //planeGenerator.GetObjectsByName(lowerHull.name);
+            //meshCombiner.objectsToCombine.Add();
         }
     }
     public void SetupSlicedComponent(GameObject slicedObject)
     {
-        Rigidbody rigid = slicedObject.GetComponent<Rigidbody>();
+        //Rigidbody rigid = slicedObject.GetComponent<Rigidbody>();
 
-        if (rigid == null)
-        {
-            rigid = slicedObject.AddComponent<Rigidbody>();
-        }
+        //if (rigid == null)
+        //{
+        //    rigid = slicedObject.AddComponent<Rigidbody>();
+        //}
 
-        rigid.isKinematic = true;
         MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
         collider.convex = true;
-        //collider.isTrigger = true;
         slicedObject.gameObject.tag = "Sliceable";
+        //collider.isTrigger = true;
+        //rigid.isKinematic = true;
     }
 }

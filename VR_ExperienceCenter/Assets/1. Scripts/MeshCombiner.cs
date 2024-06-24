@@ -3,10 +3,35 @@ using UnityEngine;
 
 public class MeshCombiner : MonoBehaviour
 {
-    public List<GameObject> objectsToCombine;
+    public List<GameObject> objectsToCombine = new List<GameObject>();
+
+   /* void Start()
+    {
+        // 씬 내에 있는 같은 이름의 오브젝트들을 찾아서 objectsToCombine 리스트에 추가합니다
+        string objectNameToCombine = "MyObject";
+        GameObject[] sameNamedObjects = GetObjectsByName(objectNameToCombine);
+        objectsToCombine.AddRange(sameNamedObjects);
+    }*/
+    public GameObject[] GetObjectsByName(string name)
+    {
+        GameObject[] allObjects = FindObjectsOfType<GameObject>();
+        List<GameObject> matchingObjects = new List<GameObject>();
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.name == name)
+            {
+                matchingObjects.Add(obj);
+            }
+        }
+        return matchingObjects.ToArray();
+    }
 
     public void CombineMeshes()
     {
+        string objectNameToCombine = "MyObject";
+        GameObject[] sameNamedObjects = GetObjectsByName(objectNameToCombine);
+        objectsToCombine.AddRange(sameNamedObjects);
+
         MeshFilter[] meshFilters = new MeshFilter[objectsToCombine.Count];
         for (int i = 0; i < objectsToCombine.Count; i++)
         {
@@ -28,10 +53,10 @@ public class MeshCombiner : MonoBehaviour
         combinedObject.AddComponent<MeshFilter>().mesh = combinedMesh;
         combinedObject.AddComponent<MeshRenderer>().material = objectsToCombine[0].GetComponent<MeshRenderer>().sharedMaterial;
         combinedObject.AddComponent<MeshCollider>();
-        combinedObject.AddComponent<Rigidbody>().isKinematic = true;
         combinedObject.GetComponent<MeshCollider>().convex = true;
+        //combinedObject.AddComponent<Rigidbody>().isKinematic = true;
         //combinedObject.GetComponent<MeshCollider>().isTrigger = true;
-
+        
         combinedObject.gameObject.tag = "Sliceable";
 
         foreach (GameObject obj in objectsToCombine)

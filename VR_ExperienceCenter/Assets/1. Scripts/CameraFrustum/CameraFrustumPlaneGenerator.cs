@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,7 +11,7 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
     public Camera mainCamera;
     public GameObject planeParent;
     public GameObject insideObject;
-    public GameObject[] cuttingPlane;
+    public CameraFrustumSlicing[] cuttingPlane;
 
     public List<GameObject> objectsToBeDestroyed = new List<GameObject>();
     public List<GameObject> objectsToBeCopy = new List<GameObject>();
@@ -31,8 +32,8 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
     float farWidth;
     float farHeight;
 
-    bool cutKeyDown = false;
-    bool copyKeyDown = false;
+    public bool cutKeyDown = false;
+    public bool copyKeyDown = false;
     private void Start()
     {
         planes = new Plane[6];
@@ -44,18 +45,52 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             cutKeyDown = true;
+
+            while (cutKeyDown)
+            {
+                bool allSliceComplete = false;
+
+                for (int i = 0; i < cuttingPlane.Length; i++)
+                {
+                    if (cuttingPlane[i].sliceComplete)
+                    {
+                        allSliceComplete = true;
+                        break;
+                    }
+                    else
+                    {
+                        allSliceComplete = false;
+                        break;
+                    }
+                }
+
+
+                if (allSliceComplete)
+                {
+                    FindObjectsInCameraFrustum();
+                    StartCoroutine(DestroyObjects());
+                    //meshCombiner.CombineMeshes();
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+
+
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
             copyKeyDown = true;
         }
-
     }
-    public void OnTriggerEnter(Collider other)
+
+    /*public void OnTriggerEnter(Collider other)
     {
         if (cutKeyDown)
         {
-            for (int i = 0; i < cuttingPlane.Length; i++)
+            for (int i = cuttingPlane.Length - 1; i >= 0; i--)
             {
                 CameraFrustumSlicing copyPlane = cuttingPlane[i].GetComponent<CameraFrustumSlicing>();
                 copyPlane.SliceToDestroy(other.gameObject);
@@ -65,11 +100,11 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
 
             StartCoroutine(DestroyObjects());
 
-            meshCombiner.CombineMeshes();
+            //meshCombiner.CombineMeshes();
             cutKeyDown = false;
         }
 
-        
+
         if (copyKeyDown)
         {
             for (int i = 0; i < cuttingPlane.Length; i++)
@@ -77,18 +112,24 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
                 CameraFrustumSlicing copyPlane = cuttingPlane[i].GetComponent<CameraFrustumSlicing>();
                 copyPlane.SliceToCopy(other.gameObject);
             }
+
             FindObjectsInCameraFrustum();
 
             //copy리스트에 있는 오브젝트 저장하기
-
+            for (int i = 0; i < objectsToBeCopy.Count; i++)
+            {
+                GameObject copiedObject;
+                copiedObject = Instantiate(objectsToBeCopy[i], objectsToBeCopy[i].transform.position, objectsToBeCopy[i].transform.rotation);
+                copiedObject.transform.SetParent(planeParent.transform);
+            }
             //저장한 다음 copy리스트에 있는 오브젝트 삭제한 후 리스트 초기화
-            StartCoroutine (DestroyCopyObjects());
+            StartCoroutine(DestroyCopyObjects());
             copyKeyDown = false;
         }
-    }
+    }*/
     private IEnumerator DestroyObjects() //삭제될 오브젝트 파괴하는 코루틴
     {
-        yield return new WaitForSeconds(0.01f);
+        //yield return new WaitForSeconds(0.1f);
 
         for (int i = objectsToBeDestroyed.Count - 1; i >= 0; i--)
         {
@@ -96,7 +137,10 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
         }
 
         objectsToBeDestroyed.Clear();
-    } 
+
+        cutKeyDown = false;
+        yield return null;
+    }
     private IEnumerator DestroyCopyObjects() //카피하려고 만들어둔 오브젝트 파괴하는 코루틴
     {
         yield return new WaitForSeconds(0.01f);
@@ -141,7 +185,7 @@ public class CameraFrustumPlaneGenerator : MonoBehaviour
             {
                 objectsToBeDestroyed.Add(obj);
             }
-            else if (copyKeyDown && isFullyInFrustum) 
+            else if (copyKeyDown && isFullyInFrustum)
             {
                 objectsToBeCopy.Add(obj);
             }
