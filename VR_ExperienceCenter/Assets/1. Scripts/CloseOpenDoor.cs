@@ -10,18 +10,28 @@ public class CloseOpenDoor : MonoBehaviour
     [SerializeField] Animator doorAnimatior;
     [SerializeField] GameObject player;
     [SerializeField] InputActionReference triggerButton;
+    [SerializeField] Portal portal;
 
+    //XRGrabInteractable interactable;
     XRSimpleInteractable simpleInteractable;
     bool isOpen = false;
 
     private void Awake()
     {
         simpleInteractable = GetComponentInChildren<XRSimpleInteractable>();
+        //interactable = GetComponent<XRGrabInteractable>();
     }
     private void Start()
     {
         triggerButton.action.performed += TriggerButtonClicked;
 
+    }
+    private void Update()
+    {
+        if (portal.walkIn)
+        {
+            StartCoroutine(Closing());
+        }
     }
     void TriggerButtonClicked(InputAction.CallbackContext context)
     {
@@ -45,7 +55,7 @@ public class CloseOpenDoor : MonoBehaviour
                 StartCoroutine(Closing());
             }
         }
-        
+
     }
     IEnumerator Opening()
     {
@@ -58,10 +68,5 @@ public class CloseOpenDoor : MonoBehaviour
         doorAnimatior.Play("Closing 1");
         isOpen = false;
         yield return new WaitForSeconds(.5f);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        StartCoroutine(Closing());
     }
 }
