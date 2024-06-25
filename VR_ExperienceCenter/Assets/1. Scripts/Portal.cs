@@ -73,7 +73,7 @@ public class Portal : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && walkIn)
         {
             for (int i = 0; i < childrenCollider.Length; i++)
             {
