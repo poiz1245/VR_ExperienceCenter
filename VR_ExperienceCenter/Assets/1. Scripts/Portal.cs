@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Portal : MonoBehaviour
@@ -26,6 +27,36 @@ public class Portal : MonoBehaviour
             ChangeLayerRecursively(obj.transform.GetChild(i).gameObject, layer);
         }
     }
+
+    void DisableAllExcludedObjects()
+    {
+        GameObject[] allObject = GameObject.FindObjectsOfType<GameObject>();
+        GameObject[] excludedObjects = System.Array.FindAll(allObject, obj => !obj.transform.IsChildOf(transform) && obj.tag != "Setting" && !IsChildOfPlayerObject(obj)); //자식이 아니고 플레이어 태그 아니면 true
+
+        foreach (GameObject obj in excludedObjects)
+        {
+            obj.SetActive(false);
+        }
+    }
+
+    bool IsChildOfPlayerObject(GameObject obj)
+    {
+        if (obj.CompareTag("Player"))
+        {
+            return true;
+        }
+
+        Transform parent = obj.transform.parent;
+        while(parent != null)
+        {
+            if (parent.gameObject.CompareTag("Player"))
+            {
+                return true;
+            }
+            parent = parent.parent;
+        }
+        return false;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -48,6 +79,8 @@ public class Portal : MonoBehaviour
         {
             childrenCollider[i].isTrigger = false;
         }
+
+        DisableAllExcludedObjects();
     }
 
 }
