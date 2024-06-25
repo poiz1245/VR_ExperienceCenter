@@ -27,7 +27,8 @@ public class CameraCenterRayCast : MonoBehaviour
     void Start()
     {
         mainCamera = GetComponent<Camera>();
-        layerMask = ~(1 << LayerMask.NameToLayer("Target") | 1<<LayerMask.NameToLayer("Player"));
+        //layerMask = ~(1 << LayerMask.NameToLayer("Target") | 1<<LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("StencilMask"));
+        layerMask = 1 << LayerMask.NameToLayer("Default");
     }
 
     void Update()
