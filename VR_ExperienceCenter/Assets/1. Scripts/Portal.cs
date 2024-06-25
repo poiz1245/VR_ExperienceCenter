@@ -12,11 +12,12 @@ public class Portal : MonoBehaviour
     int changeVisibleLayer;
     int changeInVisibleLayer;
 
-    bool walkIn = false;
+    public bool walkIn { get; private set; }
     private void Start()
     {
         changeVisibleLayer = LayerMask.NameToLayer("Default");
-        changeInVisibleLayer = LayerMask.NameToLayer("Stencil6");
+        changeInVisibleLayer = LayerMask.NameToLayer("Stencil5");
+        walkIn = false;
     }
     void ChangeLayerRecursively(GameObject obj, int layer)
     {
@@ -27,7 +28,6 @@ public class Portal : MonoBehaviour
             ChangeLayerRecursively(obj.transform.GetChild(i).gameObject, layer);
         }
     }
-
     void DisableAllExcludedObjects()
     {
         GameObject[] allObject = GameObject.FindObjectsOfType<GameObject>();
@@ -38,7 +38,6 @@ public class Portal : MonoBehaviour
             obj.SetActive(false);
         }
     }
-
     bool IsChildOfPlayerObject(GameObject obj)
     {
         if (obj.CompareTag("Player"))
@@ -75,12 +74,15 @@ public class Portal : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        for (int i = 0; i < childrenCollider.Length; i++)
+        if (other.gameObject.CompareTag("Player"))
         {
-            childrenCollider[i].isTrigger = false;
-        }
+            for (int i = 0; i < childrenCollider.Length; i++)
+            {
+                childrenCollider[i].isTrigger = false;
+            }
 
-        DisableAllExcludedObjects();
+            DisableAllExcludedObjects();
+        }
     }
 
 }
