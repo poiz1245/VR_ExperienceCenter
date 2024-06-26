@@ -12629,9 +12629,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2040205599}
+  - component: {fileID: 2040205601}
   m_Layer: 0
   m_Name: Furniture
-  m_TagString: Untagged
+  m_TagString: Setting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12701,6 +12702,69 @@ Transform:
   - {fileID: 1375598800}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2040205601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040205598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6735c32a7c45a7a49a6566c54a33f5c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  children:
+  - {fileID: 1296837381}
+  - {fileID: 1157042354}
+  - {fileID: 1922359519}
+  - {fileID: 1962754463}
+  - {fileID: 1285429613}
+  - {fileID: 1026517396}
+  - {fileID: 1072492205}
+  - {fileID: 1510841111}
+  - {fileID: 22543478}
+  - {fileID: 197087230}
+  - {fileID: 1618662718}
+  - {fileID: 1344728169}
+  - {fileID: 2138349232}
+  - {fileID: 329463872}
+  - {fileID: 1729770161}
+  - {fileID: 312032123}
+  - {fileID: 1295796266}
+  - {fileID: 1786828652}
+  - {fileID: 2003753645}
+  - {fileID: 2005968981}
+  - {fileID: 922562789}
+  - {fileID: 1033060620}
+  - {fileID: 813019339}
+  - {fileID: 1591997994}
+  - {fileID: 1350267871}
+  - {fileID: 1923230413}
+  - {fileID: 1699550404}
+  - {fileID: 1297380763}
+  - {fileID: 1654493538}
+  - {fileID: 423987421}
+  - {fileID: 1752701243}
+  - {fileID: 205160050}
+  - {fileID: 311934503}
+  - {fileID: 761977133}
+  - {fileID: 428677178}
+  - {fileID: 1284948095}
+  - {fileID: 842696365}
+  - {fileID: 721590280}
+  - {fileID: 1629141302}
+  - {fileID: 1395711963}
+  - {fileID: 662965344}
+  - {fileID: 1942132280}
+  - {fileID: 573382655}
+  - {fileID: 1786453118}
+  - {fileID: 1726930568}
+  - {fileID: 1417577873}
+  - {fileID: 1264802736}
+  - {fileID: 1550929316}
+  - {fileID: 723284061}
+  - {fileID: 1375598795}
 --- !u!1 &2053297853
 GameObject:
   m_ObjectHideFlags: 0
