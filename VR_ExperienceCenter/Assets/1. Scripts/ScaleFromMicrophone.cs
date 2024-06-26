@@ -1,35 +1,53 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ScaleFromMicrophone : MonoBehaviour
 {
-    //public AudioSource source;
-    /*public Vector3 minScale;
-    public Vector3 maxScale;*/
-    [SerializeField] float minValue;
-    [SerializeField] float maxValue;
-    public AudioLoudnessDetection detector;
-
-    Slider slider;
+    [SerializeField] AudioSource source;
+    [SerializeField] Vector3 minScale;
+    [SerializeField] Vector3 maxScale;
+    [SerializeField] AudioLoudnessDetection detector;
 
     public float loudnessSensibility = 100;
     public float threshold = 0.1f;
 
+    float loudness;
     private void Start()
     {
-        slider = GetComponent<Slider>();
     }
     void Update()
     {
-        float loudness = detector.GetLoudnessFromMicrophone() * loudnessSensibility;
+        //loudness = GetAveragedVolume() * loudnessSensibility; 오디오 소스 활용할 때 이렇게 쓰는듯
+
+
+        //loudness = detector.GetLoudnessFromMicrophone() * loudnessSensibility;
+
+        loudness = source.volume;
 
         if (loudness < threshold)
             loudness = 0;
 
-        slider.value = loudness;
 
-        //transform.localScale = Vector3.Lerp(minScale, maxScale, loudness);
+        transform.localScale = Vector3.Lerp(minScale, maxScale, loudness);
     }
+    void GetThumbStickValue()
+    {
+
+
+    }
+    /*float GetAveragedVolume() //오디오 소스에서 나오는 데이터를 수치화 하는 함수인듯
+    {
+        float[] data = new float[256];
+        float a = 0;
+        source.GetOutputData(data, 0);
+        foreach (float s in data)
+        {
+            a += Mathf.Abs(s);
+        }
+        return a / 256;
+    }*/
+
+
 }
