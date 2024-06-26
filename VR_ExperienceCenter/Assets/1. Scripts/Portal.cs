@@ -106,6 +106,7 @@ public class Portal : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && walkIn)
         {
             rigid.useGravity = false;
+            rigid.constraints = RigidbodyConstraints.FreezeAll;
             for (int i = 0; i < childrenCollider.Length; i++)
             {
                 childrenCollider[i].enabled = true;
