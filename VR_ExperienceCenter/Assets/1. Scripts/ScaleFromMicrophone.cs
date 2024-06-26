@@ -30,8 +30,6 @@ public class ScaleFromMicrophone : MonoBehaviour
 
         slider.value = loudness;
 
-        print(loudness);
-
         //transform.localScale = Vector3.Lerp(minScale, maxScale, loudness);
     }
 }

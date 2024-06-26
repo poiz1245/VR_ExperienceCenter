@@ -38,8 +38,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _IOR: -0.56
-    - _Power: 1
+    - _IOR: -0.35
+    - _Power: 1.821
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors: []
