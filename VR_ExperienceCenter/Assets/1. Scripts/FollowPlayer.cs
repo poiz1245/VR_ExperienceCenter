@@ -31,12 +31,14 @@ public class FollowPlayer : MonoBehaviour
 
         if (grabInteractable.isSelected && !isGrab)
         {
+            print("aa");
             initialDistance = Vector3.Distance(transform.position, mainCamera.transform.position);
             //initialRotation = mainCamera.transform.rotation;
             isGrab = true;
         }
         else if (grabInteractable.isSelected && isGrab)
         {
+            print("bb");
             transform.position = mainCamera.transform.position + (mainCamera.transform.forward * initialDistance);
 
             //rigid.MoveRotation(deltaRotation);
@@ -47,6 +49,7 @@ public class FollowPlayer : MonoBehaviour
         }
         else if (!grabInteractable.isSelected && isGrab)
         {
+            print("cc");
             isGrab = false;
         }
     }

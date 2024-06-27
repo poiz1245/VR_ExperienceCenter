@@ -95,6 +95,7 @@ public class Portal : MonoBehaviour
             {
                 walkIn = true;
                 ChangeLayerRecursively(stencilRoom, changeVisibleLayer);
+                DisableAllExcludedObjects();
             }
             else
             {
@@ -115,7 +116,7 @@ public class Portal : MonoBehaviour
                 childrenCollider[i].enabled = true;
             }
 
-            DisableAllExcludedObjects();
+            //DisableAllExcludedObjects();
 
             interactable.enabled = false;
 

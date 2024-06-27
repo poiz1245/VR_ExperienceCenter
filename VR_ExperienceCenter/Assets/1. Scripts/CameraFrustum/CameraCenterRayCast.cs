@@ -36,12 +36,14 @@ public class CameraCenterRayCast : MonoBehaviour
         Vector3 viewportCenter = new Vector3(0.5f, 0.5f, 0f);
         Vector3 worldCenter = mainCamera.ViewportPointToRay(viewportCenter).origin;
 
-        startPoint = worldCenter;
+        startPoint = worldCenter + new Vector3(0,0,0.1f);
 
         bool collider = Physics.Raycast(startPoint, transform.forward, out RaycastHit hitInfo, float.PositiveInfinity, layerMask);
 
         if (collider)
         {
+            //print("충돌한 오브젝트 이름" + hitInfo.collider.name);
+
             hitPoint = hitInfo.point;
             normal = hitInfo.normal;
         }
