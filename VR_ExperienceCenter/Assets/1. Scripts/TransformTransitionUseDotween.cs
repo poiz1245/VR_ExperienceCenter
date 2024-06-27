@@ -25,17 +25,17 @@ public class TransformTransitionUseDotween : MonoBehaviour
             if (random >= 0 && random <= 3)
             {
                 rotation = new Vector3(0, 15, 0);
-                duration = 2;
+                duration = 5;
             }
             else if (random >= 4 && random <= 7)
             {
                 rotation = new Vector3(15, 0, 0);
-                duration = 3;
+                duration = 6;
             }
             else
             {
                 rotation = new Vector3(0, 0, 15);
-                duration = 4;
+                duration = 7;
             }
 
             children[i].transform.DORotate(rotation, duration).SetLoops(-1, LoopType.Incremental).SetEase(Ease.Linear);
