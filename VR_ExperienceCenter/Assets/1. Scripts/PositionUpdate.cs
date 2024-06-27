@@ -6,22 +6,9 @@ public class PositionUpdate : MonoBehaviour
 {
     [SerializeField] Transform targetObject;
 
-    float previousTargetY;
-    float deltaY;
 
-
-    private void Awake()
-    {
-        previousTargetY = targetObject.transform.position.y;
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        deltaY = targetObject.position.y - previousTargetY;
-        previousTargetY = targetObject.position.y;
-
-        transform.Translate(Vector3.up *deltaY);
-        
+        transform.position = new Vector3(transform.position.x, targetObject.position.y, transform.position.z);
     }
 }
