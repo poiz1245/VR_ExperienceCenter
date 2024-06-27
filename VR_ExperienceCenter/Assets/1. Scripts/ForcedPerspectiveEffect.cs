@@ -47,7 +47,9 @@ public class ForcedPerspectiveEffect : MonoBehaviour
             Vector3 adjustment = hitObject.normal * (cubeSize.magnitude / 2);
             Vector3 newCubePosition = hitObject.hitPoint + adjustment;
 
+            //print("충돌한 오브젝트 포지션" + hitObject.hitPoint);
             transform.position = newCubePosition;
+            //print("이동 후 내 포지션" + transform.position);
 
             AdjustScale();
             isGrab = false;
@@ -65,6 +67,6 @@ public class ForcedPerspectiveEffect : MonoBehaviour
     float CalculateScaleFactor(float distance)
     {
         float scale = distance / initialDistance;
-        return Mathf.Max(scale, 0.01f); //두개의 숫자 중 더 큰 값을 반환
+        return Mathf.Max(scale, 0.1f); //두개의 숫자 중 더 큰 값을 반환
     }
 }
