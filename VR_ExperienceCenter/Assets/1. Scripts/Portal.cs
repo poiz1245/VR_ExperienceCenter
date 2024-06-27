@@ -21,6 +21,7 @@ public class Portal : MonoBehaviour
 
     bool isGrabed = false;
     public bool walkIn { get; private set; }
+    public bool secondStageStart { get; private set; }
     private void Start()
     {
         collider = GetComponent<MeshCollider>();
@@ -29,6 +30,7 @@ public class Portal : MonoBehaviour
         changeVisibleLayer = LayerMask.NameToLayer("Default");
         changeInVisibleLayer = LayerMask.NameToLayer("Stencil5");
         walkIn = false;
+        secondStageStart = false;
     }
 
     private void Update()
@@ -105,6 +107,7 @@ public class Portal : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && walkIn)
         {
+            secondStageStart = true;
             rigid.useGravity = false;
             rigid.constraints = RigidbodyConstraints.FreezeAll;
             for (int i = 0; i < childrenCollider.Length; i++)
