@@ -9,6 +9,7 @@ public class SecondObjectManager : MonoBehaviour
     [SerializeField] GameObject tv;
     [SerializeField] GameObject tvDisplay;
     [SerializeField] GameObject tvTable;
+    [SerializeField] GameObject thirdStageObject;
 
     void Update()
     {
@@ -18,6 +19,7 @@ public class SecondObjectManager : MonoBehaviour
             tv.SetActive(true);
             tvTable.SetActive(true);
             tvDisplay.SetActive(true);
+            thirdStageObject.SetActive(true);
         }
     }
 }
