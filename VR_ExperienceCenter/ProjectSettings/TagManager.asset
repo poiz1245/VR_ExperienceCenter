@@ -8,6 +8,8 @@ TagManager:
   - ProjectionPanel
   - Sliceable
   - Setting
+  - Stage2
+  - Stage3
   layers:
   - Default
   - TransparentFX
@@ -34,7 +36,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Stencil6
   - Stencil5
   - Stencil4
   - Stencil3
