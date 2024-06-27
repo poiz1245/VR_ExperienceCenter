@@ -5,21 +5,26 @@ using UnityEngine;
 public class SecondObjectManager : MonoBehaviour
 {
     [SerializeField] Portal portal;
-    [SerializeField] GameObject fog;
-    [SerializeField] GameObject tv;
-    [SerializeField] GameObject tvDisplay;
-    [SerializeField] GameObject tvTable;
-    [SerializeField] GameObject thirdStageObject;
+
+    [SerializeField] GameObject[] tvObjects;
+    [SerializeField] Transform[] tvObjectPoints;
 
     void Update()
     {
         if(portal.secondStageStart) 
         {
-            //fog.SetActive(true);
-            tv.SetActive(true);
-            tvTable.SetActive(true);
-            tvDisplay.SetActive(true);
-            thirdStageObject.SetActive(true);
+            for (int i = 0; i < tvObjects.Length; i++)
+            {
+                if (i == 3) 
+                {
+                    tvObjects[i].transform.position = tvObjectPoints[i].transform.position;
+                }
+                else
+                {
+                    tvObjects[i].gameObject.SetActive(true);
+                    tvObjects[i].transform.position = tvObjectPoints[i].transform.position;
+                }
+            }
         }
     }
 }
