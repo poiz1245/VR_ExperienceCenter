@@ -8,7 +8,7 @@ public class Portal : MonoBehaviour
 {
     [SerializeField] GameObject stencilRoom;
     [SerializeField] Collider[] childrenCollider;
-
+    [SerializeField] Transform teleportPoint;
     //BoxCollider collider;
 
     Rigidbody rigid;
@@ -26,6 +26,7 @@ public class Portal : MonoBehaviour
     {
         collider = GetComponent<MeshCollider>();
         rigid = GetComponent<Rigidbody>();
+        portal = GetComponent<Portal>();
         interactable = GetComponent<XRGrabInteractable>();
         changeVisibleLayer = LayerMask.NameToLayer("Default");
         changeInVisibleLayer = LayerMask.NameToLayer("Stencil5");
@@ -52,7 +53,7 @@ public class Portal : MonoBehaviour
     void DisableAllExcludedObjects()
     {
         GameObject[] allObject = GameObject.FindObjectsOfType<GameObject>();
-        GameObject[] excludedObjects = System.Array.FindAll(allObject, obj => !obj.transform.IsChildOf(transform) && obj.tag != "Setting" && !IsChildOfPlayerObject(obj) && obj.tag !="Stage2"); //자식이 아니고 플레이어 태그 아니면 true
+        GameObject[] excludedObjects = System.Array.FindAll(allObject, obj => !obj.transform.IsChildOf(transform) && !IsChildOfPlayerObject(obj) && obj.tag != "Stage2" && obj.tag != "stage3" && obj.tag != "Setting"); //자식이 아니고 플레이어 태그 아니면 true
 
         foreach (GameObject obj in excludedObjects)
         {
@@ -88,45 +89,61 @@ public class Portal : MonoBehaviour
     }*/
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.GetComponent<CharacterController>() != null)
         {
-            print("충돌");
-            if (!walkIn)
-            {
-                walkIn = true;
-                ChangeLayerRecursively(stencilRoom, changeVisibleLayer);
-                DisableAllExcludedObjects();
-            }
-            else
-            {
-                walkIn = false;
-                ChangeLayerRecursively(stencilRoom, changeInVisibleLayer);
-            }
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player") && walkIn)
-        {
+            // 플레이어의 실제 위치를 목적지 Transform으로 설정
+            other.transform.position = other.transform.position + new Vector3(0, 0, 1.5f);
+            other.transform.rotation = teleportPoint.rotation;
+
+            // CharacterController의 center와 height 속성 업데이트
+            other.GetComponent<CharacterController>().center = teleportPoint.InverseTransformPoint(other.transform.position);
+            other.GetComponent<CharacterController>().height = teleportPoint.InverseTransformPoint(other.transform.position + Vector3.up * other.GetComponent<CharacterController>().height).y;
+
+
+            ChangeLayerRecursively(stencilRoom, changeVisibleLayer);
+            DisableAllExcludedObjects();
+
             secondStageStart = true;
-            rigid.useGravity = false;
             rigid.constraints = RigidbodyConstraints.FreezeAll;
             for (int i = 0; i < childrenCollider.Length; i++)
             {
                 childrenCollider[i].enabled = true;
             }
 
-            //DisableAllExcludedObjects();
+            interactable.enabled = false;
+            portal.enabled = false;
+
+
+            /*   print("충돌");
+               if (!walkIn)
+               {
+                   walkIn = true;
+                   ChangeLayerRecursively(stencilRoom, changeVisibleLayer);
+                   DisableAllExcludedObjects();
+               }
+               else
+               {
+                   walkIn = false;
+                   ChangeLayerRecursively(stencilRoom, changeInVisibleLayer);
+               }*/
+        }
+    }
+    /*private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") && walkIn)
+        {
+            secondStageStart = true;
+            rigid.constraints = RigidbodyConstraints.FreezeAll;
+            for (int i = 0; i < childrenCollider.Length; i++)
+            {
+                childrenCollider[i].enabled = true;
+            }
 
             interactable.enabled = false;
-
-            if (portal != null)
-            {
-                portal.enabled = false;
-            }
+            portal.enabled = false;
 
 
         }
-    }
+    }*/
 
 }
