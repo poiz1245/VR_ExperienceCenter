@@ -42,8 +42,6 @@ public class CameraCenterRayCast : MonoBehaviour
 
         if (collider)
         {
-            //print("충돌한 오브젝트 이름" + hitInfo.collider.name);
-
             hitPoint = hitInfo.point;
             normal = hitInfo.normal;
         }

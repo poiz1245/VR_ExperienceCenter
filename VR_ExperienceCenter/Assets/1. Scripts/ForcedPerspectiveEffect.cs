@@ -7,7 +7,8 @@ public class ForcedPerspectiveEffect : MonoBehaviour
 {
     [SerializeField] Material unlitMaterial;
     [SerializeField] Material[] afterGrabMaterials;
-
+    [SerializeField] float maxScale;
+    [SerializeField] float minScale;
     Camera mainCamera;
     CameraCenterRayCast hitObject;
     XRGrabInteractable grabInteractable;
@@ -17,7 +18,7 @@ public class ForcedPerspectiveEffect : MonoBehaviour
     bool isGrab = false;
     Vector3 cubeSize;
 
- 
+
     private void Start()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
@@ -60,11 +61,17 @@ public class ForcedPerspectiveEffect : MonoBehaviour
         float scaleFactor = CalculateScaleFactor(distance);
 
         transform.localScale *= scaleFactor;
+        
+        /*Vector3 currentScale = transform.localScale;
+        currentScale = Vector3.Max(currentScale, new Vector3(minScale, minScale, minScale));
+        currentScale = Vector3.Min(currentScale, new Vector3(maxScale, maxScale, maxScale));
+        transform.localScale = currentScale;*/
+        
     }
 
     float CalculateScaleFactor(float distance)
     {
         float scale = distance / initialDistance;
-        return Mathf.Max(scale, 0.1f); //두개의 숫자 중 더 큰 값을 반환
+        return Mathf.Max(scale, 0.1f);
     }
 }
