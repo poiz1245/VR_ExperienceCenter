@@ -90,7 +90,7 @@ public class PortalToStage3 : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && walkIn)
         {
             thirdStageStart = true;
-
+            RenderSettings.fog = false;
             for (int i = 0; i < childrenCollider.Length; i++)
             {
                 childrenCollider[i].enabled = true;
