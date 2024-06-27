@@ -52,7 +52,7 @@ public class Portal : MonoBehaviour
     void DisableAllExcludedObjects()
     {
         GameObject[] allObject = GameObject.FindObjectsOfType<GameObject>();
-        GameObject[] excludedObjects = System.Array.FindAll(allObject, obj => !obj.transform.IsChildOf(transform) && obj.tag != "Setting" && !IsChildOfPlayerObject(obj)); //자식이 아니고 플레이어 태그 아니면 true
+        GameObject[] excludedObjects = System.Array.FindAll(allObject, obj => !obj.transform.IsChildOf(transform) && obj.tag != "Setting" && !IsChildOfPlayerObject(obj) && obj.tag !="Stage2"); //자식이 아니고 플레이어 태그 아니면 true
 
         foreach (GameObject obj in excludedObjects)
         {
