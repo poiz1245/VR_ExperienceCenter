@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class TVDisplay : MonoBehaviour
 {
-    [SerializeField] GameObject light;
+    [SerializeField] GameObject pointLight;
     XRGrabInteractable interactor;
     Rigidbody rigid;
 
@@ -19,7 +19,7 @@ public class TVDisplay : MonoBehaviour
     {
         if (interactor.isSelected)
         {
-            light.SetActive(false); 
+            pointLight.SetActive(false); 
             rigid.constraints = RigidbodyConstraints.None;
         }
     }

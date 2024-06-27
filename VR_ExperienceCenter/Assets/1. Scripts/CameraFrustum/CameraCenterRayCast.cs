@@ -31,7 +31,7 @@ public class CameraCenterRayCast : MonoBehaviour
         layerMask = 1 << LayerMask.NameToLayer("Default");
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 viewportCenter = new Vector3(0.5f, 0.5f, 0f);
         Vector3 worldCenter = mainCamera.ViewportPointToRay(viewportCenter).origin;
