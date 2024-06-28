@@ -30,7 +30,7 @@ public class PortalToStage3 : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         interactable = GetComponent<XRGrabInteractable>();
         changeVisibleLayer = LayerMask.NameToLayer("Default");
-        changeInVisibleLayer = LayerMask.NameToLayer("Stencil6");
+        changeInVisibleLayer = LayerMask.NameToLayer("Stencil2");
         walkIn = false;
         thirdStageStart = false;
     }

@@ -28,7 +28,7 @@ public class ForcedPerspectiveEffect : MonoBehaviour
 
         mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
     }
-    void FixedUpdate()
+    void Update()
     {
         if (grabInteractable.isSelected && !isGrab)
         {
