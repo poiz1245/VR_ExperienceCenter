@@ -13,7 +13,6 @@ public class ThirdStageObjectManager : MonoBehaviour
     {
         if (portal.thirdStageStart)
         {
-            print(portal.thirdStageStart);
             tv.SetActive(true);
             for(int i = 0; i < hindObject.Length; i++)
             {

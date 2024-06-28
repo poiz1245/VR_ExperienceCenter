@@ -15,7 +15,7 @@ public class PortalToSecondStage : MonoBehaviour
     Rigidbody rigid;
 
     bool isTrigger = false;
-    public bool secondStageStart { get; private set; }
+    public bool secondStageStart;
     private void Start()
     {
         rigid = GetComponentInParent<Rigidbody>();

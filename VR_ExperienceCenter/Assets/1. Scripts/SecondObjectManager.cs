@@ -11,11 +11,11 @@ public class SecondObjectManager : MonoBehaviour
 
     void Update()
     {
-        if(portal.secondStageStart) 
+        if (portal.secondStageStart)
         {
             for (int i = 0; i < tvObjects.Length; i++)
             {
-                if (i == 3) 
+                if (i == 3) //virtualroom은 위치만 옮기고 꺼져 있어야함
                 {
                     tvObjects[i].transform.position = tvObjectPoints[i].transform.position;
                 }
@@ -24,7 +24,9 @@ public class SecondObjectManager : MonoBehaviour
                     tvObjects[i].gameObject.SetActive(true);
                     tvObjects[i].transform.position = tvObjectPoints[i].transform.position;
                 }
+                
             }
+            portal.secondStageStart = false;
         }
     }
 }
