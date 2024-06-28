@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -12,7 +13,8 @@ public class PortalToStage3 : MonoBehaviour
     Rigidbody rigid;
     Collider collider;
     XRGrabInteractable interactable;
-    Portal portal;
+    PortalToStage3 portal;
+    MeshRenderer meshRenderer;
 
     int changeVisibleLayer;
     int changeInVisibleLayer;
@@ -22,6 +24,8 @@ public class PortalToStage3 : MonoBehaviour
     public bool thirdStageStart { get; private set; }
     private void Start()
     {
+        meshRenderer = GetComponent<MeshRenderer>();
+        portal = GetComponent<PortalToStage3>();
         collider = GetComponent<MeshCollider>();
         rigid = GetComponent<Rigidbody>();
         interactable = GetComponent<XRGrabInteractable>();
@@ -43,7 +47,7 @@ public class PortalToStage3 : MonoBehaviour
     void DisableAllExcludedObjects()
     {
         GameObject[] allObject = GameObject.FindObjectsOfType<GameObject>();
-        GameObject[] excludedObjects = System.Array.FindAll(allObject, obj => !obj.transform.IsChildOf(transform) && obj.tag != "Setting" && obj.tag != "Stage3"&& !IsChildOfPlayerObject(obj)); //자식이 아니고 플레이어 태그 아니면 true
+        GameObject[] excludedObjects = System.Array.FindAll(allObject, obj => !obj.transform.IsChildOf(transform) && obj.tag != "Setting" && obj.tag != "Stage3"&& !IsChildOfPlayerObject(obj));
 
         foreach (GameObject obj in excludedObjects)
         {
@@ -91,6 +95,8 @@ public class PortalToStage3 : MonoBehaviour
         {
             thirdStageStart = true;
             RenderSettings.fog = false;
+            meshRenderer.enabled = false;
+
             for (int i = 0; i < childrenCollider.Length; i++)
             {
                 childrenCollider[i].enabled = true;
