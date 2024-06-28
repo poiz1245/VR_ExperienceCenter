@@ -27,7 +27,6 @@ public class ForcedPerspectiveEffect : MonoBehaviour
         hitObject = CameraCenterRayCast.instance.GetComponent<CameraCenterRayCast>();
 
         mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
-        //gameObject.layer = 11;
     }
     void FixedUpdate()
     {
@@ -35,6 +34,7 @@ public class ForcedPerspectiveEffect : MonoBehaviour
         {
             isGrab = true;
             lineVisual.enabled = false;
+            gameObject.layer = 11;
 
             cubeSize = GetComponent<Renderer>().bounds.size;
             initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position);

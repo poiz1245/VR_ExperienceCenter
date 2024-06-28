@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SecondObjectManager : MonoBehaviour
 {
-    [SerializeField] Portal portal;
+    [SerializeField] PortalToSecondStage portal;
 
     [SerializeField] GameObject[] tvObjects;
     [SerializeField] Transform[] tvObjectPoints;

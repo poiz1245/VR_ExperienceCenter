@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SendTriggerData : MonoBehaviour
 {
-    PortalTest door;
+    PortalToSecondStage door;
 
     bool isTrigger = false;
     private void Start()
     {
-        door = GetComponentInParent<PortalTest>();
+        door = GetComponentInParent<PortalToSecondStage>();
     }
     private void Update()
     {
