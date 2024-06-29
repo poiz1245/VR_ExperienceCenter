@@ -3,13 +3,13 @@ using UnityEngine;
 public class IllusionEffect : MonoBehaviour
 {
     public Transform targetObject;
-    public GameObject[] scatteredImages;
     public GameObject finalObject;
     public Camera anamorphicCamera;
-
     public float acceptableAngle;
     public float acceptableDistance;
-
+    public GameObject[] scatteredImages;
+    public Material[] originalImage;
+    
     Camera mainCamera;
 
     private void Start()
@@ -24,12 +24,18 @@ public class IllusionEffect : MonoBehaviour
 
         if (angle < acceptableAngle && distance < acceptableDistance)
         {
-            foreach (GameObject image in scatteredImages)
+            for (int i = 0; i < scatteredImages.Length; i++)
             {
-                image.SetActive(false);
+                MeshRenderer scatteredObject = scatteredImages[i].GetComponent<MeshRenderer>();
+                scatteredObject.material = originalImage[i];
             }
+            
             finalObject.SetActive(true);
         }
+        /*else
+        {
+            finalObject.SetActive(false);
+        }*/
     }
 
 }
