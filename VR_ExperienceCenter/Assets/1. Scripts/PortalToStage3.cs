@@ -11,7 +11,7 @@ public class PortalToStage3 : MonoBehaviour
     //BoxCollider collider;
 
     Rigidbody rigid;
-    Collider collider;
+    //Collider collider;
     XRGrabInteractable interactable;
     PortalToStage3 portal;
     MeshRenderer meshRenderer;
@@ -19,14 +19,13 @@ public class PortalToStage3 : MonoBehaviour
     int changeVisibleLayer;
     int changeInVisibleLayer;
 
-    bool isGrabed = false;
     public bool walkIn { get; private set; }
     public bool thirdStageStart { get; private set; }
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         portal = GetComponent<PortalToStage3>();
-        collider = GetComponent<MeshCollider>();
+        //collider = GetComponent<MeshCollider>();
         rigid = GetComponent<Rigidbody>();
         interactable = GetComponent<XRGrabInteractable>();
         changeVisibleLayer = LayerMask.NameToLayer("Default");

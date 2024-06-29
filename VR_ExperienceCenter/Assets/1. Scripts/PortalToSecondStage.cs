@@ -14,7 +14,7 @@ public class PortalToSecondStage : MonoBehaviour
     PortalToSecondStage portal;
     Rigidbody rigid;
 
-    bool isTrigger = false;
+    //bool isTrigger = false;
     public bool secondStageStart;
     private void Start()
     {
@@ -50,7 +50,7 @@ public class PortalToSecondStage : MonoBehaviour
             other.GetComponent<CharacterController>().center = teleportPoint.InverseTransformPoint(other.transform.position);
             other.GetComponent<CharacterController>().height = teleportPoint.InverseTransformPoint(other.transform.position + Vector3.up * other.GetComponent<CharacterController>().height).y;
 
-            isTrigger = true;
+            //isTrigger = true;
             firstStageMap.SetActive(false);
             ChangeLayerRecursively(secondStageMap, 0);
             rigid.constraints = RigidbodyConstraints.FreezeAll;
