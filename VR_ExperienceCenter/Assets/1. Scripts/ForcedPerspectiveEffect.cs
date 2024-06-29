@@ -9,11 +9,14 @@ public class ForcedPerspectiveEffect : MonoBehaviour
     [SerializeField] Material[] afterGrabMaterials;
     [SerializeField] float maxScale;
     [SerializeField] float minScale;
+
     Camera mainCamera;
     CameraCenterRayCast hitObject;
     XRGrabInteractable grabInteractable;
     XRInteractorLineVisual lineVisual;
     new Renderer renderer;
+    Rigidbody rigid;
+
     float initialDistance;
     bool isGrab = false;
     Vector3 cubeSize;
@@ -21,6 +24,7 @@ public class ForcedPerspectiveEffect : MonoBehaviour
 
     private void Start()
     {
+        rigid  = GetComponent<Rigidbody>();
         grabInteractable = GetComponent<XRGrabInteractable>();
         renderer = GetComponent<Renderer>();
         lineVisual = GameObject.FindWithTag("GameController").GetComponent<XRInteractorLineVisual>();
@@ -60,13 +64,20 @@ public class ForcedPerspectiveEffect : MonoBehaviour
         float distance = Vector3.Distance(mainCamera.transform.position, transform.position);
         float scaleFactor = CalculateScaleFactor(distance);
 
-        transform.localScale *= scaleFactor;
-        
-        /*Vector3 currentScale = transform.localScale;
-        currentScale = Vector3.Max(currentScale, new Vector3(minScale, minScale, minScale));
-        currentScale = Vector3.Min(currentScale, new Vector3(maxScale, maxScale, maxScale));
-        transform.localScale = currentScale;*/
-        
+        Vector3 previousScale = transform.localScale; //크기 조정되기 전 스케일
+
+        transform.localScale *= scaleFactor; //크기조정
+
+        Vector3 currentScale = transform.localScale; //크기 조정된 스케일
+
+        currentScale = Vector3.Max(currentScale, new Vector3(minScale, minScale, minScale)); // 최소값
+        currentScale = Vector3.Min(currentScale, new Vector3(maxScale, maxScale, maxScale)); //최댓값
+
+        transform.localScale = currentScale; // 최종 스케일
+
+        float deltaScale = currentScale.x / previousScale.x; //조정 전 스케일과 조정 후 스케일 변화량
+
+        rigid.mass *= deltaScale; //스케일 변화량 만큼 무게 증감
     }
 
     float CalculateScaleFactor(float distance)
