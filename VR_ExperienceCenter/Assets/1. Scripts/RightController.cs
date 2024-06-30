@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class RightController : MonoBehaviour
 {
-    private float gravity = -9.81f; // 중력 가속도
+    [SerializeField] float gravity = -9.81f; // 중력 가속도
     private float jumpForce = 5f; // 점프 힘
     private float verticalVelocity = 0f; // 수직 속도
 
