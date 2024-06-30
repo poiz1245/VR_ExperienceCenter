@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EzySlice;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class MeshSlicer : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class MeshSlicer : MonoBehaviour
 
     private void Start()
     {
-        sliceableLayer = LayerMask.GetMask("Slicable");
+        sliceableLayer = LayerMask.GetMask("Sliceable");
     }
     private void FixedUpdate()
     {
@@ -32,11 +33,14 @@ public class MeshSlicer : MonoBehaviour
     }
     public void Slice(GameObject target)
     {
+        print(target);
         Vector3 velocity = velocityEstimator.GetVelocityEstimate();
         Vector3 planeNormal = Vector3.Cross(endSlicePoint.position - startSlicePoint.position, velocity);
         planeNormal.Normalize();
-
+        
         SlicedHull hull = target.Slice(endSlicePoint.position, planeNormal);
+
+        print(hull);
 
         if (hull != null)
         {
@@ -61,6 +65,15 @@ public class MeshSlicer : MonoBehaviour
 
         MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
         collider.convex = true;
+
+        ForcedPerspectiveEffect forcedPerspectiveEffect = slicedObject.AddComponent<ForcedPerspectiveEffect>();
+        XRGrabInteractable xrGrabInteractable = slicedObject.GetComponent<XRGrabInteractable>();
+
+        xrGrabInteractable.trackPosition = false;
+        xrGrabInteractable.retainTransformParent = false;
+        xrGrabInteractable.trackScale = false;
+        xrGrabInteractable.trackScale = false;
+        xrGrabInteractable.throwOnDetach = false;
 
         int layer = Mathf.RoundToInt(Mathf.Log(sliceableLayer.value, 2));
         slicedObject.layer = layer;
