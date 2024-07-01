@@ -16452,8 +16452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b239271abfbe84429846276ce023f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlitMaterial:
-  - {fileID: 0}
+  unlitMaterial: {fileID: 0}
   afterGrabMaterials: []
   maxScale: 0
   minScale: 0
@@ -20740,8 +20739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b239271abfbe84429846276ce023f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlitMaterial:
-  - {fileID: 0}
+  unlitMaterial: {fileID: 0}
   afterGrabMaterials: []
   maxScale: 0
   minScale: 0
@@ -21780,10 +21778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b239271abfbe84429846276ce023f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlitMaterial:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  unlitMaterial: {fileID: 0}
   afterGrabMaterials:
   - {fileID: 2100000, guid: 8f3fd0aaf14b4f74db399f01d3915ca3, type: 2}
   maxScale: 0
@@ -26319,8 +26314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b239271abfbe84429846276ce023f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlitMaterial:
-  - {fileID: 0}
+  unlitMaterial: {fileID: 0}
   afterGrabMaterials: []
   maxScale: 0
   minScale: 0
@@ -26770,8 +26764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b239271abfbe84429846276ce023f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlitMaterial:
-  - {fileID: 2100000, guid: 7b3bd3cd650d82d488dfda3b33fdba33, type: 2}
+  unlitMaterial: {fileID: 0}
   afterGrabMaterials:
   - {fileID: 2100000, guid: 7b3bd3cd650d82d488dfda3b33fdba33, type: 2}
   maxScale: 30
@@ -27709,8 +27702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b239271abfbe84429846276ce023f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlitMaterial:
-  - {fileID: 2100000, guid: 7b3bd3cd650d82d488dfda3b33fdba33, type: 2}
+  unlitMaterial: {fileID: 0}
   afterGrabMaterials:
   - {fileID: 2100000, guid: 7b3bd3cd650d82d488dfda3b33fdba33, type: 2}
   maxScale: 30
@@ -28097,8 +28089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b239271abfbe84429846276ce023f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlitMaterial:
-  - {fileID: 2100000, guid: 7b3bd3cd650d82d488dfda3b33fdba33, type: 2}
+  unlitMaterial: {fileID: 0}
   afterGrabMaterials:
   - {fileID: 2100000, guid: 7b3bd3cd650d82d488dfda3b33fdba33, type: 2}
   maxScale: 30
@@ -28395,8 +28386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b239271abfbe84429846276ce023f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlitMaterial:
-  - {fileID: 2100000, guid: 6763dc5abeaf0b84989cd971dc602fb6, type: 2}
+  unlitMaterial: {fileID: 2100000, guid: 6763dc5abeaf0b84989cd971dc602fb6, type: 2}
   afterGrabMaterials:
   - {fileID: 2100000, guid: b007b6182ac69df40909bfa6001d3753, type: 2}
   maxScale: 0.7
@@ -28887,8 +28877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b239271abfbe84429846276ce023f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlitMaterial:
-  - {fileID: 2100000, guid: 97174076fda46ab42b5eeff2bce9099f, type: 2}
+  unlitMaterial: {fileID: 0}
   afterGrabMaterials:
   - {fileID: 2100000, guid: 97174076fda46ab42b5eeff2bce9099f, type: 2}
   maxScale: 30
@@ -29272,8 +29261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b239271abfbe84429846276ce023f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlitMaterial:
-  - {fileID: 2100000, guid: a37fc671ad5d118498e15a54d7c73d4e, type: 2}
+  unlitMaterial: {fileID: 0}
   afterGrabMaterials:
   - {fileID: 2100000, guid: 98b901d2d38b78c43a3264d3b02a699f, type: 2}
   maxScale: 30
