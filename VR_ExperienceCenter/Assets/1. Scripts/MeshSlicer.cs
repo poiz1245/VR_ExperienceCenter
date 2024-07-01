@@ -28,19 +28,15 @@ public class MeshSlicer : MonoBehaviour
         if (hasHit)
         {
             GameObject target = hit.transform.gameObject;
-            Slice(target);
         }
     }
     public void Slice(GameObject target)
     {
-        print(target);
         Vector3 velocity = velocityEstimator.GetVelocityEstimate();
         Vector3 planeNormal = Vector3.Cross(endSlicePoint.position - startSlicePoint.position, velocity);
         planeNormal.Normalize();
         
         SlicedHull hull = target.Slice(endSlicePoint.position, planeNormal);
-
-        print(hull);
 
         if (hull != null)
         {
