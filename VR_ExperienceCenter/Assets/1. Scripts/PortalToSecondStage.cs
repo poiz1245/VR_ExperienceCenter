@@ -47,10 +47,9 @@ public class PortalToSecondStage : MonoBehaviour
             other.transform.position = teleportPoint.position;
             other.transform.rotation = teleportPoint.rotation;
 
-            other.GetComponent<CharacterController>().center = teleportPoint.InverseTransformPoint(other.transform.position);
-            other.GetComponent<CharacterController>().height = teleportPoint.InverseTransformPoint(other.transform.position + Vector3.up * other.GetComponent<CharacterController>().height).y;
+            other.GetComponent<CharacterController>().center = new Vector3(0,0.9f,0);
+            other.GetComponent<CharacterController>().height = 1.8f;
 
-            //isTrigger = true;
             firstStageMap.SetActive(false);
             ChangeLayerRecursively(secondStageMap, 0);
             rigid.constraints = RigidbodyConstraints.FreezeAll;
