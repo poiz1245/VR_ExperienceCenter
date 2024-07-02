@@ -16,7 +16,7 @@ public class ForcedPerspectiveEffect : MonoBehaviour
     XRInteractorLineVisual lineVisual;
     new Renderer renderer;
     Rigidbody rigid;
-
+    new Collider collider;
     float initialDistance;
     bool isGrab = false;
     Vector3 cubeSize;
@@ -24,6 +24,7 @@ public class ForcedPerspectiveEffect : MonoBehaviour
 
     private void Start()
     {
+        collider = GetComponent<Collider>();
         rigid  = GetComponent<Rigidbody>();
         grabInteractable = GetComponent<XRGrabInteractable>();
         renderer = GetComponent<Renderer>();
@@ -40,6 +41,7 @@ public class ForcedPerspectiveEffect : MonoBehaviour
             lineVisual.enabled = false;
             gameObject.layer = 11;
 
+            collider.isTrigger = true;
             cubeSize = GetComponent<Renderer>().bounds.size;
             initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position);
             renderer.materials = afterGrabMaterials;
@@ -47,6 +49,7 @@ public class ForcedPerspectiveEffect : MonoBehaviour
         else if (isGrab && !grabInteractable.isSelected)
         {
             lineVisual.enabled = true;
+            collider.isTrigger = false;
 
             renderer.materials = unlitMaterial;
             Vector3 adjustment = hitObject.normal * (cubeSize.magnitude / 2);
