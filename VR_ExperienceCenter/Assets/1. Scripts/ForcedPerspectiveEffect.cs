@@ -51,18 +51,16 @@ public class ForcedPerspectiveEffect : MonoBehaviour
         else if (isGrab && !grabInteractable.isSelected)
         {
             lineVisual.enabled = true;
-
             collider.isTrigger = false;
 
             renderer.materials = unlitMaterial;
+            //transform.position = hitObject.hitPoint;
 
-            transform.position = hitObject.hitPoint;
-
-            AdjustScale();
+            float distance = Vector3.Distance(mainCamera.transform.position, hitObject.hitPoint);
+            AdjustScale(distance);
 
             Vector3 adjustment = hitObject.normal * (cubeSize.magnitude / 2);
             Vector3 newCubePosition = hitObject.hitPoint + adjustment;
-
 
             transform.position = newCubePosition;
 
@@ -73,9 +71,9 @@ public class ForcedPerspectiveEffect : MonoBehaviour
         }
     }
 
-    void AdjustScale()
+    void AdjustScale(float distance)
     {
-        float distance = Vector3.Distance(mainCamera.transform.position, transform.position);
+        //float distance = Vector3.Distance(mainCamera.transform.position, transform.position);
         float scaleFactor = CalculateScaleFactor(distance);
 
         Vector3 previousScale = transform.localScale; //크기 조정되기 전 스케일
