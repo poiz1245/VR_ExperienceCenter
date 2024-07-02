@@ -14,6 +14,9 @@ public class MeshSlicer : MonoBehaviour
     public float cutForce;
     public Material capMaterial;
 
+    [SerializeField] Material[] slicedObjectBaseMaterial;
+    [SerializeField] Material[] slicedObjectFirstRenderMaterial;
+
     LayerMask sliceableLayer;
     //public LayerMask slicedObjectleLayer;
 
@@ -28,6 +31,7 @@ public class MeshSlicer : MonoBehaviour
         if (hasHit)
         {
             GameObject target = hit.transform.gameObject;
+            Slice(target);
         }
     }
     public void Slice(GameObject target)
@@ -35,7 +39,7 @@ public class MeshSlicer : MonoBehaviour
         Vector3 velocity = velocityEstimator.GetVelocityEstimate();
         Vector3 planeNormal = Vector3.Cross(endSlicePoint.position - startSlicePoint.position, velocity);
         planeNormal.Normalize();
-        
+
         SlicedHull hull = target.Slice(endSlicePoint.position, planeNormal);
 
         if (hull != null)
@@ -43,14 +47,14 @@ public class MeshSlicer : MonoBehaviour
             GameObject upperHull = hull.CreateUpperHull(target, capMaterial);
             GameObject lowerHull = hull.CreateLowerHull(target, capMaterial);
 
-            SetupSlicedComponent(upperHull);
-            SetupSlicedComponent(lowerHull);
+            SetupSlicedComponent(upperHull, target);
+            SetupSlicedComponent(lowerHull, target);
 
             Destroy(target.gameObject);
         }
     }
 
-    public void SetupSlicedComponent(GameObject slicedObject)
+    public void SetupSlicedComponent(GameObject slicedObject , GameObject originalObject)
     {
         Rigidbody rigid = slicedObject.GetComponent<Rigidbody>();
 
@@ -64,6 +68,8 @@ public class MeshSlicer : MonoBehaviour
 
         ForcedPerspectiveEffect forcedPerspectiveEffect = slicedObject.AddComponent<ForcedPerspectiveEffect>();
         XRGrabInteractable xrGrabInteractable = slicedObject.GetComponent<XRGrabInteractable>();
+        forcedPerspectiveEffect = slicedObject.GetComponent<ForcedPerspectiveEffect>();
+        SlicedObject targetObject = originalObject.GetComponent<SlicedObject>();
 
         xrGrabInteractable.trackPosition = false;
         xrGrabInteractable.retainTransformParent = false;
@@ -71,8 +77,16 @@ public class MeshSlicer : MonoBehaviour
         xrGrabInteractable.trackScale = false;
         xrGrabInteractable.throwOnDetach = false;
 
-        int layer = Mathf.RoundToInt(Mathf.Log(sliceableLayer.value, 2));
-        slicedObject.layer = layer;
+        slicedObjectFirstRenderMaterial = targetObject.firstRenderMaterial;
+        slicedObjectBaseMaterial = targetObject.baseMaterial;
+        forcedPerspectiveEffect.afterGrabMaterials = slicedObjectFirstRenderMaterial;
+        forcedPerspectiveEffect.unlitMaterial = slicedObjectBaseMaterial;
+        forcedPerspectiveEffect.minScale = targetObject.minScale;
+        forcedPerspectiveEffect.maxScale = targetObject.maxScale;
+
+
+        //int layer = Mathf.RoundToInt(Mathf.Log(sliceableLayer.value, 2));
+        //slicedObject.layer = layer;
 
         rigid.AddExplosionForce(cutForce, slicedObject.transform.position, 1);
     }

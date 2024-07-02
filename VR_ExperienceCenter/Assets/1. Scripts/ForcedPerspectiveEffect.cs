@@ -5,10 +5,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 [RequireComponent(typeof(XRGrabInteractable))]
 public class ForcedPerspectiveEffect : MonoBehaviour
 {
-    [SerializeField] Material unlitMaterial;
-    [SerializeField] Material[] afterGrabMaterials;
-    [SerializeField] float maxScale;
-    [SerializeField] float minScale;
+    public Material[] unlitMaterial;
+    public Material[] afterGrabMaterials;
+    public float maxScale;
+    public float minScale;
 
     Camera mainCamera;
     CameraCenterRayCast hitObject;
@@ -48,7 +48,7 @@ public class ForcedPerspectiveEffect : MonoBehaviour
         {
             lineVisual.enabled = true;
 
-            renderer.materials = new Material[] { unlitMaterial };
+            renderer.materials = unlitMaterial;
             Vector3 adjustment = hitObject.normal * (cubeSize.magnitude / 2);
             Vector3 newCubePosition = hitObject.hitPoint + adjustment;
 
