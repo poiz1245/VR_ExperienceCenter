@@ -445,9 +445,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Option",
+                    "name": "Menu",
                     "type": "Button",
-                    "id": "0f00f1f1-c589-4401-9a67-f4dfe79b6899",
+                    "id": "f9315281-1b89-49b9-a297-bf27d5776c8e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -688,12 +688,12 @@
                 },
                 {
                     "name": "",
-                    "id": "399bd431-ab68-464a-a2ca-f3fae9f0468c",
-                    "path": "<XRController>{RightHand}/menuButton",
+                    "id": "d7c75f22-b6c8-4222-a853-c6bfad6e03f5",
+                    "path": "<XRController>{LeftHand}/menuButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Option",
+                    "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
