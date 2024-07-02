@@ -55,6 +55,9 @@ public class ForcedPerspectiveEffect : MonoBehaviour
             transform.position = newCubePosition;
 
             AdjustScale();
+
+            gameObject.layer = 0;
+
             isGrab = false;
         }
     }
