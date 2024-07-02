@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PortalToDreamWay : MonoBehaviour
 {
-    Collider collider;
+    new Collider collider;
     [SerializeField] string sceneName;
     [SerializeField] OpenDoor openDoor;
 
