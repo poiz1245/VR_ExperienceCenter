@@ -29635,8 +29635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f893fa0486c2441ab9ff01e86b46a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &33474403009887404
-BoxCollider:
+--- !u!64 &33474403009887404
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -29653,9 +29653,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.39663222, y: 0.12057811, z: 0.39603096}
-  m_Center: {x: -0.0014359434, y: 0.00083213684, z: 0.0007760527}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 2ecb35e93d895564898643660f53cc1d, type: 3}
 --- !u!33 &33515987781203854
 MeshFilter:
   m_ObjectHideFlags: 0
