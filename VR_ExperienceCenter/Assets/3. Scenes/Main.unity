@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.4
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13190444, g: 0.12930505, b: 0.13008094, a: 0.4}
+  m_IndirectSpecularColor: {r: 0.1314211, g: 0.12911491, b: 0.12945463, a: 0.4}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2471,7 +2471,7 @@ MonoBehaviour:
     IsHidden: 0
 --- !u!4 &235942826
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -32921,6 +32921,7 @@ GameObject:
   - component: {fileID: 9086136312782127703}
   - component: {fileID: 9086136312782127704}
   - component: {fileID: 9086136312782127705}
+  - component: {fileID: 9086136312782127706}
   m_Layer: 11
   m_Name: TV Display
   m_TagString: Stage2
@@ -33154,7 +33155,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.6565826, y: 0.5223993, z: 0.065205604}
   m_Center: {x: 0, y: 0, z: 0}
@@ -33171,6 +33172,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 1313646923}
+--- !u!64 &9086136312782127706
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086136312782127699}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4672985404280677916, guid: e3a00e50f272ea041886bed00c7123c4, type: 3}
 --- !u!4 &9107349264632160022
 Transform:
   m_ObjectHideFlags: 0

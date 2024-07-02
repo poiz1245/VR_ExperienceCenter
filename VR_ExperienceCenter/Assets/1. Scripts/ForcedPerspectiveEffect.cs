@@ -49,13 +49,18 @@ public class ForcedPerspectiveEffect : MonoBehaviour
             lineVisual.enabled = true;
 
             renderer.materials = unlitMaterial;
-            Vector3 adjustment = hitObject.normal * (cubeSize.magnitude / 2);
-            Vector3 newCubePosition = hitObject.hitPoint + adjustment;
 
-            transform.position = newCubePosition;
+            transform.position = hitObject.hitPoint;
 
             AdjustScale();
 
+            Vector3 adjustment = hitObject.normal * (cubeSize.magnitude / 2);
+            Vector3 newCubePosition = hitObject.hitPoint + adjustment;
+
+
+            transform.position = newCubePosition;
+
+            print(transform.position);
             gameObject.layer = 0;
 
             isGrab = false;
