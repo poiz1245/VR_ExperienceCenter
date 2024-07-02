@@ -42,6 +42,7 @@ public class ForcedPerspectiveEffect : MonoBehaviour
             gameObject.layer = 11;
 
             collider.isTrigger = true;
+
             cubeSize = GetComponent<Renderer>().bounds.size;
             initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position);
             renderer.materials = afterGrabMaterials;
@@ -52,22 +53,26 @@ public class ForcedPerspectiveEffect : MonoBehaviour
             collider.isTrigger = false;
 
             renderer.materials = unlitMaterial;
+            //transform.position = hitObject.hitPoint;
+
+            float distance = Vector3.Distance(mainCamera.transform.position, hitObject.hitPoint);
+            AdjustScale(distance);
+
             Vector3 adjustment = hitObject.normal * (cubeSize.magnitude / 2);
             Vector3 newCubePosition = hitObject.hitPoint + adjustment;
 
             transform.position = newCubePosition;
 
-            AdjustScale();
-
+            print(transform.position);
             gameObject.layer = 0;
 
             isGrab = false;
         }
     }
 
-    void AdjustScale()
+    void AdjustScale(float distance)
     {
-        float distance = Vector3.Distance(mainCamera.transform.position, transform.position);
+        //float distance = Vector3.Distance(mainCamera.transform.position, transform.position);
         float scaleFactor = CalculateScaleFactor(distance);
 
         Vector3 previousScale = transform.localScale; //크기 조정되기 전 스케일
