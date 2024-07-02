@@ -24,6 +24,7 @@ public class PortalToDreamWay : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Camera.main.enabled = false;
             SceneManager.LoadScene(sceneName);
         }
     }
