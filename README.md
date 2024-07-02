@@ -10,7 +10,8 @@
   
 ### 2. 같은 크기의 물체가 거리에 따라 크기가 다르게 보이는 것을 활용하여 착시 구현(ForcePerspectiveEffect)
 - 오브젝트를 처음 grab했을 때 카메라와 오브젝트의 거리를 오브젝트가 grab이 풀려 이동한 후 거리와 비교하여 증가 또는 감소한 비율에 따라 스케일을 조정
-![image](https://github.com/poiz1245/VR_ExperienceCenter/assets/139199211/ab03d91f-4db6-40b2-b0e9-51746758d95c)
+![image](https://github.com/poiz1245/VR_ExperienceCenter/assets/139199211/0f14bfdb-4a36-436e-8b36-f40395ab1875)
+
 
 ### 3. 착시 그림을 오브젝트화 하는 기능 구현(AnamorphicEffect)
 
