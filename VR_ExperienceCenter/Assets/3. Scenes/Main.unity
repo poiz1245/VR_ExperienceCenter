@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 2
   m_FogDensity: 0.12
@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1e70ba36d38599443801fe86b520c788, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1e70ba36d38599443801fe86b520c788, type: 3}
       propertyPath: m_TagString
@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 1e70ba36d38599443801fe86b520c788, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 1e70ba36d38599443801fe86b520c788, type: 3}
       propertyPath: m_TagString
@@ -270,6 +270,10 @@ PrefabInstance:
     - target: {fileID: 1595831213463952, guid: c446df1b3a078be469c924f2fc3bdab6, type: 3}
       propertyPath: m_Name
       value: Cupboard_old1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595831213463952, guid: c446df1b3a078be469c924f2fc3bdab6, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4648475618290838, guid: c446df1b3a078be469c924f2fc3bdab6, type: 3}
       propertyPath: m_LocalScale.x
@@ -788,7 +792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1295412704638594, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4282350128905190, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_LocalScale.x
@@ -1252,9 +1256,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2131302727}
     m_Modifications:
+    - target: {fileID: 1494361316349454, guid: db352c313a68edc40a9834ab6a415dac, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806923388476908, guid: db352c313a68edc40a9834ab6a415dac, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1838977694228196, guid: db352c313a68edc40a9834ab6a415dac, type: 3}
       propertyPath: m_Name
       value: Pillow_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838977694228196, guid: db352c313a68edc40a9834ab6a415dac, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1838977694228196, guid: db352c313a68edc40a9834ab6a415dac, type: 3}
       propertyPath: m_IsActive
@@ -1422,7 +1438,7 @@ GameObject:
   - component: {fileID: 120495145}
   - component: {fileID: 120495144}
   - component: {fileID: 120495146}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: AnamorphicImageWall
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -1563,9 +1579,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2131302727}
     m_Modifications:
+    - target: {fileID: 1118736627535710, guid: 7f6fcbc2661941b4eaabcc3e1322e07a, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336241549376314, guid: 7f6fcbc2661941b4eaabcc3e1322e07a, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1374424551722960, guid: 7f6fcbc2661941b4eaabcc3e1322e07a, type: 3}
       propertyPath: m_Name
       value: Coffee Grinder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1374424551722960, guid: 7f6fcbc2661941b4eaabcc3e1322e07a, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4253475502898830, guid: 7f6fcbc2661941b4eaabcc3e1322e07a, type: 3}
       propertyPath: m_LocalScale.x
@@ -1958,7 +1986,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 200836619}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Stage3
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -2097,7 +2125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 201890721}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Attach
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -2239,9 +2267,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 200836619}
     m_Modifications:
+    - target: {fileID: 1052022903594444, guid: f3f914d97cb541549b746cc184ff323a, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102336750460834, guid: f3f914d97cb541549b746cc184ff323a, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1800931090640826, guid: f3f914d97cb541549b746cc184ff323a, type: 3}
       propertyPath: m_Name
       value: Curtain1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800931090640826, guid: f3f914d97cb541549b746cc184ff323a, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4055461575317572, guid: f3f914d97cb541549b746cc184ff323a, type: 3}
       propertyPath: m_LocalScale.x
@@ -2640,9 +2680,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2131302727}
     m_Modifications:
+    - target: {fileID: 1030218144558036, guid: b24e3bf56901470459477cc1f8b08d49, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097550797135292, guid: b24e3bf56901470459477cc1f8b08d49, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1747305232838386, guid: b24e3bf56901470459477cc1f8b08d49, type: 3}
       propertyPath: m_Name
       value: Book_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747305232838386, guid: b24e3bf56901470459477cc1f8b08d49, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4989407200013122, guid: b24e3bf56901470459477cc1f8b08d49, type: 3}
       propertyPath: m_LocalScale.x
@@ -3223,9 +3275,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 200836619}
     m_Modifications:
+    - target: {fileID: 1171975253012788, guid: 2709b9fa245d2c049bbc80d3d3d55756, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276731190619706, guid: 2709b9fa245d2c049bbc80d3d3d55756, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1862325750096844, guid: 2709b9fa245d2c049bbc80d3d3d55756, type: 3}
       propertyPath: m_Name
       value: Pottery_Cup1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862325750096844, guid: 2709b9fa245d2c049bbc80d3d3d55756, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4540676361241820, guid: 2709b9fa245d2c049bbc80d3d3d55756, type: 3}
       propertyPath: m_LocalScale.x
@@ -3561,6 +3625,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1152474844465036, guid: 49e227f9b9713f14ebbade52034b9737, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341201538412614, guid: 49e227f9b9713f14ebbade52034b9737, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724438483394642, guid: 49e227f9b9713f14ebbade52034b9737, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 4906605442275884, guid: 49e227f9b9713f14ebbade52034b9737, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.58
@@ -3637,7 +3713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 375114257}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4105,7 +4181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1295412704638594, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4282350128905190, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_LocalScale.x
@@ -5189,9 +5265,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 200836619}
     m_Modifications:
+    - target: {fileID: 1086132101350576, guid: dcec2bdff29c6524c8e05d78be968a54, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1283239117732204, guid: dcec2bdff29c6524c8e05d78be968a54, type: 3}
       propertyPath: m_Name
       value: Pottery_Cup2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283239117732204, guid: dcec2bdff29c6524c8e05d78be968a54, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626818139066014, guid: dcec2bdff29c6524c8e05d78be968a54, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4700948876116748, guid: dcec2bdff29c6524c8e05d78be968a54, type: 3}
       propertyPath: m_LocalScale.x
@@ -5274,7 +5362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1295412704638594, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4282350128905190, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_LocalScale.x
@@ -5406,7 +5494,7 @@ PrefabInstance:
     - target: {fileID: -8684251187902555887, guid: f10ecbc237630d9469cea29121d074f4,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: -6562066744935471810, guid: f10ecbc237630d9469cea29121d074f4,
         type: 3}
@@ -5419,7 +5507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: f10ecbc237630d9469cea29121d074f4, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: f10ecbc237630d9469cea29121d074f4, type: 3}
       propertyPath: m_LocalScale.x
@@ -5756,6 +5844,18 @@ PrefabInstance:
     - target: {fileID: 1077665954076600, guid: eee4d8da620f6f9449fc6c3ab93f77b1, type: 3}
       propertyPath: m_Name
       value: Plant_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077665954076600, guid: eee4d8da620f6f9449fc6c3ab93f77b1, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930618923939750, guid: eee4d8da620f6f9449fc6c3ab93f77b1, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1934810470967358, guid: eee4d8da620f6f9449fc6c3ab93f77b1, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4278358797866158, guid: eee4d8da620f6f9449fc6c3ab93f77b1, type: 3}
       propertyPath: m_LocalScale.x
@@ -6241,7 +6341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 565894566}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Structure
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -6279,6 +6379,10 @@ PrefabInstance:
     - target: {fileID: 1141096762818902, guid: 465602415bc4e7b4386f4c16fbb9daf7, type: 3}
       propertyPath: m_Name
       value: Wardrobe2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1141096762818902, guid: 465602415bc4e7b4386f4c16fbb9daf7, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1141096762818902, guid: 465602415bc4e7b4386f4c16fbb9daf7, type: 3}
       propertyPath: m_IsActive
@@ -6537,6 +6641,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book_15
       objectReference: {fileID: 0}
+    - target: {fileID: 1117475491070412, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686819033116808, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723922470236256, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -6612,9 +6728,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 200836619}
     m_Modifications:
+    - target: {fileID: 1209768005437368, guid: ab4cca42cd40232419f5031c8e7ed8fc, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1664243553333454, guid: ab4cca42cd40232419f5031c8e7ed8fc, type: 3}
       propertyPath: m_Name
       value: Clay_Jug_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664243553333454, guid: ab4cca42cd40232419f5031c8e7ed8fc, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728281341892852, guid: ab4cca42cd40232419f5031c8e7ed8fc, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4551721951529274, guid: ab4cca42cd40232419f5031c8e7ed8fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -6886,7 +7014,7 @@ GameObject:
   - component: {fileID: 595279821}
   - component: {fileID: 595279820}
   - component: {fileID: 595279822}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Wall (9)
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -7354,7 +7482,7 @@ GameObject:
   - component: {fileID: 638263596}
   - component: {fileID: 638263595}
   - component: {fileID: 638263597}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Wall (7)
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -7630,7 +7758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1295412704638594, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4282350128905190, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_LocalScale.x
@@ -7965,7 +8093,7 @@ PrefabInstance:
     - target: {fileID: 6683477847236081759, guid: ca794718ea2a2e4438e37724e4f6a6cc,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 6683477847236081759, guid: ca794718ea2a2e4438e37724e4f6a6cc,
         type: 3}
@@ -7975,7 +8103,7 @@ PrefabInstance:
     - target: {fileID: 7741797352114732036, guid: ca794718ea2a2e4438e37724e4f6a6cc,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 7741797352114732036, guid: ca794718ea2a2e4438e37724e4f6a6cc,
         type: 3}
@@ -8566,9 +8694,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2131302727}
     m_Modifications:
+    - target: {fileID: 1228938523154876, guid: 7db29a7f439eef8458aa0b4a1e2720c3, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278730166110970, guid: 7db29a7f439eef8458aa0b4a1e2720c3, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1895348628050922, guid: 7db29a7f439eef8458aa0b4a1e2720c3, type: 3}
       propertyPath: m_Name
       value: Book_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895348628050922, guid: 7db29a7f439eef8458aa0b4a1e2720c3, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4508910638535620, guid: 7db29a7f439eef8458aa0b4a1e2720c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9039,7 +9179,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 782194672}
+    m_TransformParent: {fileID: 2131302727}
     m_Modifications:
     - target: {fileID: 1117475491070412, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_Name
@@ -9047,7 +9187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1117475491070412, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1117475491070412, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_IsActive
@@ -9059,7 +9199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1686819033116808, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1686819033116808, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_TagString
@@ -9067,7 +9207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1723922470236256, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1723922470236256, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_TagString
@@ -9087,19 +9227,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1509995
+      value: 2.1510015
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.340564
+      value: 5.3405643
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.037992
+      value: 19.03801
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.97156185
+      value: 0.9715618
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -9107,7 +9247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.23678628
+      value: -0.23678626
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -9299,7 +9439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 782194672}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Collider
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -9325,12 +9465,10 @@ Transform:
   - {fileID: 1404766281}
   - {fileID: 1856866195}
   - {fileID: 1613326944}
-  - {fileID: 761403687}
   - {fileID: 2066865507}
   - {fileID: 15140726}
   - {fileID: 2065870283}
   - {fileID: 1183922088}
-  - {fileID: 1174027208}
   - {fileID: 1193428098}
   - {fileID: 1327919430}
   - {fileID: 1837936657}
@@ -9453,6 +9591,10 @@ PrefabInstance:
     - target: {fileID: 1018855719644062, guid: dd51be22530c5b54593d28e8de4c5e54, type: 3}
       propertyPath: m_Name
       value: Chair1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018855719644062, guid: dd51be22530c5b54593d28e8de4c5e54, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4968346756040248, guid: dd51be22530c5b54593d28e8de4c5e54, type: 3}
       propertyPath: m_LocalScale.x
@@ -9901,7 +10043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1295412704638594, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4282350128905190, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_LocalScale.x
@@ -9981,7 +10123,7 @@ GameObject:
   - component: {fileID: 852407846}
   - component: {fileID: 852407848}
   - component: {fileID: 852407847}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10471,7 +10613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1295412704638594, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4282350128905190, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_LocalScale.x
@@ -10701,7 +10843,7 @@ GameObject:
   - component: {fileID: 923653520}
   - component: {fileID: 923653519}
   - component: {fileID: 923653521}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Wall (11)
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -10803,7 +10945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 929801980}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Wall
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -10849,7 +10991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1295412704638594, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4282350128905190, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_LocalScale.x
@@ -10926,9 +11068,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2131302727}
     m_Modifications:
+    - target: {fileID: 1698634238068042, guid: ab642d9a77ebdfa49b17063e8a0c1329, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1769959152095350, guid: ab642d9a77ebdfa49b17063e8a0c1329, type: 3}
       propertyPath: m_Name
       value: Book_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769959152095350, guid: ab642d9a77ebdfa49b17063e8a0c1329, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789061852089760, guid: ab642d9a77ebdfa49b17063e8a0c1329, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4580082132161464, guid: ab642d9a77ebdfa49b17063e8a0c1329, type: 3}
       propertyPath: m_LocalScale.x
@@ -11316,7 +11470,7 @@ GameObject:
   - component: {fileID: 975076386}
   - component: {fileID: 975076385}
   - component: {fileID: 975076387}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Wall (12)
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -11705,6 +11859,10 @@ PrefabInstance:
     - target: {fileID: 1350420266742754, guid: d17b674f2da923a4a8de18ab0915148c, type: 3}
       propertyPath: m_Name
       value: Wardrobe1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1350420266742754, guid: d17b674f2da923a4a8de18ab0915148c, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1350420266742754, guid: d17b674f2da923a4a8de18ab0915148c, type: 3}
       propertyPath: m_IsActive
@@ -12343,7 +12501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1080465153}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Grabable
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -13009,7 +13167,7 @@ GameObject:
   - component: {fileID: 1152499348}
   - component: {fileID: 1152499347}
   - component: {fileID: 1152499349}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Wall (5)
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -13265,7 +13423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1971964791502700, guid: 335e5cedc041a614c86ff1f3feee693a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1971964791502700, guid: 335e5cedc041a614c86ff1f3feee693a, type: 3}
       propertyPath: m_TagString
@@ -13314,7 +13472,7 @@ PrefabInstance:
     - target: {fileID: 1111395177948149367, guid: 335e5cedc041a614c86ff1f3feee693a,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1111395177948149367, guid: 335e5cedc041a614c86ff1f3feee693a,
         type: 3}
@@ -13386,7 +13544,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 782194672}
+    m_TransformParent: {fileID: 2131302727}
     m_Modifications:
     - target: {fileID: 1117475491070412, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_Name
@@ -13394,7 +13552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1117475491070412, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1117475491070412, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_IsActive
@@ -13406,7 +13564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1686819033116808, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1686819033116808, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_TagString
@@ -13414,7 +13572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1723922470236256, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1723922470236256, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_TagString
@@ -13422,7 +13580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.5305862
+      value: 4.5305867
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalScale.y
@@ -13430,19 +13588,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.5305862
+      value: 4.5305867
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.151
+      value: 2.1510015
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.1115646
+      value: 5.111565
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.038
+      value: 19.03801
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13454,7 +13612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.13316397
+      value: -0.13316394
       objectReference: {fileID: 0}
     - target: {fileID: 4813871595721988, guid: e0920e26560ad694c9c66d6042fec73b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -13608,7 +13766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5e41be4d8a88922419f427a620c8de35, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5e41be4d8a88922419f427a620c8de35, type: 3}
       propertyPath: m_TagString
@@ -13722,7 +13880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 8cafc167211933b49b04b6c84e393405, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 8cafc167211933b49b04b6c84e393405, type: 3}
       propertyPath: m_IsActive
@@ -14430,6 +14588,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pottery_Cup3
       objectReference: {fileID: 0}
+    - target: {fileID: 1160778861558820, guid: 6fa6e51955a37144cb19b38cfc0f8b29, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588052530784550, guid: 6fa6e51955a37144cb19b38cfc0f8b29, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859082678479536, guid: 6fa6e51955a37144cb19b38cfc0f8b29, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 4126734583744010, guid: 6fa6e51955a37144cb19b38cfc0f8b29, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -14509,6 +14679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupboard2
       objectReference: {fileID: 0}
+    - target: {fileID: 1317325936783198, guid: bd842f14444b2634da3ce3e8cf0d4c2e, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 4141650896911832, guid: bd842f14444b2634da3ce3e8cf0d4c2e, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.63
@@ -14584,9 +14758,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 200836619}
     m_Modifications:
+    - target: {fileID: 1235923389617392, guid: 0b79684cfbbd15a4297ebc446bf6cf6e, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1308802768523568, guid: 0b79684cfbbd15a4297ebc446bf6cf6e, type: 3}
       propertyPath: m_Name
       value: Pottery_Teapot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308802768523568, guid: 0b79684cfbbd15a4297ebc446bf6cf6e, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510318731136398, guid: 0b79684cfbbd15a4297ebc446bf6cf6e, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4107070260038130, guid: 0b79684cfbbd15a4297ebc446bf6cf6e, type: 3}
       propertyPath: m_LocalScale.x
@@ -15072,7 +15258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ccc7f3b6a77dd054da91562738eaed38, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ccc7f3b6a77dd054da91562738eaed38, type: 3}
       propertyPath: m_IsActive
@@ -15575,9 +15761,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 200836619}
     m_Modifications:
+    - target: {fileID: 1090521852117426, guid: 1435cdc4b4157ed439e7cd629817e70e, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1110021279721422, guid: 1435cdc4b4157ed439e7cd629817e70e, type: 3}
       propertyPath: m_Name
       value: Book_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110021279721422, guid: 1435cdc4b4157ed439e7cd629817e70e, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411485261305738, guid: 1435cdc4b4157ed439e7cd629817e70e, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4306266496758426, guid: 1435cdc4b4157ed439e7cd629817e70e, type: 3}
       propertyPath: m_LocalScale.x
@@ -15805,7 +16003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1295412704638594, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4282350128905190, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_LocalScale.x
@@ -16003,7 +16201,7 @@ GameObject:
   - component: {fileID: 1326325580}
   - component: {fileID: 1326325582}
   - component: {fileID: 1326325581}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: target
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -16089,7 +16287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d43385974fdafec47aee981f477a03e4, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d43385974fdafec47aee981f477a03e4, type: 3}
       propertyPath: m_TagString
@@ -16740,6 +16938,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table1A
       objectReference: {fileID: 0}
+    - target: {fileID: 1142549406783924, guid: d99708afac5b6914d9e3b20f72157198, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497967519540912, guid: d99708afac5b6914d9e3b20f72157198, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1522376537579380, guid: d99708afac5b6914d9e3b20f72157198, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 4758985979490304, guid: d99708afac5b6914d9e3b20f72157198, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -16970,7 +17180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: fb04af89a2acb224facc592e9d04b57b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: fb04af89a2acb224facc592e9d04b57b, type: 3}
       propertyPath: m_TagString
@@ -17314,7 +17524,7 @@ PrefabInstance:
     - target: {fileID: 526264474456500771, guid: 015166512b2d4cf48b07dac3a488f7ee,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 526264474456500771, guid: 015166512b2d4cf48b07dac3a488f7ee,
         type: 3}
@@ -17533,7 +17743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1463800531}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: StaticObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17675,7 +17885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1885991436826414, guid: 9efa763cf4184e340aa68a7f61c4f922, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1885991436826414, guid: 9efa763cf4184e340aa68a7f61c4f922, type: 3}
       propertyPath: m_IsActive
@@ -18124,7 +18334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 3b963fe355a4e7844af6d0c333578949, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 3b963fe355a4e7844af6d0c333578949, type: 3}
       propertyPath: m_IsActive
@@ -18797,7 +19007,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1585144210}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Anamorphic
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -18838,7 +19048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ba90f0dd744d76b4ab61c8d693b3ecef, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ba90f0dd744d76b4ab61c8d693b3ecef, type: 3}
       propertyPath: m_IsActive
@@ -19548,7 +19758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034991242859298, guid: 7dfc58255c242024c89d9dd8d016580f, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1034991242859298, guid: 7dfc58255c242024c89d9dd8d016580f, type: 3}
       propertyPath: m_TagString
@@ -19640,7 +19850,7 @@ GameObject:
   - component: {fileID: 1614007372}
   - component: {fileID: 1614007371}
   - component: {fileID: 1614007373}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Wall (4)
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -20734,7 +20944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1697640419
 Transform:
   m_ObjectHideFlags: 0
@@ -21065,7 +21275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1295412704638594, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4282350128905190, guid: 8973defc0d284dd44ba47d85370eb344, type: 3}
       propertyPath: m_LocalScale.x
@@ -21147,6 +21357,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp_Table_Apt_01
       objectReference: {fileID: 0}
+    - target: {fileID: 117895243694500892, guid: 3e7be61a66e072c44bc2cc6bbee79f45,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 481405169795443332, guid: 3e7be61a66e072c44bc2cc6bbee79f45,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785222585947242794, guid: 3e7be61a66e072c44bc2cc6bbee79f45,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 6124730947378653682, guid: 3e7be61a66e072c44bc2cc6bbee79f45,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -21216,6 +21441,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311602866272692118, guid: 3e7be61a66e072c44bc2cc6bbee79f45,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172612555637424203, guid: 3e7be61a66e072c44bc2cc6bbee79f45,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22520,7 +22755,7 @@ GameObject:
   - component: {fileID: 1791776779}
   - component: {fileID: 1791776778}
   - component: {fileID: 1791776780}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Wall (10)
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -22625,7 +22860,7 @@ GameObject:
   - component: {fileID: 1794594821}
   - component: {fileID: 1794594820}
   - component: {fileID: 1794594822}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Wall (8)
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -22954,6 +23189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carpet1
       objectReference: {fileID: 0}
+    - target: {fileID: 1108126329338936, guid: de43d760b43e3e243bc1a6a81c8a344c, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 4705024232133124, guid: de43d760b43e3e243bc1a6a81c8a344c, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -23141,7 +23380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1152474844465036, guid: 49e227f9b9713f14ebbade52034b9737, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1152474844465036, guid: 49e227f9b9713f14ebbade52034b9737, type: 3}
       propertyPath: m_TagString
@@ -23149,7 +23388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1341201538412614, guid: 49e227f9b9713f14ebbade52034b9737, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1341201538412614, guid: 49e227f9b9713f14ebbade52034b9737, type: 3}
       propertyPath: m_TagString
@@ -23157,7 +23396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1724438483394642, guid: 49e227f9b9713f14ebbade52034b9737, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1724438483394642, guid: 49e227f9b9713f14ebbade52034b9737, type: 3}
       propertyPath: m_TagString
@@ -23353,7 +23592,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1021839405193646, guid: 8c084b17e9fd6b344ad65351605ac7ce, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1021839405193646, guid: 8c084b17e9fd6b344ad65351605ac7ce, type: 3}
       propertyPath: m_TagString
@@ -23361,7 +23600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1504333176919246, guid: 8c084b17e9fd6b344ad65351605ac7ce, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1504333176919246, guid: 8c084b17e9fd6b344ad65351605ac7ce, type: 3}
       propertyPath: m_TagString
@@ -23373,7 +23612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1947369653435966, guid: 8c084b17e9fd6b344ad65351605ac7ce, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1947369653435966, guid: 8c084b17e9fd6b344ad65351605ac7ce, type: 3}
       propertyPath: m_IsActive
@@ -23465,9 +23704,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 200836619}
     m_Modifications:
+    - target: {fileID: 1030218144558036, guid: b24e3bf56901470459477cc1f8b08d49, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097550797135292, guid: b24e3bf56901470459477cc1f8b08d49, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1747305232838386, guid: b24e3bf56901470459477cc1f8b08d49, type: 3}
       propertyPath: m_Name
       value: Book_05 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747305232838386, guid: b24e3bf56901470459477cc1f8b08d49, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4989407200013122, guid: b24e3bf56901470459477cc1f8b08d49, type: 3}
       propertyPath: m_LocalScale.x
@@ -23955,7 +24206,7 @@ GameObject:
   - component: {fileID: 1896401884}
   - component: {fileID: 1896401883}
   - component: {fileID: 1896401885}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: AnamorphicSpawnObject
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -24393,9 +24644,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 200836619}
     m_Modifications:
+    - target: {fileID: 1021839405193646, guid: 8c084b17e9fd6b344ad65351605ac7ce, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504333176919246, guid: 8c084b17e9fd6b344ad65351605ac7ce, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1947369653435966, guid: 8c084b17e9fd6b344ad65351605ac7ce, type: 3}
       propertyPath: m_Name
       value: Table2A
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947369653435966, guid: 8c084b17e9fd6b344ad65351605ac7ce, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4249731442208788, guid: 8c084b17e9fd6b344ad65351605ac7ce, type: 3}
       propertyPath: m_LocalScale.x
@@ -25543,6 +25806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupboard1
       objectReference: {fileID: 0}
+    - target: {fileID: 1473685992697024, guid: 381f30c110f6eee46b6005f3a12dd79a, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 4566516764784620, guid: 381f30c110f6eee46b6005f3a12dd79a, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -25624,7 +25891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 199a1bc5f30f5354f96424dc187898d6, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 199a1bc5f30f5354f96424dc187898d6, type: 3}
       propertyPath: m_TagString
@@ -25830,9 +26097,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2131302727}
     m_Modifications:
+    - target: {fileID: 1670425399430898, guid: 28d3a1d9c256b4d4b80c8509f7fde904, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1709069190711778, guid: 28d3a1d9c256b4d4b80c8509f7fde904, type: 3}
       propertyPath: m_Name
       value: Book_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709069190711778, guid: 28d3a1d9c256b4d4b80c8509f7fde904, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729770856580936, guid: 28d3a1d9c256b4d4b80c8509f7fde904, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4585419917190016, guid: 28d3a1d9c256b4d4b80c8509f7fde904, type: 3}
       propertyPath: m_LocalScale.x
@@ -26982,7 +27261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ed2f96078a13e4b46ad3ca51eebf67fa, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ed2f96078a13e4b46ad3ca51eebf67fa, type: 3}
       propertyPath: m_TagString
@@ -27091,7 +27370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1371996953314278, guid: 9384aa05486ff1d4ba7978dec946aa28, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1371996953314278, guid: 9384aa05486ff1d4ba7978dec946aa28, type: 3}
       propertyPath: m_TagString
@@ -27099,7 +27378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1459707785737914, guid: 9384aa05486ff1d4ba7978dec946aa28, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1459707785737914, guid: 9384aa05486ff1d4ba7978dec946aa28, type: 3}
       propertyPath: m_TagString
@@ -27107,7 +27386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1947474990917500, guid: 9384aa05486ff1d4ba7978dec946aa28, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1947474990917500, guid: 9384aa05486ff1d4ba7978dec946aa28, type: 3}
       propertyPath: m_TagString
@@ -27196,7 +27475,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2071955301}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Door
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -27262,7 +27541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 148596, guid: e7ea1c45eb0a04146bdc7aae38eb4c36, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 148596, guid: e7ea1c45eb0a04146bdc7aae38eb4c36, type: 3}
       propertyPath: m_TagString
@@ -27461,7 +27740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2131302727}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: ActiveObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27481,6 +27760,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 761403687}
+  - {fileID: 1174027208}
   - {fileID: 737110321}
   - {fileID: 949679843}
   - {fileID: 154194165}
@@ -27713,7 +27994,7 @@ GameObject:
   - component: {fileID: 753916329127925425}
   - component: {fileID: 753916329127925424}
   - component: {fileID: 753916329127925428}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Book_07(Clone)
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -28130,7 +28411,7 @@ PrefabInstance:
     - target: {fileID: 232534741456080389, guid: 11ee24238752a7246a2984e4ef4b9321,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 232534741456080389, guid: 11ee24238752a7246a2984e4ef4b9321,
         type: 3}
@@ -28140,7 +28421,7 @@ PrefabInstance:
     - target: {fileID: 2513908225614653433, guid: 11ee24238752a7246a2984e4ef4b9321,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 2513908225614653433, guid: 11ee24238752a7246a2984e4ef4b9321,
         type: 3}
@@ -28205,7 +28486,7 @@ PrefabInstance:
     - target: {fileID: 2748283081130617474, guid: 11ee24238752a7246a2984e4ef4b9321,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 2748283081130617474, guid: 11ee24238752a7246a2984e4ef4b9321,
         type: 3}
@@ -28220,7 +28501,7 @@ PrefabInstance:
     - target: {fileID: 7790109101733651467, guid: 11ee24238752a7246a2984e4ef4b9321,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 7790109101733651467, guid: 11ee24238752a7246a2984e4ef4b9321,
         type: 3}
@@ -28230,7 +28511,7 @@ PrefabInstance:
     - target: {fileID: 8721414495613338628, guid: 11ee24238752a7246a2984e4ef4b9321,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 8721414495613338628, guid: 11ee24238752a7246a2984e4ef4b9321,
         type: 3}
@@ -28310,7 +28591,7 @@ GameObject:
   - component: {fileID: 1835534459610583004}
   - component: {fileID: 3589626544317141605}
   - component: {fileID: 5466379455318829750}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Camera
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -28607,7 +28888,7 @@ GameObject:
   - component: {fileID: 5330955150665695463}
   - component: {fileID: 5330955150665695462}
   - component: {fileID: 5330955150665695461}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Book_03(Clone)
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -29051,7 +29332,7 @@ GameObject:
   - component: {fileID: 6043139364037143396}
   - component: {fileID: 6043139364037143395}
   - component: {fileID: 6043139364037143399}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Book_06(Clone)
   m_TagString: Stage3
   m_Icon: {fileID: 0}
@@ -29680,7 +29961,7 @@ PrefabInstance:
     - target: {fileID: 526264474456500771, guid: 015166512b2d4cf48b07dac3a488f7ee,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 526264474456500771, guid: 015166512b2d4cf48b07dac3a488f7ee,
         type: 3}
@@ -29785,7 +30066,7 @@ GameObject:
   - component: {fileID: 8191458291893411620}
   - component: {fileID: 8191458291893411618}
   - component: {fileID: 8191458291893411617}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Paint2_14 (2)
   m_TagString: Stage3
   m_Icon: {fileID: 0}
