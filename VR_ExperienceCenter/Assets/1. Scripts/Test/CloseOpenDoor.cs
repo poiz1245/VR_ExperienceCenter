@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
+[RequireComponent(typeof(XRSimpleInteractable))]
 public class CloseOpenDoor : MonoBehaviour
 {
     [SerializeField] GameObject player;
@@ -12,6 +13,8 @@ public class CloseOpenDoor : MonoBehaviour
     [SerializeField] float minDistance;
     [SerializeField] Vector3 openRotation;
     [SerializeField] Vector3 closeRotation;
+
+    [SerializeField] GameObject activeObject;
 
     //XRGrabInteractable interactable;
     XRSimpleInteractable simpleInteractable;
@@ -47,6 +50,10 @@ public class CloseOpenDoor : MonoBehaviour
             if (!isOpen)
             {
                 gameObject.transform.DORotate(openRotation, duration).SetEase(Ease.InQuad);
+                if(activeObject!= null)
+                {
+                    activeObject.SetActive(true);
+                }
                 isOpen = true;
             }
             else

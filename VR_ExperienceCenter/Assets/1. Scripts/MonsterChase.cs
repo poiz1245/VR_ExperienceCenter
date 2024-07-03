@@ -15,7 +15,7 @@ public class MonsterChase : MonoBehaviour
     bool startChase = false;
     void Update()
     {
-        if (door.isOpen)
+        if (door != null && door.isOpen)
         {
             startChase = true;
         }
