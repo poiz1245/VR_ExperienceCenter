@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.4
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1314211, g: 0.12911491, b: 0.12945463, a: 0.4}
+  m_IndirectSpecularColor: {r: 0.13190444, g: 0.12930505, b: 0.13008094, a: 0.4}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2783,7 +2783,7 @@ MonoBehaviour:
     IsHidden: 0
 --- !u!4 &235942826
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -16464,7 +16464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1221294924}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18664,7 +18664,7 @@ GameObject:
   - component: {fileID: 1313646924}
   - component: {fileID: 1313646926}
   - component: {fileID: 1313646925}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Setting
   m_Icon: {fileID: 0}
@@ -35086,6 +35086,11 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3696903397367437612, guid: 7852930aa6a3f494aaf2b6d749627e9c,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 3924947577216672039, guid: 7852930aa6a3f494aaf2b6d749627e9c,
         type: 3}
       propertyPath: m_Name
@@ -37251,7 +37256,7 @@ GameObject:
   - component: {fileID: 9086136312782127704}
   - component: {fileID: 9086136312782127705}
   - component: {fileID: 9086136312782127706}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TV Display
   m_TagString: Stage2
   m_Icon: {fileID: 0}
