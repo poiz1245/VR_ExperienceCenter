@@ -8104,7 +8104,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1885991436826414, guid: 9efa763cf4184e340aa68a7f61c4f922,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1361824889}
   m_SourcePrefab: {fileID: 100100000, guid: 9efa763cf4184e340aa68a7f61c4f922, type: 3}
 --- !u!4 &1361824887 stripped
 Transform:
@@ -8112,6 +8116,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1361824886}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1361824888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1885991436826414, guid: 9efa763cf4184e340aa68a7f61c4f922,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361824886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1361824889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361824888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389187607c944514c9a842ba0f78432f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  triggerButton: {fileID: 0}
+  minDistance: 0
+  openRotation: {x: 0, y: 0, z: 0}
+  closeRotation: {x: 0, y: 0, z: 0}
 --- !u!1001 &1366240707
 PrefabInstance:
   m_ObjectHideFlags: 0
