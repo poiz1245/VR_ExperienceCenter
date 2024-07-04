@@ -53,7 +53,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        PlayerTag();
+        if (monster != null)
+        {
+            PlayerTag();
+        }
     }
     void PlayerTag()
     {
