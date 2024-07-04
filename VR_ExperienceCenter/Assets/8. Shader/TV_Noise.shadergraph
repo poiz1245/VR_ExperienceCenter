@@ -698,7 +698,7 @@
         "m_Guid": ""
     },
     "isMainTexture": false,
-    "useTilingAndOffset": false,
+    "useTilingAndOffset": true,
     "m_Modifiable": true,
     "m_DefaultType": 0
 }
@@ -938,7 +938,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Scale",
     "m_StageCapability": 3,
-    "m_Value": 1000.0,
+    "m_Value": 800.0,
     "m_DefaultValue": 10.0,
     "m_Labels": []
 }
@@ -1222,10 +1222,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1280.1800537109375,
-            "y": 777.6300048828125,
-            "width": 0.0,
-            "height": 0.0
+            "x": -1237.0,
+            "y": 664.0,
+            "width": 124.0,
+            "height": 173.0
         }
     },
     "m_Slots": [
@@ -1321,7 +1321,7 @@
             "b": 0.0,
             "a": 0.0
         },
-        "ctime0": 0,
+        "ctime0": 25058,
         "ctime1": 65535,
         "ctime2": 0,
         "ctime3": 0,
