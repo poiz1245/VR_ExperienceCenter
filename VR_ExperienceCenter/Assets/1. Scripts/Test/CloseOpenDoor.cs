@@ -14,7 +14,7 @@ public class CloseOpenDoor : MonoBehaviour
     [SerializeField] Vector3 openRotation;
     [SerializeField] Vector3 closeRotation;
 
-    [SerializeField] GameObject activeObject;
+    //[SerializeField] GameObject activeObject;
 
     //XRGrabInteractable interactable;
     XRSimpleInteractable simpleInteractable;
@@ -50,10 +50,10 @@ public class CloseOpenDoor : MonoBehaviour
             if (!isOpen)
             {
                 gameObject.transform.DORotate(openRotation, duration).SetEase(Ease.InQuad);
-                if(activeObject!= null)
+                /*if(activeObject!= null)
                 {
                     activeObject.SetActive(true);
-                }
+                }*/
                 isOpen = true;
             }
             else
