@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] string currentSceneName;
 
-    [SerializeField] float maxSoundVolume;
+    public float maxSoundVolume;
     [SerializeField] ScaleFromMicrophone scaleFromMicrophone;
 
     [SerializeField] TimelineAsset playerDie;
