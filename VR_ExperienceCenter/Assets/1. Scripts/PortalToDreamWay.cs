@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class PortalToDreamWay : MonoBehaviour
     new Collider collider;
     [SerializeField] string sceneName;
     [SerializeField] OpenDoor openDoor;
+    [SerializeField] Camera cinemachineCamera;
 
     private void Start()
     {
@@ -15,7 +17,7 @@ public class PortalToDreamWay : MonoBehaviour
     }
     private void Update()
     {
-        if (openDoor.isOpen)
+        if (openDoor != null && openDoor.isOpen)
         {
             collider.isTrigger = true;
         }
@@ -24,6 +26,10 @@ public class PortalToDreamWay : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if (cinemachineCamera != null)
+            {
+                cinemachineCamera.enabled = false;
+            }
             Camera.main.enabled = false;
             SceneManager.LoadScene(sceneName);
         }

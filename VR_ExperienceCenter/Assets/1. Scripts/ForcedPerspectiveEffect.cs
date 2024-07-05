@@ -53,7 +53,6 @@ public class ForcedPerspectiveEffect : MonoBehaviour
             collider.isTrigger = false;
 
             renderer.materials = unlitMaterial;
-            //transform.position = hitObject.hitPoint;
 
             float distance = Vector3.Distance(mainCamera.transform.position, hitObject.hitPoint);
             AdjustScale(distance);
@@ -63,7 +62,6 @@ public class ForcedPerspectiveEffect : MonoBehaviour
 
             transform.position = newCubePosition;
 
-            print(transform.position);
             gameObject.layer = 0;
 
             isGrab = false;
@@ -72,7 +70,6 @@ public class ForcedPerspectiveEffect : MonoBehaviour
 
     void AdjustScale(float distance)
     {
-        //float distance = Vector3.Distance(mainCamera.transform.position, transform.position);
         float scaleFactor = CalculateScaleFactor(distance);
 
         Vector3 previousScale = transform.localScale; //크기 조정되기 전 스케일
