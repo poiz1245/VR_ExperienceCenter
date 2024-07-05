@@ -26,7 +26,7 @@ public class DeadZoneMonster : MonoBehaviour
         {
             //영상 재생
             GameOver();
-            StartCoroutine(LoadSceneWithDelay(currentSceneName, 1.5f));
+            StartCoroutine(LoadSceneWithDelay(currentSceneName, 2.5f));
 
         }
     }
