@@ -15,7 +15,8 @@ public class Menu : MonoBehaviour
         Main,
         Stage4,
         Stage5,
-        Chase
+        Chase,
+        Stage6
     }
 
     public SceneName sceneName;
