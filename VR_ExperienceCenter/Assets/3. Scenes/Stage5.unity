@@ -15170,6 +15170,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Interaction Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 1544023212289517666, guid: c7359411cc25cd540b75d18823945839,
+        type: 3}
+      propertyPath: m_LeftHandTurnAction.m_UseReference
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1802000128821915383, guid: c7359411cc25cd540b75d18823945839,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15225,6 +15230,16 @@ PrefabInstance:
       propertyPath: m_XROrigin
       value: 
       objectReference: {fileID: 264519176}
+    - target: {fileID: 6071243353937173609, guid: c7359411cc25cd540b75d18823945839,
+        type: 3}
+      propertyPath: m_LeftHandMoveAction.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071243353937173609, guid: c7359411cc25cd540b75d18823945839,
+        type: 3}
+      propertyPath: m_RightHandMoveAction.m_UseReference
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
