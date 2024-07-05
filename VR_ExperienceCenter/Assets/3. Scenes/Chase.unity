@@ -39926,9 +39926,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba51c2cb1a2b214185740c1241554f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
+  sceneName: mainChase
   openDoor: {fileID: 0}
-  cinemachineCamera: {fileID: 0}
+  cinemachineCamera: {fileID: 1895913520}
 --- !u!1001 &995949584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73644,31 +73644,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5209482795776137613, guid: d8749a6936e76ad459d3109aae3b1950,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.101997375
-      objectReference: {fileID: 0}
-    - target: {fileID: 5209482795776137613, guid: d8749a6936e76ad459d3109aae3b1950,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.46380997
-      objectReference: {fileID: 0}
-    - target: {fileID: 5209482795776137613, guid: d8749a6936e76ad459d3109aae3b1950,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.087771304
-      objectReference: {fileID: 0}
-    - target: {fileID: 5209482795776137613, guid: d8749a6936e76ad459d3109aae3b1950,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.09362332
-      objectReference: {fileID: 0}
-    - target: {fileID: 5209482795776137613, guid: d8749a6936e76ad459d3109aae3b1950,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.0133791845
       objectReference: {fileID: 0}
     - target: {fileID: 8040653589008645829, guid: d8749a6936e76ad459d3109aae3b1950,
         type: 3}
