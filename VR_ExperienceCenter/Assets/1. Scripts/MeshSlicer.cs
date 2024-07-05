@@ -66,7 +66,9 @@ public class MeshSlicer : MonoBehaviour
         MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
         collider.convex = true;
 
-        ForcedPerspectiveEffect forcedPerspectiveEffect = slicedObject.AddComponent<ForcedPerspectiveEffect>();
+        SlicedObject obj = slicedObject.AddComponent<SlicedObject>();
+        obj.isSliced = true;
+        /*ForcedPerspectiveEffect forcedPerspectiveEffect = slicedObject.AddComponent<ForcedPerspectiveEffect>();
         XRGrabInteractable xrGrabInteractable = slicedObject.GetComponent<XRGrabInteractable>();
         forcedPerspectiveEffect = slicedObject.GetComponent<ForcedPerspectiveEffect>();
         SlicedObject targetObject = originalObject.GetComponent<SlicedObject>();
@@ -82,7 +84,7 @@ public class MeshSlicer : MonoBehaviour
         forcedPerspectiveEffect.afterGrabMaterials = slicedObjectFirstRenderMaterial;
         forcedPerspectiveEffect.unlitMaterial = slicedObjectBaseMaterial;
         forcedPerspectiveEffect.minScale = targetObject.minScale;
-        forcedPerspectiveEffect.maxScale = targetObject.maxScale;
+        forcedPerspectiveEffect.maxScale = targetObject.maxScale;*/
 
 
         //int layer = Mathf.RoundToInt(Mathf.Log(sliceableLayer.value, 2));
