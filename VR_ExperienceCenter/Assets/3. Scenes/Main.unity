@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.4
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13190444, g: 0.12930505, b: 0.13008094, a: 0.4}
+  m_IndirectSpecularColor: {r: 0.1314211, g: 0.12911491, b: 0.12945463, a: 0.4}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2788,7 +2788,7 @@ MonoBehaviour:
     IsHidden: 0
 --- !u!4 &235942826
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -11522,6 +11522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Stage4
   openDoor: {fileID: 1159930341}
+  cinemachineCamera: {fileID: 0}
 --- !u!1 &841152142
 GameObject:
   m_ObjectHideFlags: 0
@@ -23555,7 +23556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1697640419
 Transform:
   m_ObjectHideFlags: 0
@@ -34651,7 +34652,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5823002052797481472, guid: 7852930aa6a3f494aaf2b6d749627e9c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8562652783841418654}
   m_SourcePrefab: {fileID: 100100000, guid: 7852930aa6a3f494aaf2b6d749627e9c, type: 3}
 --- !u!23 &6025538024868013748
 MeshRenderer:
@@ -35522,6 +35527,29 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5830291460356481726}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8562652783841418654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8562652783841418653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 487ad968d3d652f4180f31812a393ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 1326325580}
+  finalObject: {fileID: 1896401878}
+  anamorphicCamera: {fileID: 3589626544317141605}
+  acceptableAngle: 5
+  acceptableDistance: 5
+  scatteredImages:
+  - {fileID: 1109433099}
+  - {fileID: 120495142}
+  originalImage:
+  - {fileID: 2100000, guid: 614984bb37b3a1d40849947b77505957, type: 2}
+  - {fileID: 2100000, guid: 3d24a9308a65f76499210f18b18b69fc, type: 2}
 --- !u!4 &8717312889337582466
 Transform:
   m_ObjectHideFlags: 0

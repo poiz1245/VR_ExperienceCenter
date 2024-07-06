@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/3. Scenes/Chase.unity
     guid: 9dc755f5901c71d41a1d9b440e516c2a
   - enabled: 1
+    path: Assets/3. Scenes/MainChase.unity
+    guid: e34b556f57e2ed241b702a18615ccaa8
+  - enabled: 1
     path: Assets/3. Scenes/Stage5.unity
     guid: b6bba79d66debba43ba2d0cf382ae02b
   - enabled: 1

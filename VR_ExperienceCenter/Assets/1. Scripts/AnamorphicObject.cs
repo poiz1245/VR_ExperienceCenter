@@ -8,12 +8,14 @@ public class AnamorphicObject : MonoBehaviour
 {
     XRGrabInteractable interactable;
     new Collider collider;
+    Rigidbody rigid;
 
     bool isGrab;
     void Start()
     {
         interactable = GetComponent<XRGrabInteractable>();
         collider = GetComponent<Collider>();
+        rigid = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -21,13 +23,15 @@ public class AnamorphicObject : MonoBehaviour
         if (interactable.isSelected && !isGrab)
         {
             isGrab = true;
+            rigid.useGravity = true;
         }
         else if(!interactable.isSelected && isGrab)
         {
             isGrab = false;
+            rigid.useGravity = true;
         }
 
-        if(isGrab)
+        if (isGrab)
         {
             collider.isTrigger = true;
         }
