@@ -1,12 +1,13 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 
-[RequireComponent(typeof(XRSimpleInteractable))]
-public class CloseOpenDoor : MonoBehaviour
+public class GameStart : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] InputActionReference triggerButton;
@@ -15,7 +16,6 @@ public class CloseOpenDoor : MonoBehaviour
     [SerializeField] Vector3 closeRotation;
 
     XRSimpleInteractable simpleInteractable;
-    public bool isOpen { get; private set; } 
 
     private void Awake()
     {
@@ -23,7 +23,6 @@ public class CloseOpenDoor : MonoBehaviour
     }
     private void Start()
     {
-        isOpen = false;
         triggerButton.action.performed += TriggerButtonClicked;
     }
 
@@ -41,17 +40,15 @@ public class CloseOpenDoor : MonoBehaviour
 
         if (dist < minDistance)
         {
-            if (!isOpen)
-            {
-                gameObject.transform.DORotate(openRotation, duration).SetEase(Ease.InQuad);
-                isOpen = true;
-            }
-            else
-            {
-                gameObject.transform.DORotate(closeRotation, duration).SetEase(Ease.InQuad);
-                isOpen = false;
-            }
+            gameObject.transform.DORotate(openRotation, duration).SetEase(Ease.InQuad);
+            StartCoroutine(LoadScene());
         }
+    }
 
+    IEnumerator LoadScene()
+    {
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene("Main");
     }
 }
