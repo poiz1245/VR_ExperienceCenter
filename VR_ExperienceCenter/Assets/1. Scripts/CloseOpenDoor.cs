@@ -13,6 +13,7 @@ public class CloseOpenDoor : MonoBehaviour
     [SerializeField] float minDistance;
     [SerializeField] Vector3 openRotation;
     [SerializeField] Vector3 closeRotation;
+    [SerializeField] AudioSource audioSource;
 
     XRSimpleInteractable simpleInteractable;
     public bool isOpen { get; private set; } 
@@ -44,11 +45,13 @@ public class CloseOpenDoor : MonoBehaviour
             if (!isOpen)
             {
                 gameObject.transform.DORotate(openRotation, duration).SetEase(Ease.InQuad);
+                audioSource.Play();
                 isOpen = true;
             }
             else
             {
                 gameObject.transform.DORotate(closeRotation, duration).SetEase(Ease.InQuad);
+                audioSource.Play();
                 isOpen = false;
             }
         }

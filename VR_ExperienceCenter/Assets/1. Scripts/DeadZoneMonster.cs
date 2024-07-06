@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,7 @@ public class DeadZoneMonster : MonoBehaviour
     [SerializeField] PlayableDirector playableDirector;
     [SerializeField] Camera timelineCamera;
 
+    [SerializeField] AudioSource bgm;
     
     private void Update()
     {
@@ -25,6 +27,10 @@ public class DeadZoneMonster : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //영상 재생
+            if (bgm != null)
+            {
+                bgm.Stop();
+            }
             GameOver();
             StartCoroutine(LoadSceneWithDelay(currentSceneName, 2.5f));
 
