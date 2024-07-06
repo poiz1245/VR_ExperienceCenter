@@ -21,6 +21,7 @@ public class FallingSound : MonoBehaviour
         {
             return;
         }
+
         deltaScale = transform.localScale.x / startScale.x;
         if (deltaScale <= 1)
         {
