@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -13,10 +14,11 @@ public class MonsterNavMesh : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] TimelineAsset playerDie;
     [SerializeField] PlayableDirector playableDirector;
-    [SerializeField] Camera timelineCamera;
+    [SerializeField] CinemachineVirtualCamera virtualCamera;
+    //[SerializeField] Camera timelineCamera;
 
     bool breachingComplete = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -48,7 +50,7 @@ public class MonsterNavMesh : MonoBehaviour
     {
         //게임오버
         Camera.main.enabled = false;
-        timelineCamera.enabled = true;
+        virtualCamera.Priority = 10;
         playableDirector.Play();
     }
     void PlayerTag()

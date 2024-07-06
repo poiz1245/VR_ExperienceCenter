@@ -22,7 +22,7 @@ public class RightController : MonoBehaviour
 
     private void Start()
     {
-        grabButton.action.performed += ObjectGrab;
+        //grabButton.action.performed += ObjectGrab;
         primaryButton.action.performed += OnJump;
     }
     private void Update()
@@ -41,8 +41,8 @@ public class RightController : MonoBehaviour
             verticalVelocity = jumpForce;
         }
     }
-    public void ObjectGrab(InputAction.CallbackContext obj) // 큐브 잡고 돌릴 때 사용
-    {
-        rightControllerPosition = transform.position;
-    }
+    //public void ObjectGrab(InputAction.CallbackContext obj) // 큐브 잡고 돌릴 때 사용
+    //{
+        //rightControllerPosition = transform.position;
+    //}
 }
