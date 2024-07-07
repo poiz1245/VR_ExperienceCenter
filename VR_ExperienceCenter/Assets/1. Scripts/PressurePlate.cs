@@ -13,7 +13,7 @@ public class PressurePlate : MonoBehaviour
         if (collision.gameObject.CompareTag("Key"))
         {
             gameObject.transform.DOLocalMove(new Vector3(0,0.001f, 0), 1).SetEase(Ease.InQuad);
-            barrier.transform.DOLocalMove(new Vector3(1.25f, -2.5f, 8.7f), 3).SetEase(Ease.OutQuad);
+            barrier.transform.DOLocalMove(new Vector3(1.04f, -2.41f, 8.8f), 3).SetEase(Ease.OutQuad);
         }
     }
 
