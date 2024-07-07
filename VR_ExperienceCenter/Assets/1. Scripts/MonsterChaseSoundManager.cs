@@ -21,7 +21,6 @@ public class MonsterChaseSoundManager : MonoBehaviour
             case 0:
                 audioSource.Stop();
                 return;
-                break;
             case 1:
                 audioSource.clip = audioClips[0];
                 break;

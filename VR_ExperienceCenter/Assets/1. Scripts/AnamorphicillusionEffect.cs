@@ -9,7 +9,9 @@ public class IllusionEffect : MonoBehaviour
     public float acceptableDistance;
     public GameObject[] scatteredImages;
     public Material[] originalImage;
-    
+
+    [SerializeField] AudioSource audioSource;
+
     Camera mainCamera;
 
     private void Start()
@@ -30,6 +32,7 @@ public class IllusionEffect : MonoBehaviour
                 scatteredObject.material = originalImage[i];
             }
             
+            audioSource.Play();
             finalObject.SetActive(true);
         }
         /*else

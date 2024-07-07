@@ -19,7 +19,7 @@ public class RightController : MonoBehaviour
 
     public Vector3 rightControllerPosition;
 
-
+    bool jumping = false;
     private void Start()
     {
         //grabButton.action.performed += ObjectGrab;

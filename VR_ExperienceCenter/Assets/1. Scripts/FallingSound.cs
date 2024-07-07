@@ -1,23 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class FallingSound : MonoBehaviour
 {
     [SerializeField] AudioClip[] audioClips;
     [SerializeField] AudioSource audioSources;
 
+    Rigidbody rigid;
+    XRGrabInteractable interactable;
     float deltaScale;
     Vector3 startScale;
 
     private void Start()
     {
+        rigid = GetComponent<Rigidbody>();
+        interactable = GetComponent<XRGrabInteractable>();
         startScale = transform.localScale;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || interactable.isSelected || rigid.velocity.magnitude <= 0f)
         {
             return;
         }

@@ -42,7 +42,7 @@ public class ForcedPerspectiveEffect : MonoBehaviour
             gameObject.layer = 11;
 
             collider.isTrigger = true;
-
+            
             cubeSize = GetComponent<Renderer>().bounds.size;
             initialDistance = Vector3.Distance(mainCamera.transform.position, transform.position);
             renderer.materials = afterGrabMaterials;

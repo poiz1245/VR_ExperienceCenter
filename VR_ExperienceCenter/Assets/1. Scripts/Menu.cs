@@ -16,6 +16,7 @@ public class Menu : MonoBehaviour
         Stage4,
         Stage5,
         Chase,
+        MainChase,
         Stage6
     }
 
