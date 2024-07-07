@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] string currentSceneName;
     [SerializeField] MonsterChase monster;
+    [SerializeField] Monster outSideMonster;
 
     [Header("SoundWarning")]
     [SerializeField] ScaleFromMicrophone scaleFromMicrophone;
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayableDirector playableDirector;
     [SerializeField] Camera timelineCamera;
 
-  
+
 
     Camera mainCamera;
 
@@ -60,7 +61,7 @@ public class GameManager : MonoBehaviour
             ChaseStart();
         }
 
-        if (monster != null)
+        if (monster != null || outSideMonster != null)
         {
             PlayerTag();
         }
@@ -81,7 +82,13 @@ public class GameManager : MonoBehaviour
     }
     void PlayerTag()
     {
-        if (monster.playerTag)
+        if (monster != null && monster.playerTag)
+        {
+            GameOver();
+            StartCoroutine(LoadSceneWithDelay(currentSceneName, 1.5f));
+        }
+
+        if (outSideMonster != null && outSideMonster.playerTag)
         {
             GameOver();
             StartCoroutine(LoadSceneWithDelay(currentSceneName, 1.5f));
