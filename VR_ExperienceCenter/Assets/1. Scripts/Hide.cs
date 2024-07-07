@@ -8,13 +8,15 @@ public class Hide : MonoBehaviour
 {
     [SerializeField] ScaleFromMicrophone scaleFromMicrophone;
 
-    float hideTime;
+    public float hideTime;
     bool stayHide = false;
-    // Start is called before the first frame update
+
+
     void Start()
     {
         scaleFromMicrophone.OnSoundVolumeChanged += SoundVolumeWarning;
     }
+
 
     void SoundVolumeWarning(float loudness)
     {
@@ -24,6 +26,7 @@ public class Hide : MonoBehaviour
         }
     }
 
+
     void Update()
     {
         if (stayHide)
@@ -32,6 +35,7 @@ public class Hide : MonoBehaviour
 
             if (hideTime >= 3)
             {
+                GameManager.Instance.chaseStart = false;
                 GameManager.Instance.count = 0;
             }
         }
@@ -40,6 +44,8 @@ public class Hide : MonoBehaviour
             hideTime = 0;
         }
     }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bush"))
@@ -47,6 +53,8 @@ public class Hide : MonoBehaviour
             stayHide = true;
         }
     }
+
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Bush"))
