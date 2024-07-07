@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] string currentSceneName;
     [SerializeField] MonsterChase monster;
     [SerializeField] Monster outSideMonster;
+    [SerializeField] CloseOpenDoor lastDoor;
+    [SerializeField] GameObject fadeOut;
 
     [Header("SoundWarning")]
     [SerializeField] ScaleFromMicrophone scaleFromMicrophone;
@@ -69,6 +71,11 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+
+        if (lastDoor != null && lastDoor.isOpen)
+        {
+            GameClear();
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -76,6 +83,22 @@ public class GameManager : MonoBehaviour
         {
             StageStart();
         }
+    }
+    void GameClear()
+    {
+        fadeOut.SetActive(true);
+        scaleFromMicrophone.OnSoundVolumeChanged -= SoundVolumeWarning;
+        chaseStart = false;
+        count = 0;
+
+        StartCoroutine(LoadScene());
+
+    }
+
+    IEnumerator LoadScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Ending");
     }
     void StageStart()
     {

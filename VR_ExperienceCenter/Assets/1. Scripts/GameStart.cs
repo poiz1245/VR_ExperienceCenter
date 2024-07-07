@@ -16,13 +16,14 @@ public class GameStart : MonoBehaviour
     [SerializeField] Vector3 closeRotation;
 
     XRSimpleInteractable simpleInteractable;
-
+    AudioSource audioSource;
     private void Awake()
     {
         simpleInteractable = GetComponentInChildren<XRSimpleInteractable>();
     }
     private void Start()
     {
+        audioSource= GetComponent<AudioSource>();
         triggerButton.action.performed += TriggerButtonClicked;
     }
 
@@ -40,7 +41,8 @@ public class GameStart : MonoBehaviour
 
         if (dist < minDistance)
         {
-            gameObject.transform.DORotate(openRotation, duration).SetEase(Ease.InQuad);
+            gameObject.transform.DOLocalRotate(openRotation, duration).SetEase(Ease.InQuad);
+            audioSource.Play();
             StartCoroutine(LoadScene());
         }
     }
