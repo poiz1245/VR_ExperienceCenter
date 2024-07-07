@@ -65,6 +65,10 @@ public class GameManager : MonoBehaviour
         {
             PlayerTag();
         }
+        if(count >= 4)
+        {
+            GameOver();
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -85,13 +89,11 @@ public class GameManager : MonoBehaviour
         if (monster != null && monster.playerTag)
         {
             GameOver();
-            StartCoroutine(LoadSceneWithDelay(currentSceneName, 1.5f));
         }
 
         if (outSideMonster != null && outSideMonster.playerTag)
         {
             GameOver();
-            StartCoroutine(LoadSceneWithDelay(currentSceneName, 1.5f));
         }
     }
     void ChaseStart()
@@ -122,17 +124,19 @@ public class GameManager : MonoBehaviour
 
             OnCountChanged?.Invoke(count);
 
-            if (count == 4)
+          /*  if (count == 4)
             {
                 GameOver();
-            }
+            }*/
         }
     }
     void GameOver()
     {
+        scaleFromMicrophone.OnSoundVolumeChanged -= SoundVolumeWarning;
         mainCamera.enabled = false;
         timelineCamera.enabled = true;
         playableDirector.Play();
+        StartCoroutine(LoadSceneWithDelay(currentSceneName, 2f));
     }
     private IEnumerator LoadSceneWithDelay(string sceneName, float delay)
     {
