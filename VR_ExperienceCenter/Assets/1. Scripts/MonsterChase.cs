@@ -11,11 +11,17 @@ public class MonsterChase : MonoBehaviour
     [SerializeField] CloseOpenDoor door;
     [SerializeField] float moveSpeed;
 
+    AudioSource audioSource;
     public bool playerTag { get; private set; }
     bool startChase = false;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void Update()
     {
-        if (door.isOpen)
+        if (door != null && door.isOpen)
         {
             startChase = true;
         }
@@ -24,6 +30,7 @@ public class MonsterChase : MonoBehaviour
         {
             Rotate();
             Move();
+            audioSource.Play();
         }
     }
 

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.XR.Interaction.Toolkit;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -8,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class RightController : MonoBehaviour
 {
     [SerializeField] float gravity = -9.81f; // 중력 가속도
-    private float jumpForce = 5f; // 점프 힘
+    [SerializeField] float jumpForce = 5f; // 점프 힘
     private float verticalVelocity = 0f; // 수직 속도
 
     [SerializeField] InputActionReference grabButton;
@@ -20,10 +19,9 @@ public class RightController : MonoBehaviour
 
     public Vector3 rightControllerPosition;
 
-
     private void Start()
     {
-        grabButton.action.performed += ObjectGrab;
+        //grabButton.action.performed += ObjectGrab;
         primaryButton.action.performed += OnJump;
     }
     private void Update()
@@ -42,8 +40,8 @@ public class RightController : MonoBehaviour
             verticalVelocity = jumpForce;
         }
     }
-    public void ObjectGrab(InputAction.CallbackContext obj) // 큐브 잡고 돌릴 때 사용
-    {
-        rightControllerPosition = transform.position;
-    }
+    //public void ObjectGrab(InputAction.CallbackContext obj) // 큐브 잡고 돌릴 때 사용
+    //{
+        //rightControllerPosition = transform.position;
+    //}
 }

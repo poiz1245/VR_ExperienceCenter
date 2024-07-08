@@ -10,6 +10,8 @@ TagManager:
   - Setting
   - Stage2
   - Stage3
+  - Key
+  - Bush
   layers:
   - Default
   - TransparentFX

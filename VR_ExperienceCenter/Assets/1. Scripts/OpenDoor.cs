@@ -13,10 +13,14 @@ public class OpenDoor : MonoBehaviour
 
     XRGrabInteractable keyInteractable;
     Rigidbody keyRigidbody;
+
+    public bool isOpen { get; private set; }
     void Start()
     {
         keyInteractable = key.GetComponent<XRGrabInteractable>();
         keyRigidbody = key.GetComponent<Rigidbody>();
+
+        isOpen = false;
     }
 
     void Update()
@@ -27,6 +31,7 @@ public class OpenDoor : MonoBehaviour
     {
         if (other.gameObject== key)
         {
+            isOpen = true;
             Vector3 rotation = new Vector3(0.0f, -90.0f, 0.0f);
             int duration = 2;
 
@@ -35,8 +40,6 @@ public class OpenDoor : MonoBehaviour
 
             other.transform.position = photoAttach.position;
             other.transform.rotation = photoAttach.rotation;
-          
-
 
             door.transform.DORotate(rotation, duration).SetEase(Ease.InQuad);
         }
