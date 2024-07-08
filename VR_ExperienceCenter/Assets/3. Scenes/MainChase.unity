@@ -1342,17 +1342,17 @@ PrefabInstance:
     - target: {fileID: 4914973355760200531, guid: 7852930aa6a3f494aaf2b6d749627e9c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.96012
+      value: -33.101
       objectReference: {fileID: 0}
     - target: {fileID: 4914973355760200531, guid: 7852930aa6a3f494aaf2b6d749627e9c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.232
+      value: 4.243
       objectReference: {fileID: 0}
     - target: {fileID: 4914973355760200531, guid: 7852930aa6a3f494aaf2b6d749627e9c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.383626
+      value: 3.9733963
       objectReference: {fileID: 0}
     - target: {fileID: 4914973355760200531, guid: 7852930aa6a3f494aaf2b6d749627e9c,
         type: 3}
@@ -9699,7 +9699,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.05
+  m_Intensity: 0.6
   m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -10619,7 +10619,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.05
+  m_Intensity: 0.6
   m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -11693,7 +11693,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.05
+  m_Intensity: 0.6
   m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -12235,7 +12235,7 @@ PrefabInstance:
     - target: {fileID: 1679794956646195915, guid: abd45814163c7c34d89fb70ffa494c0a,
         type: 3}
       propertyPath: m_Speed
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1679794956646195915, guid: abd45814163c7c34d89fb70ffa494c0a,
         type: 3}
@@ -12322,10 +12322,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1a7e4922027d6d44aa862c3fcd03916f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9447906fa2ae8c543836b60193585cdf, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 2
+  m_Pitch: 1.5
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -12884,7 +12884,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.05
+  m_Intensity: 0.6
   m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -16274,7 +16274,7 @@ PrefabInstance:
     - target: {fileID: 1679794956646195915, guid: abd45814163c7c34d89fb70ffa494c0a,
         type: 3}
       propertyPath: m_Speed
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1679794956646195915, guid: abd45814163c7c34d89fb70ffa494c0a,
         type: 3}
@@ -16361,10 +16361,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1a7e4922027d6d44aa862c3fcd03916f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9447906fa2ae8c543836b60193585cdf, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 2
+  m_Pitch: 1.5
   Loop: 1
   Mute: 0
   Spatialize: 0
