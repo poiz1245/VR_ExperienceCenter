@@ -524,7 +524,7 @@ PrefabInstance:
     - target: {fileID: 1544023212289517666, guid: c7359411cc25cd540b75d18823945839,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1544023212289517666, guid: c7359411cc25cd540b75d18823945839,
         type: 3}
@@ -584,7 +584,17 @@ PrefabInstance:
     - target: {fileID: 6071243353937173609, guid: c7359411cc25cd540b75d18823945839,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071243353937173609, guid: c7359411cc25cd540b75d18823945839,
+        type: 3}
+      propertyPath: m_LeftHandMoveAction.m_UseReference
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071243353937173609, guid: c7359411cc25cd540b75d18823945839,
+        type: 3}
+      propertyPath: m_RightHandMoveAction.m_UseReference
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

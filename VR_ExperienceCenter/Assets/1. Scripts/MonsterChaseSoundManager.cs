@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MonsterChaseSoundManager : MonoBehaviour
 {
-    [SerializeField] AudioClip[] audioClips;
     AudioSource audioSource;
 
     
@@ -16,20 +15,27 @@ public class MonsterChaseSoundManager : MonoBehaviour
 
     void SoundPlay(int count)
     {
+        audioSource.Stop();
         switch (count)
         {
             case 0:
                 audioSource.Stop();
                 return;
             case 1:
-                audioSource.clip = audioClips[0];
+                audioSource.volume = 0.3f;
+                audioSource.pitch = 0.8f;
                 break;
             case 2:
-                audioSource.clip = audioClips[1];
+                audioSource.volume = 0.6f;
+                audioSource.pitch = 1f;
                 break;
             case 3:
-                audioSource.clip = audioClips[2];
+                audioSource.volume = 1f;
+                audioSource.pitch = 1.2f;
                 break;
+            case 4:
+                audioSource.Stop();
+                return;
         }
 
         audioSource.Play();

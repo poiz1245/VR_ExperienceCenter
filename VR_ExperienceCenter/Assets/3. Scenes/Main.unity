@@ -793,8 +793,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 0.1, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1001 &50477722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3727,7 +3727,7 @@ GameObject:
   - component: {fileID: 312896810}
   m_Layer: 0
   m_Name: LivingRoomBGM
-  m_TagString: Setting
+  m_TagString: Stage3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4998,8 +4998,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 0.1, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!23 &398686300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9446,6 +9446,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.011059552
       objectReference: {fileID: 0}
+    - target: {fileID: 23595876732371924, guid: dab5bcc5824da2f41976c1a71c0113f9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1f10e4ae945a8634bbadb9e61a0d5ef1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9832,8 +9837,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 0.1, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &620895642
 GameObject:
   m_ObjectHideFlags: 0
@@ -11424,8 +11429,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 20, y: 0.1, z: 20}
-  m_Center: {x: 0, y: 0, z: 10}
+  m_Size: {x: 20, y: 10, z: 20}
+  m_Center: {x: 0, y: -5, z: 10}
 --- !u!1 &734636465
 GameObject:
   m_ObjectHideFlags: 0
@@ -12412,6 +12417,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23121596433154264, guid: dd51be22530c5b54593d28e8de4c5e54,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 548d01eb86270e64a9efd007f9b990c5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13154,7 +13164,7 @@ GameObject:
   - component: {fileID: 872559323}
   m_Layer: 0
   m_Name: OutSideBGM
-  m_TagString: Setting
+  m_TagString: Stage2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18459,8 +18469,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 0.1, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!23 &1287166823
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19950,8 +19960,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 0.1, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!23 &1354680539
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21271,6 +21281,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23446059143604208, guid: 9efa763cf4184e340aa68a7f61c4f922,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 61f7a21eb1dbdf8449945d290dc1af51, type: 2}
     - target: {fileID: 65702421581822050, guid: 9efa763cf4184e340aa68a7f61c4f922,
         type: 3}
       propertyPath: m_Enabled
@@ -22009,6 +22024,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 3b963fe355a4e7844af6d0c333578949, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1c5bbc34b258bdb478cb6de116d55152, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25037,7 +25056,7 @@ MonoBehaviour:
   - {fileID: 216802827}
   - {fileID: 1274916776}
   - {fileID: 64648432047032609}
-  - {fileID: 0}
+  - {fileID: 33506357671575724}
   - {fileID: 1279124869}
   - {fileID: 820736929}
   - {fileID: 521088791}
@@ -29983,7 +30002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1963853271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30127,6 +30146,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23084807201219302, guid: 381f30c110f6eee46b6005f3a12dd79a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bcf486791c5d3e5479ededb24f20ef62, type: 2}
     - target: {fileID: 65905666471356804, guid: 381f30c110f6eee46b6005f3a12dd79a,
         type: 3}
       propertyPath: m_Enabled
@@ -30186,7 +30210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlitMaterial:
-  - {fileID: 2100000, guid: 0e9a0c8f8ebb826479d78cd64523aac7, type: 2}
+  - {fileID: 2100000, guid: bcf486791c5d3e5479ededb24f20ef62, type: 2}
   afterGrabMaterials:
   - {fileID: 2100000, guid: 1808640f5ba219647b080c7fa6cda299, type: 2}
   maxScale: 15
@@ -36156,7 +36180,7 @@ PrefabInstance:
     - target: {fileID: 6006653877182223970, guid: c1b6e7fa3d332784ebc9bcb14604a77c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36700,6 +36724,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4586563474325256243, guid: 11ee24238752a7246a2984e4ef4b9321,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1c5bbc34b258bdb478cb6de116d55152, type: 2}
     - target: {fileID: 7790109101733651467, guid: 11ee24238752a7246a2984e4ef4b9321,
         type: 3}
       propertyPath: m_Layer
@@ -38080,7 +38109,7 @@ PrefabInstance:
     - target: {fileID: 8407707369532783899, guid: 7852930aa6a3f494aaf2b6d749627e9c,
         type: 3}
       propertyPath: m_MaxRaycastDistance
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8493550322045618424, guid: 7852930aa6a3f494aaf2b6d749627e9c,
         type: 3}
@@ -39269,7 +39298,7 @@ MonoBehaviour:
   finalObject: {fileID: 1896401878}
   anamorphicCamera: {fileID: 3589626544317141605}
   acceptableAngle: 5
-  acceptableDistance: 3
+  acceptableDistance: 1
   scatteredImages:
   - {fileID: 1109433099}
   - {fileID: 120495142}

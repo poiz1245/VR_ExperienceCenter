@@ -119,6 +119,17 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
     }
+
+    public void HideOnBush()
+    {
+        count = 0;
+        OnCountChanged?.Invoke(count);
+    }
+    public void ActivateTrap()
+    {
+        count++;
+        OnCountChanged?.Invoke(count);
+    }
     void ChaseStart()
     {
         delay -= Time.deltaTime;
@@ -127,6 +138,7 @@ public class GameManager : MonoBehaviour
         {
             count++;
             delay = 5f;
+            OnCountChanged?.Invoke(count);
         }
     }
     void SoundVolumeWarning(float loudness)
@@ -169,4 +181,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneName);
     }
+
+    
 }

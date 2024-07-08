@@ -16,17 +16,21 @@ public class ControllerHaptic : MonoBehaviour
 
     void OnCountChangedHandler(int count)
     {
-        if (count == 1)
+        switch (count)
         {
-            OnVibration(0.3f, 3);
-        }
-        else if (count == 2)
-        {
-            OnVibration(0.6f, 3);
-        }
-        else if (count == 3)
-        {
-            OnVibration(1f, 3);
+            case 0:
+                return;
+            case 1:
+                OnVibration(0.3f, 3);
+                break;
+            case 2:
+                OnVibration(0.6f, 3);
+                break;
+            case 3:
+                OnVibration(1f, 3);
+                break;
+            case 4:
+                return;
         }
     }
 

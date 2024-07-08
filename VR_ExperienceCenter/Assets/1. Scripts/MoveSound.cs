@@ -29,7 +29,6 @@ public class MoveSound : MonoBehaviour
     {
         RaycastHit hit;
         bool isHit = Physics.BoxCast(transform.position, transform.localScale, -transform.up, out hit, transform.rotation);
-        print(isHit);
         wasGrounded = isGrounded;
         isGrounded = !isHit;
 

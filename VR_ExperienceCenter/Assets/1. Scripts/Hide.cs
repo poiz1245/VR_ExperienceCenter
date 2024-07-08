@@ -9,8 +9,8 @@ public class Hide : MonoBehaviour
     [SerializeField] ScaleFromMicrophone scaleFromMicrophone;
 
     public float hideTime;
-    bool stayHide = false;
-
+    public bool stayHide = false;
+    
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class Hide : MonoBehaviour
             if (hideTime >= 3)
             {
                 GameManager.Instance.chaseStart = false;
-                GameManager.Instance.count = 0;
+                GameManager.Instance.HideOnBush();
             }
         }
         else
@@ -50,6 +50,7 @@ public class Hide : MonoBehaviour
     {
         if (other.CompareTag("Bush"))
         {
+            print("InBush");
             stayHide = true;
         }
     }
