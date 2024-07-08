@@ -44,6 +44,7 @@ public class MonsterNavMesh : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            moveAudioSource.Stop();
             PlayerTag();
         }
     }

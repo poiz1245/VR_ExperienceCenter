@@ -10,7 +10,7 @@ public class MonsterChase : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] OnlyOpenDoor door;
     [SerializeField] float moveSpeed;
-
+    [SerializeField] AudioSource moveSound;
     public bool playerTag { get; private set; }
     bool startChase = false;
     bool soundReady = false;
@@ -49,6 +49,7 @@ public class MonsterChase : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerTag = true;
+            moveSound.Stop();
         }
     }
 }
