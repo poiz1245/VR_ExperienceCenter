@@ -29461,7 +29461,7 @@ MonoBehaviour:
   fadeOut: {fileID: 372382820}
   scaleFromMicrophone: {fileID: 755027794}
   hide: {fileID: 755027796}
-  maxSoundVolume: 500
+  maxSoundVolume: 20
   chaseStart: 0
   count: 0
   playerDie: {fileID: 11400000, guid: 834ff9d263c423e428358a738a74426d, type: 2}
