@@ -9,7 +9,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class CloseOpenDoor : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] InputActionReference triggerButton;
+    [SerializeField] InputActionReference rightTriggerButton;
+    [SerializeField] InputActionReference lefttriggerButton;
     [SerializeField] float minDistance;
     [SerializeField] Vector3 openRotation;
     [SerializeField] Vector3 closeRotation;
@@ -26,7 +27,11 @@ public class CloseOpenDoor : MonoBehaviour
     private void Start()
     {
         isOpen = false;
-        triggerButton.action.performed += TriggerButtonClicked;
+        rightTriggerButton.action.performed += TriggerButtonClicked;
+        if(lefttriggerButton != null)
+        {
+            lefttriggerButton.action.performed += TriggerButtonClicked;
+        }
     }
 
     void TriggerButtonClicked(InputAction.CallbackContext context)

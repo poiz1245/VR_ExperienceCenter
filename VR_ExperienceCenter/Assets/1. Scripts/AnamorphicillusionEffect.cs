@@ -10,6 +10,7 @@ public class IllusionEffect : MonoBehaviour
     public GameObject[] scatteredImages;
     public Material[] originalImage;
 
+    IllusionEffect illusionEffect;
     [SerializeField] AudioSource audioSource;
 
     Camera mainCamera;
@@ -17,6 +18,7 @@ public class IllusionEffect : MonoBehaviour
     private void Start()
     {
         mainCamera = GetComponent<Camera>();
+        illusionEffect = GetComponent<IllusionEffect>();
     }
     void Update()
     {
@@ -34,6 +36,7 @@ public class IllusionEffect : MonoBehaviour
             
             audioSource.Play();
             finalObject.SetActive(true);
+            illusionEffect.enabled = false;
         }
         /*else
         {

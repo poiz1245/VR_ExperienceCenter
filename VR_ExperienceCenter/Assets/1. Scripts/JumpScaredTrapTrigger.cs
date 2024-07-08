@@ -12,11 +12,16 @@ public class JumpScaredTrapTrigger : MonoBehaviour
     [SerializeField] DOTweenAnimation light;
 
     [SerializeField] AudioSource audioSource;
-
+    [SerializeField] float delay;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+
             if (trapObject != null)
             {
                 trapObject.transform.DOMove(move, duration).SetEase(Ease.Linear);
@@ -28,12 +33,14 @@ public class JumpScaredTrapTrigger : MonoBehaviour
                 }
             }
 
-            if (audioSource != null)
-            {
-                audioSource.Play();
-            }
+            StartCoroutine(SoundDestroy());
 
-            Destroy(gameObject);
         }
+    }
+    IEnumerator SoundDestroy()
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+
     }
 }

@@ -26,14 +26,14 @@ public class HandLight : MonoBehaviour
         {
             if(!focusOn)
             {
-                handLight.intensity = 200f;
+                handLight.intensity = 100f;
                 handLight.innerSpotAngle = 20f;
                 handLight.spotAngle = 30f;
                 focusOn = true;
             }
             else if (focusOn)
             {
-                handLight.intensity = 100f;
+                handLight.intensity = 50f;
                 handLight.innerSpotAngle = 10f;
                 handLight.spotAngle = 60f;
                 focusOn = false;
