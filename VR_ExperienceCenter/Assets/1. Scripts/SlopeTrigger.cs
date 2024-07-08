@@ -16,8 +16,6 @@ public class SlopeTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //Camera.main.enabled = false;
-            //virtualCamera.Priority = 10;
             playableDirector.Play();
         }
     }

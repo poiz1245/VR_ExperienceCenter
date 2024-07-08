@@ -85,7 +85,7 @@ public class ForcedPerspectiveEffect : MonoBehaviour
 
         float deltaScale = currentScale.x / previousScale.x; //조정 전 스케일과 조정 후 스케일 변화량
 
-        rigid.mass *= deltaScale; //스케일 변화량 만큼 무게 증감
+        //rigid.mass *= deltaScale; //스케일 변화량 만큼 무게 증감
     }
 
     float CalculateScaleFactor(float distance)

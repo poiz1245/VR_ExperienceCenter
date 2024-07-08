@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerTag();
         }
-        if(count >= 4)
+        if (count >= 4)
         {
             GameOver();
         }
@@ -147,15 +147,18 @@ public class GameManager : MonoBehaviour
 
             OnCountChanged?.Invoke(count);
 
-          /*  if (count == 4)
-            {
-                GameOver();
-            }*/
+            /*  if (count == 4)
+              {
+                  GameOver();
+              }*/
         }
     }
     void GameOver()
     {
-        scaleFromMicrophone.OnSoundVolumeChanged -= SoundVolumeWarning;
+        if (scaleFromMicrophone != null)
+        {
+            scaleFromMicrophone.OnSoundVolumeChanged -= SoundVolumeWarning;
+        }
         mainCamera.enabled = false;
         timelineCamera.enabled = true;
         playableDirector.Play();

@@ -14,6 +14,7 @@ public class MoveSound : MonoBehaviour
     AudioSource audioSource;
     CharacterController characterController;
 
+    //int layerMask = ~(1 << 3);
     bool isGrounded = false;
     bool wasGrounded = false;
     private void Start()
@@ -26,16 +27,18 @@ public class MoveSound : MonoBehaviour
 
     private void Update()
     {
+        RaycastHit hit;
+        bool isHit = Physics.BoxCast(transform.position, transform.localScale, -transform.up, out hit, transform.rotation);
+        print(isHit);
         wasGrounded = isGrounded;
-        isGrounded = characterController.isGrounded;
+        isGrounded = !isHit;
 
-        print("이전프레임"+wasGrounded);
-        print("현재프레임"+isGrounded);
-        if (!wasGrounded && isGrounded)
+        if (audioClips.Length == 2 && !wasGrounded && isGrounded)
         {
             PlayLandingSound();
         }
     }
+   
     void PlayLandingSound()
     {
         audioSource.clip = audioClips[1];
@@ -45,7 +48,7 @@ public class MoveSound : MonoBehaviour
     }
     void Move(InputAction.CallbackContext context)
     {
-        if (!characterController.isGrounded)
+        if (!isGrounded)
         {
             return;
         }

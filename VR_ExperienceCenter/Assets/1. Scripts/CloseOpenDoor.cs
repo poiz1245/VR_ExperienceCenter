@@ -14,6 +14,7 @@ public class CloseOpenDoor : MonoBehaviour
     [SerializeField] Vector3 openRotation;
     [SerializeField] Vector3 closeRotation;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] GameObject activeObject;
 
     XRSimpleInteractable simpleInteractable;
     public bool isOpen { get; private set; } 
@@ -33,6 +34,11 @@ public class CloseOpenDoor : MonoBehaviour
         if (simpleInteractable.isHovered)
         {
             DoorInteraction();
+
+            if(activeObject != null)
+            {
+                activeObject.SetActive(true);
+            }
         }
     }
     public void DoorInteraction()

@@ -18,9 +18,11 @@ public class CuttingDoorOpen : MonoBehaviour
     [SerializeField] Vector3 closeRotation;
     [SerializeField] GameObject portal;
 
+    AudioSource audioSource;
     XRSimpleInteractable simpleInteractable;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         triggerButton.action.performed += TriggerButtonClicked;
         simpleInteractable = GetComponentInChildren<XRSimpleInteractable>();
         collider = GetComponent<Collider>();
@@ -40,6 +42,7 @@ public class CuttingDoorOpen : MonoBehaviour
         if (simpleInteractable.isHovered)
         {
             DoorInteraction();
+            audioSource.Play();
         }
     }
     public void DoorInteraction()

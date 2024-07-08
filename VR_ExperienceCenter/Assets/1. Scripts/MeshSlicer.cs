@@ -16,6 +16,7 @@ public class MeshSlicer : MonoBehaviour
 
     [SerializeField] Material[] slicedObjectBaseMaterial;
     [SerializeField] Material[] slicedObjectFirstRenderMaterial;
+    [SerializeField] AudioSource cutSound;
 
     LayerMask sliceableLayer;
     //public LayerMask slicedObjectleLayer;
@@ -50,6 +51,7 @@ public class MeshSlicer : MonoBehaviour
             SetupSlicedComponent(upperHull, target);
             SetupSlicedComponent(lowerHull, target);
 
+            cutSound.Play();
             Destroy(target.gameObject);
         }
     }

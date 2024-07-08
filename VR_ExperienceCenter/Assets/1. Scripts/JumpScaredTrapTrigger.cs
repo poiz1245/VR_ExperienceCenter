@@ -32,6 +32,8 @@ public class JumpScaredTrapTrigger : MonoBehaviour
             {
                 audioSource.Play();
             }
+
+            Destroy(gameObject);
         }
     }
 }

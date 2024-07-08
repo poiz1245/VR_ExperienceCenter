@@ -15,6 +15,7 @@ public class MonsterNavMesh : MonoBehaviour
     [SerializeField] TimelineAsset playerDie;
     [SerializeField] PlayableDirector playableDirector;
     [SerializeField] CinemachineVirtualCamera virtualCamera;
+    [SerializeField] AudioSource moveAudioSource;
     //[SerializeField] Camera timelineCamera;
 
     bool breachingComplete = false;
@@ -65,6 +66,8 @@ public class MonsterNavMesh : MonoBehaviour
     }
     public void Breaching()
     {
-        breachingComplete= true;
+        moveAudioSource.Play();
+        breachingComplete = true;
     }
+
 }

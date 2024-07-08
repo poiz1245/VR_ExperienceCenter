@@ -8,17 +8,13 @@ using UnityEngine.Animations.Rigging;
 public class MonsterChase : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] CloseOpenDoor door;
+    [SerializeField] OnlyOpenDoor door;
     [SerializeField] float moveSpeed;
 
-    AudioSource audioSource;
     public bool playerTag { get; private set; }
     bool startChase = false;
+    bool soundReady = false;
 
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
     void Update()
     {
         if (door != null && door.isOpen)
@@ -30,8 +26,10 @@ public class MonsterChase : MonoBehaviour
         {
             Rotate();
             Move();
-            audioSource.Play();
+            soundReady = true;
+
         }
+
     }
 
     private void Move()
