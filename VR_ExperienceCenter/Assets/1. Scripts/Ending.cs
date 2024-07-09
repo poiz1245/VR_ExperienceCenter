@@ -13,7 +13,7 @@ public class Ending : MonoBehaviour
 
     IEnumerator SceneLoad()
     {
-        yield return new WaitForSeconds(18f);
+        yield return new WaitForSeconds(20f);
         SceneManager.LoadScene("Title");
     }
 }
