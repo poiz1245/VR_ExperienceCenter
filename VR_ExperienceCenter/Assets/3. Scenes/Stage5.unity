@@ -10954,7 +10954,8 @@ PrefabInstance:
       value: PlayerDieCinematic
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 858523180743034790, guid: d8749a6936e76ad459d3109aae3b1950, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8749a6936e76ad459d3109aae3b1950, type: 3}
@@ -24271,7 +24272,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thumbStick: {fileID: -5217857706409110352, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: fce27cf14edb04647b60f156a64cdf61, type: 3}
+  - {fileID: 8300000, guid: b3a08b98252ad5840bab1561a75cf85f, type: 3}
 --- !u!114 &7879328729912489295
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,12 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TransformTransitionUseDotween : MonoBehaviour
 {
     [SerializeField] GameObject[] children;
 
     GameObject dotweenSettingObject;
+    GameObject eventSystem;
 
     Vector3 rotation;
     int duration;
@@ -42,6 +44,8 @@ public class TransformTransitionUseDotween : MonoBehaviour
             children[i].transform.DOMove(move, duration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
         }
         dotweenSettingObject = GameObject.Find("[DOTween]");
+        eventSystem = GameObject.Find("EventSystem");
+        eventSystem.tag = "Setting";
         dotweenSettingObject.tag = "Setting";
     }
 

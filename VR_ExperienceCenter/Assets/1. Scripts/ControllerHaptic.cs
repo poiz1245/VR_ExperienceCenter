@@ -7,10 +7,12 @@ public class ControllerHaptic : MonoBehaviour
 {
     [SerializeField] ScaleFromMicrophone scaleFromMicrophone;
 
-    XRController leftController;
+    //XRController leftController;
+    XRBaseControllerInteractor leftController;
     private void Start()
     {
-        leftController = GetComponent<XRController>();
+        leftController = GetComponent<XRBaseControllerInteractor>();
+        //leftController = GetComponent<XRController>();
         GameManager.Instance.OnCountChanged += OnCountChangedHandler;
     }
 
@@ -36,7 +38,7 @@ public class ControllerHaptic : MonoBehaviour
 
     void OnVibration(float amplitude, float duration)
     {
-        leftController.SendHapticImpulse(amplitude, duration);
-
+        leftController.xrController.SendHapticImpulse(amplitude, duration);
+        //leftController.SendHapticImpulse(amplitude, duration);
     }
 }
