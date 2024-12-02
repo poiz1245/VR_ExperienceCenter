@@ -27,7 +27,6 @@ public class MonsterChase : MonoBehaviour
             Rotate();
             Move();
             soundReady = true;
-
         }
 
     }

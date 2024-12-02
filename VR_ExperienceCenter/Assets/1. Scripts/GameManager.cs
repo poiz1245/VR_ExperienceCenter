@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour
     }
     public void ActivateTrap()
     {
+        chaseStart = true;
         count++;
         OnCountChanged?.Invoke(count);
     }

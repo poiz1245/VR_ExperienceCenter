@@ -16,6 +16,20 @@ public class MonsterNavMesh : MonoBehaviour
     [SerializeField] PlayableDirector playableDirector;
     [SerializeField] CinemachineVirtualCamera virtualCamera;
     [SerializeField] AudioSource moveAudioSource;
+
+    [SerializeField] float playerChatchDistance;
+
+    public enum SceneName
+    {
+        Main,
+        Stage4,
+        Stage5,
+        Chase,
+        MainChase,
+        Stage6
+    }
+
+    public SceneName sceneName;
     //[SerializeField] Camera timelineCamera;
 
     bool breachingComplete = false;
@@ -38,16 +52,21 @@ public class MonsterNavMesh : MonoBehaviour
                 agent.SetDestination(transform.position);
             }
         }
-        
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        float distance = Vector3.Distance(transform.position, target.transform.position);
+
+        if (distance <= playerChatchDistance)
         {
-            moveAudioSource.Stop();
             PlayerTag();
         }
     }
+/*    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            //moveAudioSource.Stop();
+            PlayerTag();
+        }
+    }*/
     void GameOver()
     {
         //게임오버
@@ -57,8 +76,9 @@ public class MonsterNavMesh : MonoBehaviour
     }
     void PlayerTag()
     {
-            GameOver();
-            StartCoroutine(LoadSceneWithDelay("mainChase", 1.5f));
+        moveAudioSource.Stop();
+        GameOver();
+        StartCoroutine(LoadSceneWithDelay(sceneName.ToString(), 1.5f));
     }
     private IEnumerator LoadSceneWithDelay(string sceneName, float delay)
     {

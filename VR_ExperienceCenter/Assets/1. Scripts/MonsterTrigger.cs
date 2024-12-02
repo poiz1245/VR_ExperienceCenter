@@ -6,6 +6,7 @@ using UnityEngine;
 public class MonsterTrigger : MonoBehaviour
 {
     [SerializeField] GameObject monster;
+    [SerializeField] GameObject door;
     //[SerializeField] Vector3 move;
     //[SerializeField] int duration;
     Animator animator;
@@ -20,11 +21,12 @@ public class MonsterTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             monster.SetActive(true);
+            door.transform.DOLocalRotate(new Vector3(0,130,0), 1).SetEase(Ease.OutQuad);
             //animator.SetBool("move", true);
             //monster.transform.DOMove(move, duration).SetEase(Ease.Linear);
             audioSource.Play();
 
-            StartCoroutine(MonsterDestroy());
+            //StartCoroutine(MonsterDestroy());
         }
     }
 

@@ -12252,6 +12252,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.19
       objectReference: {fileID: 0}
+    - target: {fileID: 1679794956646195915, guid: abd45814163c7c34d89fb70ffa494c0a,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6638881776336835421, guid: abd45814163c7c34d89fb70ffa494c0a,
         type: 3}
       propertyPath: target
@@ -12263,6 +12268,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 834ff9d263c423e428358a738a74426d,
         type: 2}
+    - target: {fileID: 6638881776336835421, guid: abd45814163c7c34d89fb70ffa494c0a,
+        type: 3}
+      propertyPath: sceneName
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6638881776336835421, guid: abd45814163c7c34d89fb70ffa494c0a,
         type: 3}
       propertyPath: virtualCamera
@@ -12288,6 +12298,11 @@ PrefabInstance:
       propertyPath: breachingAudioSource
       value: 
       objectReference: {fileID: 858735191}
+    - target: {fileID: 6638881776336835421, guid: abd45814163c7c34d89fb70ffa494c0a,
+        type: 3}
+      propertyPath: playerChatchDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7004204925590252082, guid: abd45814163c7c34d89fb70ffa494c0a,
         type: 3}
       propertyPath: m_Name
@@ -16318,6 +16333,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.19
       objectReference: {fileID: 0}
+    - target: {fileID: 1679794956646195915, guid: abd45814163c7c34d89fb70ffa494c0a,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6638881776336835421, guid: abd45814163c7c34d89fb70ffa494c0a,
         type: 3}
       propertyPath: target
@@ -16329,6 +16349,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 834ff9d263c423e428358a738a74426d,
         type: 2}
+    - target: {fileID: 6638881776336835421, guid: abd45814163c7c34d89fb70ffa494c0a,
+        type: 3}
+      propertyPath: sceneName
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6638881776336835421, guid: abd45814163c7c34d89fb70ffa494c0a,
         type: 3}
       propertyPath: virtualCamera
@@ -16354,6 +16379,11 @@ PrefabInstance:
       propertyPath: breachingAudioSource
       value: 
       objectReference: {fileID: 1123677862}
+    - target: {fileID: 6638881776336835421, guid: abd45814163c7c34d89fb70ffa494c0a,
+        type: 3}
+      propertyPath: playerChatchDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7004204925590252082, guid: abd45814163c7c34d89fb70ffa494c0a,
         type: 3}
       propertyPath: m_Name
@@ -23139,9 +23169,9 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.033333335
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 0513d12c26faf034c98b8102cf1a2b08, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: f84e044e17652f34cb13ada2e9f24325, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1540997202
 Transform:
